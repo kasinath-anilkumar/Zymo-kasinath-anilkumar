@@ -1,12 +1,13 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import ZymoLogo from '../CustomNavbar/ZymoLogo.png';
+import { Link } from 'react-router-dom';
 
 const CustomNavbar = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home" className="d-flex align-items-center " style={{ width: '12rem' }}>
+        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center" style={{ width: '12rem' }}>
           <img src={ZymoLogo} className="img-fluid w-100" alt="Zymo Logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

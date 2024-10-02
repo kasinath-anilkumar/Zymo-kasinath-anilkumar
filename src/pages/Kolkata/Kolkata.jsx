@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 
-const Mumbai = () => {
-  const [index, setIndex] = useState(0);
-
+const Kolkata = () => {
+  const [index, setIndex] = useState(0); 
 
   useEffect(() => {
+    // Set an interval to change the slide every 2 seconds
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % 3);
+      setIndex((prevIndex) => (prevIndex + 1) % 3); // Change to the next slide
     }, 2000); 
 
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval); // Clear the interval on component unmount
   }, []);
 
   const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex); 
+    setIndex(selectedIndex); // Update index on manual select
   };
 
   return (
@@ -25,7 +25,7 @@ const Mumbai = () => {
             className="d-block w-100 rounded p-1"
             src="https://zymo.app/static/media/heroSecImage.012372867a73d0320a1b.jpg"
             alt="First slide"
-            style={{border:'solid'}}
+            style={{ border: 'solid' }}
           />
         </Carousel.Item>
         <Carousel.Item>
@@ -33,15 +33,15 @@ const Mumbai = () => {
             className="d-block w-100 rounded p-1"
             src="https://zymo.app/static/media/heroSecImage.012372867a73d0320a1b.jpg"
             alt="Second slide"
-            style={{border:'solid'}}
+            style={{ border: 'solid' }}
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100 rounded p-1"
             src="https://zymo.app/static/media/heroSecImage.012372867a73d0320a1b.jpg"
-            alt="Third slide"
-            style={{border:'solid'}}
+            alt="First slide"
+            style={{ border: 'solid' }}
           />
         </Carousel.Item>
       </Carousel>
@@ -49,4 +49,4 @@ const Mumbai = () => {
   );
 };
 
-export default Mumbai;
+export default Kolkata;

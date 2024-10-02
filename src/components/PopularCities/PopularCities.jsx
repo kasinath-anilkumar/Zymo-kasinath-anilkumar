@@ -5,11 +5,11 @@ import { Row, Col } from 'react-bootstrap';
 const PopularCities = ({ onCitySelect }) => {
   const cities = [
     { name: 'Delhi', image: 'https://cdn2.iconfinder.com/data/icons/indian-cities/64/Delhi-1024.png' },
-    { name: 'Bengaluru', image: 'https://cdn4.iconfinder.com/data/icons/indian-cities-landmarks/100/Bengaluru-1024.png' },
     { name: 'Mumbai', image: 'https://static.vecteezy.com/system/resources/previews/019/016/738/original/mumbai-icon-design-free-vector.jpg' },
     { name: 'Chennai', image: 'https://cdn4.iconfinder.com/data/icons/indian-cities-landmarks/100/Chennai-512.png' },
     { name: 'Pune', image: 'https://cdn4.iconfinder.com/data/icons/indian-cities-landmarks/100/Pune-512.png' },
     { name: 'Hyderabad', image: 'https://cdn2.iconfinder.com/data/icons/indian-cities/64/Hyderabad-1024.png' },
+    { name: 'Kolkata', image: 'https://cdn2.iconfinder.com/data/icons/indian-cities/64/Hyderabad-1024.png' },
   ];
 
   return (
@@ -29,11 +29,9 @@ const PopularCities = ({ onCitySelect }) => {
               }}
               onClick={() => onCitySelect(city.name)}
               onMouseEnter={(e) => {
-                // e.currentTarget.style.transform = 'scale(1.05)';
                 e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
               }}
               onMouseLeave={(e) => {
-                // e.currentTarget.style.transform = 'scale(1)';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
@@ -41,7 +39,7 @@ const PopularCities = ({ onCitySelect }) => {
                 src={city.image}
                 alt={city.name}
                 className="w-25"
-                style={{ display: 'block', margin: '0 auto', borderRadius: '8px', marginBottom: '10px' }} // Center the image
+                style={{ display: 'block', margin: '0 auto', borderRadius: '8px', marginBottom: '10px' }} 
               />
               <h6 style={{ fontSize: '1rem', fontWeight: '500' }}>{city.name}</h6>
             </div>

@@ -25,8 +25,7 @@ const CarRentalSearch = () => {
   return (
     <div className='mt-14 container-sm  rounded'>
       <div style={{ background: 'white', padding: '20px', borderRadius: '10px', boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)' }}>
-        {/* Daily Rentals and Monthly Subscription Tabs */}
-        <div style={{ display: 'flex', justifyContent: 'flex-start', marginBottom: '20px' }}> {/* Changed to flex-start */}
+        <div style={{ display: 'flex', justifyContent: 'flex-start', marginBottom: '20px' }}> 
           <Button
             variant={activeTab === 'daily' ? 'primary' : 'outline-secondary'}
             onClick={() => setActiveTab('daily')}
@@ -56,13 +55,11 @@ const CarRentalSearch = () => {
           </Button>
         </div>
 
-        {/* Location and Date Picker */}
         <Row>
           <Col md={3}>
             <div>
               <label>Location</label>
               <Button 
-                // variant="outline-dark" 
                 onClick={() => setShowCities(!showCities)} 
                 style={{ width: '100%', padding: '10px', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#a11fdb', border: 'none' }}
               >
