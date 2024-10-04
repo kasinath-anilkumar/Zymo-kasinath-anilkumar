@@ -19,31 +19,37 @@ import Reviews from './components/Reviews/Reviews';
 import Youtube from './components/Youtube/Youtube';
 import Faq from './components/FAQ/Faq';
 import Footer from './components/Footer/Footer';
+import Amritsar from './pages/Amritsar/Amritsar';
+import Kochi from './pages/Kochi/Kochi';
 
 const App = () => {
   return (
     <>
       <CustomNavbar />
+      
       <Routes>
-        <Route path="/" element={<CarRentalSearch/>} />
+        <Route path="/" element={<CarRentalSearch />} />
         <Route path="/Zymo-self-drive-cars/city/delhi" element={<Delhi />} />
         <Route path="/Zymo-self-drive-cars/city/kolkata" element={<Kolkata />} />
-        <Route path="/Zymo-self-drive-cars/city/chennai" element={<Chennai/>} />
+        <Route path="/Zymo-self-drive-cars/city/chennai" element={<Chennai />} />
         <Route path="/Zymo-self-drive-cars/city/hyderabad" element={<Hyderabad />} />
         <Route path="/Zymo-self-drive-cars/city/mumbai" element={<Mumbai />} />
         <Route path="/Zymo-self-drive-cars/city/pune" element={<Pune />} />
         <Route path="/Zymo-self-drive-cars/city/jaipur" element={<Jaipur />} />
         <Route path="/Zymo-self-drive-cars/city/noida" element={<Noida />} />
+        <Route path="/Zymo-self-drive-cars/city/noida" element={<Kochi />} />
+        <Route path="/Zymo-self-drive-cars/city/noida" element={<Amritsar />} />
       </Routes>
-      <Zymo/>
-      <Benefits/>
-      <Refer/>
-      <Cars/>
-      <Featured/>
-      <Reviews/>
-      <Youtube/>
-      <Faq/>
-      <Footer/>
+
+      <Zymo />
+      <Benefits />
+      <Refer />
+      <Cars />
+      <Featured />
+      <Reviews />
+      <Youtube />
+      <Faq />
+      <Footer />
     </>
   );
 };

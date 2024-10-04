@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
 
+
+
 const PopularCities = ({ onCitySelect }) => {
   // const [location, setLocation] = useState({ latitude: null, longitude: null });
   // const [error, setError] = useState(null);
@@ -14,21 +16,23 @@ const PopularCities = ({ onCitySelect }) => {
     { name: 'Kolkata', image: 'https://cdn4.iconfinder.com/data/icons/indian-cities-landmarks/100/Kolkata-256.png' },
     { name: 'Jaipur', image: 'https://cdn2.iconfinder.com/data/icons/indian-cities/64/Jaipur-1024.png' },
     { name: 'Noida', image: 'https://res.cloudinary.com/stanza-living/image/upload/f_auto,q_auto/v1582114422/NewWebsite/cities/noida.png' },
+    { name: 'Kochi', image: 'https://cdn4.iconfinder.com/data/icons/indian-cities-landmarks/100/kochi-512.png' },
+    { name: 'Amritsar', image: 'https://cdn2.iconfinder.com/data/icons/landmarks-55/96/Asset_18-1024.png' },
   ];
 
-  const OtherCities = [
-    { name: 'Kochi' },
-    { name: 'Mangalore' },
-    { name: 'Nashik' },
-    { name: 'Goa' },
-    { name: 'Lucknow' },
-    { name: 'Indore' },
-    { name: 'Coimbatore' },
-    { name: 'Amritsar' },
-    { name: 'Siliguri' },
-    { name: 'Trichy' },
-    { name: 'Vadodara' }
-  ];
+  // const OtherCities = [
+  //   { name: 'Kochi' },
+  //   { name: 'Mangalore' },
+  //   { name: 'Nashik' },
+  //   { name: 'Goa' },
+  //   { name: 'Lucknow' },
+  //   { name: 'Indore' },
+  //   { name: 'Coimbatore' },
+  //   { name: 'Amritsar' },
+  //   { name: 'Siliguri' },
+  //   { name: 'Trichy' },
+  //   { name: 'Vadodara' }
+  // ];
 
   // const getLocation = () => {
   //   if (navigator.geolocation) {
@@ -89,7 +93,7 @@ const PopularCities = ({ onCitySelect }) => {
           </Col>
         ))}
       </Row>
-      <h6 className='mb-3'>Other Cities..</h6>
+      {/* <h6 className='mb-3'>Other Cities..</h6>
       <Row>
         {OtherCities.map((city) => (
           <Col xs={6} sm={4} md={2} key={city.name} className="text-center mb-3">
@@ -113,7 +117,7 @@ const PopularCities = ({ onCitySelect }) => {
             </div>
           </Col>
         ))}
-        {/* <Col >
+        <Col >
           <div className='d-flex justify-center'
             style={{
               border: '1px solid #dee2e6',
@@ -132,8 +136,8 @@ const PopularCities = ({ onCitySelect }) => {
             }} >
             <i className="fa-solid fa-location-crosshairs"></i>
           </div>
-        </Col> */}
-      </Row>
+        </Col>
+      </Row> */}
       {/* {error && <p style={{ color: 'red' }}>Error: {error}</p>} */}
     </div>
   );
