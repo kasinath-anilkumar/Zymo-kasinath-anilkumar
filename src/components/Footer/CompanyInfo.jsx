@@ -1,5 +1,5 @@
 import React from "react";
-import zomo from "/zomo.png";
+import Zomo from "/Zomo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -11,10 +11,10 @@ import {
 
 const CompanyInfo = () => {
   return (
-    <div className="w-full md:w-[224px] md:h-[272px] p-4">
-      <div className="py-3">
+    <div className="w-full md:w-[224px] md:h-[272px]">
+      <div>
       <img
-        src={zomo}
+        src={Zomo}
         alt="Company Logo"
         className="bg-white w-[150px] mb-5 mx-auto"
       />
