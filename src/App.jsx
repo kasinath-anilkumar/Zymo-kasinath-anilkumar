@@ -17,14 +17,14 @@ const App = () => {
       <CustomNavbar />
       <Routes>
         <Route path="/" element={<CarRentalSearch/>} />
-        <Route path="/city/delhi" element={<Delhi />} />
-        <Route path="/city/kolkata" element={<Kolkata />} />
-        <Route path="/city/chennai" element={<Chennai/>} />
-        <Route path="/city/hyderabad" element={<Hyderabad />} />
-        <Route path="/city/mumbai" element={<Mumbai />} />
-        <Route path="/city/pune" element={<Pune />} />
-        <Route path="/city/jaipur" element={<Jaipur />} />
-        <Route path="/city/noida" element={<Noida />} />
+        <Route path="/Zymo-self-drive-cars/delhi" element={<Delhi />} />
+        <Route path="/Zymo-self-drive-cars/city/kolkata" element={<Kolkata />} />
+        <Route path="/Zymo-self-drive-cars/city/chennai" element={<Chennai/>} />
+        <Route path="/Zymo-self-drive-cars/city/hyderabad" element={<Hyderabad />} />
+        <Route path="/Zymo-self-drive-cars/city/mumbai" element={<Mumbai />} />
+        <Route path="/Zymo-self-drive-cars/city/pune" element={<Pune />} />
+        <Route path="/Zymo-self-drive-cars/city/jaipur" element={<Jaipur />} />
+        <Route path="/Zymo-self-drive-cars/city/noida" element={<Noida />} />
       </Routes>
       {/* <Banner/> */}
     </>
