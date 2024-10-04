@@ -12,7 +12,7 @@ const CustomNavbar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="text-center mx-auto">
+          <Nav className="mx-auto">
             <Nav.Link className="me-3" style={{ fontSize: '1.2rem', fontWeight: '400' }} href="#home">Deals</Nav.Link>
             <Nav.Link className="me-3" style={{ fontSize: '1.2rem', fontWeight: '400' }} href="#fleets">Fleets</Nav.Link>
             <Nav.Link className="me-3" style={{ fontSize: '1.2rem', fontWeight: '400' }} href="#about">About Us</Nav.Link>
@@ -20,7 +20,7 @@ const CustomNavbar = () => {
           </Nav>
           <Nav className="ms-auto d-flex align-items-center">
             <Nav.Link href="#faq" style={{ fontSize: '1.2rem', fontWeight: '400' }} className="me-3">FAQ's</Nav.Link>
-            <Nav.Link href="#login">
+            {/* <Nav.Link href="#login">
               <button
                 className="btn"
                 style={{
@@ -33,7 +33,7 @@ const CustomNavbar = () => {
               >
                 Login or Signup
               </button>
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
