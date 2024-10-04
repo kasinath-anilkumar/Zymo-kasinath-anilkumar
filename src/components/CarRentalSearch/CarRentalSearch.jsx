@@ -3,7 +3,7 @@ import { Button, Row, Col } from 'react-bootstrap';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import PopularCities from '../PopularCities/PopularCities';
-
+import Banner from '../Banner/Banner'
 const CarRentalSearch = () => {
   const [location, setLocation] = useState('');
   const [pickupDate, setPickupDate] = useState('2024-10-03T09:30');
@@ -103,7 +103,9 @@ const CarRentalSearch = () => {
       </div>
 
       {showCities && <PopularCities onCitySelect={handleLocationSelect} />}
+      <Banner/>
     </div>
+   
   );
 };
 

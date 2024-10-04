@@ -10,7 +10,6 @@ import Mumbai from './pages/Mumbai/Mumbai'
 import Kolkata from './pages/Kolkata/Kolkata';
 import Jaipur from './pages/Jaipur/Jaipur';
 import Noida from './pages/Noida/Noida';
-import Banner  from './components/Banner/Banner';
 
 const App = () => {
   return (
@@ -27,7 +26,6 @@ const App = () => {
         <Route path="/Zymo-self-drive-cars/city/jaipur" element={<Jaipur />} />
         <Route path="/Zymo-self-drive-cars/city/noida" element={<Noida />} />
       </Routes>
-      <Banner/>
     </>
   );
 };
