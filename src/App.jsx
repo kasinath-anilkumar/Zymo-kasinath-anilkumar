@@ -26,7 +26,7 @@ const App = () => {
   return (
     <>
       <CustomNavbar />
-      
+
       <Routes>
         <Route path="/" element={<CarRentalSearch />} />
         <Route path="/Zymo-self-drive-cars/city/delhi" element={<Delhi />} />
@@ -37,8 +37,8 @@ const App = () => {
         <Route path="/Zymo-self-drive-cars/city/pune" element={<Pune />} />
         <Route path="/Zymo-self-drive-cars/city/jaipur" element={<Jaipur />} />
         <Route path="/Zymo-self-drive-cars/city/noida" element={<Noida />} />
-        <Route path="/Zymo-self-drive-cars/city/noida" element={<Kochi />} />
-        <Route path="/Zymo-self-drive-cars/city/noida" element={<Amritsar />} />
+        <Route path="/Zymo-self-drive-cars/city/kochi" element={<Kochi />} />
+        <Route path="/Zymo-self-drive-cars/city/amritsar" element={<Amritsar />} />
       </Routes>
 
       <Zymo />
