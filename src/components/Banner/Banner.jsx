@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
+import banner1 from '../../assets/banner1.jpg'
 import p1 from './Images/p1.png'
 import p2 from './Images/p2.png'
 import p3 from './Images/p3.png'
@@ -27,7 +28,7 @@ const Banner = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 rounded p-1"
-            src="https://zymo.app/static/media/heroSecImage.012372867a73d0320a1b.jpg"
+            src={banner1}
             alt="First slide"
             style={{ border: 'solid' }}
           />
