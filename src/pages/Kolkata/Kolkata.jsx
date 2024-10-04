@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
+import banner1 from '../../assets/banner1.jpg'
+import p1 from '../../assets/p1.png'
+import p2 from '../../assets/p2.png'
+import p3 from '../../assets/p3.png'
+
+
 
 const Kolkata = () => {
-  const [index, setIndex] = useState(0); 
+  const [index, setIndex] = useState(0);
 
+  // Custom interval for the carousel that works even when the browser is inactive
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % 3); 
-    }, 2000); 
+      setIndex(prevIndex => (prevIndex + 1) % 4); 
+    }, 2000);
 
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, []);
 
   const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex); 
+    setIndex(selectedIndex);
   };
 
   return (
@@ -22,7 +29,7 @@ const Kolkata = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 rounded p-1"
-            src="https://zymo.app/static/media/heroSecImage.012372867a73d0320a1b.jpg"
+            src={banner1}
             alt="First slide"
             style={{ border: 'solid' }}
           />
@@ -30,7 +37,15 @@ const Kolkata = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 rounded p-1"
-            src="https://zymo.app/static/media/heroSecImage.012372867a73d0320a1b.jpg"
+            src={p1}
+            alt="slide"
+            style={{ border: 'solid' }}
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100 rounded p-1"
+            src={p2}
             alt="Second slide"
             style={{ border: 'solid' }}
           />
@@ -38,8 +53,8 @@ const Kolkata = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 rounded p-1"
-            src="https://zymo.app/static/media/heroSecImage.012372867a73d0320a1b.jpg"
-            alt="First slide"
+            src={p3}
+            alt="Third slide"
             style={{ border: 'solid' }}
           />
         </Carousel.Item>
