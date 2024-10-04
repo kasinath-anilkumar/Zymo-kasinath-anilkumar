@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import banner1 from '../../assets/banner1.jpg'
-import p1 from './Images/p1.png'
-import p2 from './Images/p2.png'
-import p3 from './Images/p3.png'
+import p1 from '../../assets/p1.png'
+import p2 from '../../assets/p2.png'
+import p3 from '../../assets/p3.png'
 
 
 const Banner = () => {

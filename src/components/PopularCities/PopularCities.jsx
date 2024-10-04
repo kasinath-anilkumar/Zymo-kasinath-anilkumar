@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
 
-
 const PopularCities = ({ onCitySelect }) => {
+  // const [location, setLocation] = useState({ latitude: null, longitude: null });
+  // const [error, setError] = useState(null);
+
   const cities = [
     { name: 'Delhi', image: 'https://cdn2.iconfinder.com/data/icons/indian-cities/64/Delhi-1024.png' },
     { name: 'Mumbai', image: 'https://static.vecteezy.com/system/resources/previews/019/016/738/original/mumbai-icon-design-free-vector.jpg' },
@@ -15,18 +17,43 @@ const PopularCities = ({ onCitySelect }) => {
   ];
 
   const OtherCities = [
-    { name: 'Kochi'},
-    { name: 'Mangalore'},
-    { name: 'Nashik'},
-    { name: 'Goa'},
-    { name: 'Lucknow'},
-    { name: 'Indore'},
-    { name: 'Coimbatore'},
-    { name: 'Amritsar'},
-    { name: 'Siliguri'},
-    { name: 'Trichy'},
-    { name: 'Vadodara'}
-  ]
+    { name: 'Kochi' },
+    { name: 'Mangalore' },
+    { name: 'Nashik' },
+    { name: 'Goa' },
+    { name: 'Lucknow' },
+    { name: 'Indore' },
+    { name: 'Coimbatore' },
+    { name: 'Amritsar' },
+    { name: 'Siliguri' },
+    { name: 'Trichy' },
+    { name: 'Vadodara' }
+  ];
+
+  // const getLocation = () => {
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(
+  //       (position) => {
+  //         setLocation({
+  //           latitude: position.coords.latitude,
+  //           longitude: position.coords.longitude,
+  //         });
+  //       },
+  //       (err) => {
+  //         setError(err.message);
+  //       }
+  //     );
+  //   } else {
+  //     setError("Geolocation is not supported by this browser.");
+  //   }
+  // };
+
+  // // Log location when it updates
+  // useEffect(() => {
+  //   if (location.latitude && location.longitude) {
+  //     console.log('Updated location:', location);
+  //   }
+  // }, [location]);
 
   return (
     <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '8px' }}>
@@ -55,7 +82,7 @@ const PopularCities = ({ onCitySelect }) => {
                 src={city.image}
                 alt={city.name}
                 className="w-25"
-                style={{ display: 'block', margin: '0 auto', borderRadius: '8px', marginBottom: '10px' }} 
+                style={{ display: 'block', margin: '0 auto', borderRadius: '8px', marginBottom: '10px' }}
               />
               <h6 style={{ fontSize: '1rem', fontWeight: '500' }}>{city.name}</h6>
             </div>
@@ -68,7 +95,6 @@ const PopularCities = ({ onCitySelect }) => {
           <Col xs={6} sm={4} md={2} key={city.name} className="text-center mb-3">
             <div
               style={{
-                // border: '1px solid #dee2e6',
                 borderRadius: '10px',
                 padding: '18px',
                 cursor: 'pointer',
@@ -83,19 +109,33 @@ const PopularCities = ({ onCitySelect }) => {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              {/* <img
-                src={city.image}
-                alt={city.name}
-                className="w-25 img-fluid"
-                style={{ display: 'block', margin: '0 auto', borderRadius: '8px', marginBottom: '10px' }} 
-              /> */}
               <h6 style={{ fontSize: '14px', fontWeight: '500' }}>{city.name}</h6>
             </div>
           </Col>
         ))}
+        {/* <Col >
+          <div className='d-flex justify-center'
+            style={{
+              border: '1px solid #dee2e6',
+              borderRadius: '10px',
+              padding: '18px',
+              cursor: 'pointer',
+              transition: 'transform 0.3s, box-shadow 0.3s',
+              backgroundColor: '#fff',
+            }}
+            onClick={getLocation}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = 'none';
+            }} >
+            <i className="fa-solid fa-location-crosshairs"></i>
+          </div>
+        </Col> */}
       </Row>
+      {/* {error && <p style={{ color: 'red' }}>Error: {error}</p>} */}
     </div>
-    
   );
 };
 
