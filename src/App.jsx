@@ -21,6 +21,8 @@ import Faq from './components/FAQ/Faq';
 import Footer from './components/Footer/Footer';
 import Amritsar from './pages/Amritsar/Amritsar';
 import Kochi from './pages/Kochi/Kochi';
+import Ernakulam from './pages/Ernakulam/Ernakulam';
+import Komalapuram from './pages/Komalapuram/Komalapuram';
 
 const App = () => {
   return (
@@ -39,6 +41,8 @@ const App = () => {
         <Route path="/Zymo-self-drive-cars/city/noida" element={<Noida />} />
         <Route path="/Zymo-self-drive-cars/city/kochi" element={<Kochi />} />
         <Route path="/Zymo-self-drive-cars/city/amritsar" element={<Amritsar />} />
+        <Route path="/Zymo-self-drive-cars/city/ernakulam" element={<Ernakulam />} />
+        <Route path="/Zymo-self-drive-cars/city/komalapuram" element={<Komalapuram />} />
       </Routes>
 
       <Zymo />
