@@ -15,14 +15,17 @@ const PopularCities = ({ onCitySelect }) => {
   ];
 
   const OtherCities = [
-    { name: 'Kochi', image: 'https://cdn2.iconfinder.com/data/icons/indian-cities/64/Delhi-1024.png' },
-    { name: 'Kottayam', image: 'https://static.vecteezy.com/system/resources/previews/019/016/738/original/mumbai-icon-design-free-vector.jpg' },
-    { name: 'Alappuzha', image: 'https://cdn4.iconfinder.com/data/icons/indian-cities-landmarks/100/Chennai-512.png' },
-    { name: 'Madurai', image: 'https://cdn4.iconfinder.com/data/icons/indian-cities-landmarks/100/Pune-512.png' },
-    { name: 'Amritsar', image: 'https://cdn2.iconfinder.com/data/icons/indian-cities/64/Hyderabad-1024.png' },
-    { name: 'Agra', image: 'https://cdn4.iconfinder.com/data/icons/indian-cities-landmarks/100/Kolkata-256.png' },
-    { name: 'Madgoan', image: 'https://cdn2.iconfinder.com/data/icons/indian-cities/64/Jaipur-1024.png' },
-    { name: 'Nagpur', image: 'https://res.cloudinary.com/stanza-living/image/upload/f_auto,q_auto/v1582114422/NewWebsite/cities/noida.png' },
+    { name: 'Kochi'},
+    { name: 'Mangalore'},
+    { name: 'Nashik'},
+    { name: 'Goa'},
+    { name: 'Lucknow'},
+    { name: 'Indore'},
+    { name: 'Coimbatore'},
+    { name: 'Amritsar'},
+    { name: 'Siliguri'},
+    { name: 'Trichy'},
+    { name: 'Vadodara'}
   ]
 
   return (
@@ -80,12 +83,12 @@ const PopularCities = ({ onCitySelect }) => {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              <img
+              {/* <img
                 src={city.image}
                 alt={city.name}
                 className="w-25 img-fluid"
                 style={{ display: 'block', margin: '0 auto', borderRadius: '8px', marginBottom: '10px' }} 
-              />
+              /> */}
               <h6 style={{ fontSize: '14px', fontWeight: '500' }}>{city.name}</h6>
             </div>
           </Col>
