@@ -56,7 +56,7 @@ const CarRentalSearch = () => {
         </div>
 
         <Row>
-          <Col md={3}>
+          <Col xs={12} md={3}>
             <div>
               <label>Location</label>
               <Button 
@@ -68,32 +68,32 @@ const CarRentalSearch = () => {
               </Button>
             </div>
           </Col>
-          <Col md={3}>
+          <Col  xs={12} md={3} >
             <div className='text-center'>
               <label className='font-semibold'>Pick-Up Date</label>
               <input 
                 type="datetime-local" 
                 value={pickupDate} 
                 onChange={(e) => setPickupDate(e.target.value)} 
-                style={{ width: 'auto', padding: '10px' }}
+                style={{padding: '10px',backgroundColor:'rgba(75, 54, 117, 0.2)',borderRadius:'5px' }}
               />
             </div>
           </Col>
-          <Col md={3}>
-            <div className='text-center'>
+          <Col  xs={12} md={3}>
+            <div className='text-center' >
               <label className='font-semibold'>Return Date</label>
               <input 
                 type="datetime-local" 
                 value={returnDate} 
                 onChange={(e) => setReturnDate(e.target.value)} 
-                style={{ width: 'auto', padding: '10px' }}
+                style={{padding: '10px',backgroundColor:'rgba(75, 54, 117, 0.2)',borderRadius:'5px'}}
               />
             </div>
           </Col>
-          <Col md={2}>
+          <Col  xs={12}  md={2}>
             <Button 
               variant="primary" 
-              style={{ width: '100%', backgroundColor: '#a11fdb', border: 'none', marginTop: '24px' }}
+              style={{ width: '100%', backgroundColor: '#a11fdb', border: 'none', marginTop: '28px' }}
               // onClick={handleSearch}
             >
               Search
