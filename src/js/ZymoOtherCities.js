@@ -44,8 +44,8 @@ const ZymoOtherCities = [
     { name: 'Jodhpur' },
     { name: 'Haridwar' },
     { name: 'Rishikesh' },
-    // { name: 'Komalapuram' },
-    // { name: 'Ernakulam' },
+    { name: 'Komalapuram' },
+    { name: 'Ernakulam' },
   ];
   
   export default ZymoOtherCities;
