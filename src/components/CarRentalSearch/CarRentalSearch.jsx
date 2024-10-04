@@ -16,7 +16,7 @@ const CarRentalSearch = () => {
   const handleLocationSelect = (city) => {
     setLocation(city);
     setShowCities(false);
-    navigate(`/Zymo-self-drive-cars/city/${city.toLowerCase()}`);
+    navigate(`self-drive-cars/${city.toLowerCase()}`);
   };
 
   // const handleSearch = () => {

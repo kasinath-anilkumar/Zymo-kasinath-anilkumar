@@ -31,18 +31,18 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<CarRentalSearch />} />
-        <Route path="/Zymo-self-drive-cars/city/delhi" element={<Delhi />} />
-        <Route path="/Zymo-self-drive-cars/city/kolkata" element={<Kolkata />} />
-        <Route path="/Zymo-self-drive-cars/city/chennai" element={<Chennai />} />
-        <Route path="/Zymo-self-drive-cars/city/hyderabad" element={<Hyderabad />} />
-        <Route path="/Zymo-self-drive-cars/city/mumbai" element={<Mumbai />} />
-        <Route path="/Zymo-self-drive-cars/city/pune" element={<Pune />} />
-        <Route path="/Zymo-self-drive-cars/city/jaipur" element={<Jaipur />} />
-        <Route path="/Zymo-self-drive-cars/city/noida" element={<Noida />} />
-        <Route path="/Zymo-self-drive-cars/city/kochi" element={<Kochi />} />
-        <Route path="/Zymo-self-drive-cars/city/amritsar" element={<Amritsar />} />
-        <Route path="/Zymo-self-drive-cars/city/ernakulam" element={<Ernakulam />} />
-        <Route path="/Zymo-self-drive-cars/city/komalapuram" element={<Komalapuram />} />
+        <Route path="self-drive-cars/delhi" element={<Delhi />} />
+        <Route path="self-drive-cars/kolkata" element={<Kolkata />} />
+        <Route path="self-drive-cars/chennai" element={<Chennai />} />
+        <Route path="self-drive-cars/hyderabad" element={<Hyderabad />} />
+        <Route path="self-drive-cars/mumbai" element={<Mumbai />} />
+        <Route path="self-drive-cars/pune" element={<Pune />} />
+        <Route path="self-drive-cars/jaipur" element={<Jaipur />} />
+        <Route path="self-drive-cars/noida" element={<Noida />} />
+        <Route path="self-drive-cars/kochi" element={<Kochi />} />
+        <Route path="self-drive-cars/amritsar" element={<Amritsar />} />
+        <Route path="self-drive-cars/ernakulam" element={<Ernakulam />} />
+        <Route path="self-drive-cars/komalapuram" element={<Komalapuram />} />
       </Routes>
 
       <Zymo />
