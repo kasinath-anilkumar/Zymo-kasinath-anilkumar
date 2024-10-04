@@ -17,7 +17,7 @@ const App = () => {
       <CustomNavbar />
       <Routes>
         <Route path="/" element={<CarRentalSearch/>} />
-        <Route path="/Zymo-self-drive-cars/delhi" element={<Delhi />} />
+        <Route path="/Zymo-self-drive-cars/city/delhi" element={<Delhi />} />
         <Route path="/Zymo-self-drive-cars/city/kolkata" element={<Kolkata />} />
         <Route path="/Zymo-self-drive-cars/city/chennai" element={<Chennai/>} />
         <Route path="/Zymo-self-drive-cars/city/hyderabad" element={<Hyderabad />} />

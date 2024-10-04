@@ -45,7 +45,7 @@ const Delhi = () => {
             />
           </Carousel.Item>
         </Carousel>
-      </div>
+      </div>     
     </>
   );
 };
