@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import PopularCities from '../PopularCities/PopularCities';
 
 const CarRentalSearch = () => {
-  const [location, setLocation] = useState('Delhi');
+  const [location, setLocation] = useState('');
   const [pickupDate, setPickupDate] = useState('2024-10-03T09:30');
   const [returnDate, setReturnDate] = useState('2024-10-06T18:30');
   const [showCities, setShowCities] = useState(false);
@@ -18,9 +18,9 @@ const CarRentalSearch = () => {
     navigate(`/city/${city.toLowerCase()}`);
   };
 
-  const handleSearch = () => {
-    navigate(`/search?location=${location}&pickupDate=${pickupDate}&returnDate=${returnDate}`);
-  };
+  // const handleSearch = () => {
+  //   navigate(`/search?location=${location}&pickupDate=${pickupDate}&returnDate=${returnDate}`);
+  // };
 
   return (
     <div className='mt-14 container-sm  rounded'>
@@ -63,7 +63,7 @@ const CarRentalSearch = () => {
                 onClick={() => setShowCities(!showCities)} 
                 style={{ width: '100%', padding: '10px', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#a11fdb', border: 'none' }}
               >
-                {location}
+                {location || 'Select a location'}
                 {showCities ? <FaChevronUp /> : <FaChevronDown />}
               </Button>
             </div>
@@ -94,7 +94,7 @@ const CarRentalSearch = () => {
             <Button 
               variant="primary" 
               style={{ width: '100%', backgroundColor: '#a11fdb', border: 'none', marginTop: '24px' }}
-              onClick={handleSearch}
+              // onClick={handleSearch}
             >
               Search
             </Button>

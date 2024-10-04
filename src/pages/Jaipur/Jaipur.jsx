@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 
-const Kolkata = () => {
-  const [index, setIndex] = useState(0); 
+const Jaipur = () => {
+  const [index, setIndex] = useState(0);
 
+  // Custom interval for the carousel that works even when the browser is inactive
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % 3); 
-    }, 2000); 
+      setIndex(prevIndex => (prevIndex + 1) % 3); // Assuming 3 slides
+    }, 2000); // Slide every 2 seconds
 
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval); // Clean up interval on unmount
   }, []);
 
   const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex); 
+    setIndex(selectedIndex);
   };
 
   return (
@@ -39,7 +40,7 @@ const Kolkata = () => {
           <img
             className="d-block w-100 rounded p-1"
             src="https://zymo.app/static/media/heroSecImage.012372867a73d0320a1b.jpg"
-            alt="First slide"
+            alt="Third slide"
             style={{ border: 'solid' }}
           />
         </Carousel.Item>
@@ -48,4 +49,4 @@ const Kolkata = () => {
   );
 };
 
-export default Kolkata;
+export default Jaipur;
