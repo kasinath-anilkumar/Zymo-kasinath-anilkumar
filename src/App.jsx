@@ -59,7 +59,7 @@ const App = () => {
       </Routes>
       <Footer />
 
-      {location.pathname !== "/career" || "/fleet"(
+      {location.pathname !== "/career" &&(
         <>
           <Zymo />
           <Benefits />
