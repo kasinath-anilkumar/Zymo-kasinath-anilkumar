@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import CustomNavbar from './components/CustomNavbar/CustomNavbar';
 import CarRentalSearch from './components/CarRentalSearch/CarRentalSearch';
 import Zymo from './components/Zymo/Zymo';
@@ -20,9 +20,11 @@ import Pune from './pages/Pune/Pune';
 import Mumbai from './pages/Mumbai/Mumbai';
 import Kolkata from './pages/Kolkata/Kolkata';
 import NotFound from '../src/NotFound';
-import Career from './components/Career/Career'
+import Career from './components/Career/Career';
 
 const App = () => {
+  const location = useLocation();
+
   return (
     <>
       <CustomNavbar />
@@ -57,9 +59,8 @@ const App = () => {
           );
         })}
       </Routes>
-      
 
-      {location.pathname != "/career" &&(
+      {location.pathname !== "/career" && (
         <>
           <Zymo />
           <Benefits />
