@@ -22,17 +22,18 @@ const PopularCities = ({ onCitySelect }) => {
   ];
 
   const OtherCities = [
-    { name: 'Kochi' },
+    { name: 'Bhopal' },
     { name: 'Mangalore' },
     { name: 'Nashik' },
     { name: 'Goa' },
     { name: 'Lucknow' },
     { name: 'Indore' },
     { name: 'Coimbatore' },
-    { name: 'Amritsar' },
+    { name: 'Surat' },
     { name: 'Siliguri' },
     { name: 'Trichy' },
     { name: 'Vadodara' },
+    { name: 'Thane' },
   ];
 
 
@@ -108,9 +109,9 @@ const PopularCities = ({ onCitySelect }) => {
     <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '8px' }}>
 
       <h1 className='font-semibold mt-2' style={{ marginBottom: '20px' }}>Popular Cities</h1>
-      <Row>
+      <Row xs={5}>
         {cities.map((city) => (
-          <Col xs={6} sm={6} md={2} key={city.name} className="text-center mb-3">
+          <Col  key={city.name} className="text-center mb-3">
             <div
               style={{
                 border: '1px solid #dee2e6',

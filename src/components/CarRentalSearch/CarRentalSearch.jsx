@@ -16,7 +16,7 @@ const CarRentalSearch = () => {
   const handleLocationSelect = (city) => {
     setLocation(city);
     setShowCities(false);
-    navigate(`self-drive-cars/${city.toLowerCase()}`);
+    navigate(`self-drive-car-rentals/${city.toLowerCase()}`);
   };
 
   // const handleSearch = () => {
