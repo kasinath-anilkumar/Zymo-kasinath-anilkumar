@@ -57,9 +57,9 @@ const App = () => {
           );
         })}
       </Routes>
-      <Footer />
+      
 
-      {location.pathname !== "/career" &&(
+      {location.pathname != "/career" &&(
         <>
           <Zymo />
           <Benefits />
@@ -72,7 +72,7 @@ const App = () => {
         </>
       )}
 
-
+      <Footer />
     </>
   );
 };

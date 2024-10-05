@@ -11,7 +11,8 @@ import {
 
 const CompanyInfo = () => {
   return (
-    <div className="w-full md:w-[224px] md:h-[272px]">
+    <div className="w-full md:w-[224px] md:h-[272px]"
+    style={{color:'whitesmoke'}}>
       <div>
       <img
         src={Zomo}

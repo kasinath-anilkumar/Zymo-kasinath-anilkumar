@@ -3,11 +3,14 @@ import CompanyInfo from './CompanyInfo';
 import About from './About';
 import Features from './Features';
 import InstallApp from './InstallApp';
+import { colors } from '@mui/material';
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black m-10">
-      <div className="container px-4">
+    <footer className="bg-white text-black mt-10 " style={{
+      background: 'linear-gradient(90deg, #9b08fe, #673ab7, #9c27b0)'
+    }}>
+      <div className="p-8"style={{color:'whitesmoke'}}>
         <div className="flex flex-wrap justify-between"> {/* Main content container */}
           <CompanyInfo /> {/* Company information component */}
           <About /> {/* About component */}

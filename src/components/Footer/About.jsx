@@ -2,7 +2,8 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="w-full md:w-[80px] md:h-[272px] mb-4">
+    <div className="w-full md:w-[80px] md:h-[272px] mb-4"
+    style={{color:'whitesmoke'}}>
       <h3 className="text-xl font-bold mb-4">About</h3>
       <ul className="">
         <li><a href="#" className="hover:text-gray-300">Deals</a></li>

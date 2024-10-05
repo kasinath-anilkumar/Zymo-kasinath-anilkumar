@@ -2,7 +2,8 @@ import React from "react";
 
 const Features = () => {
   return (
-    <div className="w-full md:w-[130px] md:h-[272px]">
+    <div className="w-full md:w-[130px] md:h-[272px]"
+    style={{color:'whitesmoke'}}>
       <h3 className="text-xl font-bold mb-4">Features</h3>
       <ul className="">
         <li>
