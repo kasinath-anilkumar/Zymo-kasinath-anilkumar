@@ -1,0 +1,232 @@
+* {
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .career-form-container {
+    width: 60vw;
+    margin: auto;
+    margin-bottom: 5rem;
+  
+    margin-top: 1rem;
+  
+    @media screen and (max-width: 850px) {
+      width: 70vw;
+    }
+  
+    @media screen and (max-width: 650px) {
+      width: 90vw;
+    }
+  
+    h1 {
+      color: #673ab7;
+      text-align: center;
+  
+      padding: 2rem;
+  
+      >span {
+        color: lightgray;
+      }
+    }
+  
+    .career-page-form {
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      gap: 3rem;
+      padding: 2rem;
+  
+      >.choose-adventure-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+  
+        >.adventure-heading {
+          text-align: center;
+          color: rgb(156, 155, 155);
+        }
+  
+        :nth-child(2) {
+          display: flex;
+          gap: 1rem;
+          border-radius: 20px;
+  
+          .tab-button {
+            border-radius: 20px;
+            padding: 1rem 2rem;
+            font-size: medium;
+            background-color: transparent;
+            font-weight: 600;
+  
+            &:hover {
+              cursor: pointer;
+              background-color: rgb(156, 155, 155);
+              color: #fdf9f9;
+            }
+          }
+  
+          .selected-button {
+            background-color: rgb(156, 155, 155);
+            color: #fdf9f9;
+          }
+        }
+      }
+  
+      .personal-info-container {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+  
+        :nth-child(1) {
+          color: rgb(156, 155, 155);
+  
+          @media screen and (max-width: 500px) {
+            font-size: large;
+          }
+        }
+  
+        .text-field {
+          width: 30rem;
+  
+          @media screen and (max-width: 900px) {
+            width: 25rem;
+          }
+  
+          @media screen and (max-width: 500px) {
+            width: 15rem;
+            font-size: medium;
+          }
+        }
+      }
+  
+      .choose-skills-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 3rem;
+  
+        :nth-child(1) {
+          color: rgb(156, 155, 155);
+  
+          @media screen and (max-width: 500px) {
+            font-size: large;
+          }
+        }
+  
+        .skills-options {
+          width: 30rem;
+          color: rgb(156, 155, 155);
+  
+          @media screen and (max-width: 900px) {
+            width: 25rem;
+          }
+  
+          @media screen and (max-width: 500px) {
+            width: 15rem;
+          }
+        }
+      }
+  
+      .flaunt-skills-container {
+        width: 100%;
+  
+        :nth-child(1) {
+          color: rgb(156, 155, 155);
+  
+          @media screen and (max-width: 900px) {
+            width: 100%;
+          }
+  
+          @media screen and (max-width: 500px) {
+            font-size: large;
+          }
+        }
+      }
+  
+      .stipend-expectation-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem 3rem;
+        align-items: center;
+  
+        :nth-child(1) {
+          color: rgb(156, 155, 155);
+  
+          @media screen and (max-width: 500px) {
+            font-size: large;
+          }
+        }
+  
+        .stipend-expectation {
+          width: 30rem;
+          color: rgb(156, 155, 155);
+  
+          @media screen and (max-width: 850px) {
+            width: 25rem;
+          }
+  
+          @media screen and (max-width: 500px) {
+            width: 15rem;
+          }
+        }
+  
+        .text-field-stipend {
+          width: 30rem;
+  
+          @media screen and (max-width: 850px) {
+            width: 25rem;
+          }
+  
+          @media screen and (max-width: 500px) {
+            width: 15rem;
+          }
+        }
+      }
+  
+      .submit-career-form {
+        width: 70%;
+  
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+  
+        padding: 1rem 3rem 3rem 3rem;
+  
+        @media screen and (max-width: 850px) {
+          width: 100%;
+        }
+  
+        :nth-child(1) {
+          color: rgb(156, 155, 155);
+  
+          @media screen and (max-width: 500px) {
+            font-size: large;
+          }
+        }
+  
+        :nth-child(2) {
+          width: 80%;
+          padding: 1rem;
+          font-size: large;
+          background-color: #9435b6;
+          color: #fdf9f9;
+          border: none;
+          border-radius: 30px;
+          cursor: pointer;
+  
+          @media screen and (max-width: 500px) {
+            font-size: medium;
+            padding: 0.5rem;
+          }
+        }
+      }
+  
+      border: 1px solid #673ab7;
+    }
+  }

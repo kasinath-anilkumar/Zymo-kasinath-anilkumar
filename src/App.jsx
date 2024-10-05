@@ -20,6 +20,7 @@ import Pune from './pages/Pune/Pune';
 import Mumbai from './pages/Mumbai/Mumbai';
 import Kolkata from './pages/Kolkata/Kolkata';
 import NotFound from '../src/NotFound';
+import Career from './components/Career/Career'
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="self-drive-cars/mumbai" element={<Mumbai />} />
         <Route path="self-drive-cars/pune" element={<Pune />} />
         <Route path="self-drive-cars/kolkata" element={<Kolkata />} />
+        <Route path="/career" element={<Career />} />
 
         {/* Dynamic Routes */}
         {ZymoOtherCities.map((city, index) => {
@@ -55,16 +57,22 @@ const App = () => {
           );
         })}
       </Routes>
-
-      <Zymo />
-      <Benefits />
-      <Refer />
-      <Cars />
-      <Featured />
-      <Reviews />
-      <Youtube />
-      <Faq />
       <Footer />
+
+      {location.pathname !== "/career" || "/fleet"(
+        <>
+          <Zymo />
+          <Benefits />
+          <Refer />
+          <Cars />
+          <Featured />
+          <Reviews />
+          <Youtube />
+          <Faq />
+        </>
+      )}
+
+
     </>
   );
 };
