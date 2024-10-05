@@ -6,7 +6,7 @@ import Play_store from "/Play_store.png"
 
 const InstallApp = () => {
   return (
-    <div className="w-full md:w-[368px] md:h-[241px]"style={{color:'whitesmoke'}}>
+    <div className="w-full md:w-[368px] md:h-[241px]">
       <h3 className="text-xl font-bold mb-4">Install App</h3>
       <p className="mb-3">From App Store or Google Play</p>
       <div className="flex gap-5 justify-center lg:justify-start">

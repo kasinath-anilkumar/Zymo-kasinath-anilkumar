@@ -7,10 +7,8 @@ import { colors } from '@mui/material';
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black mt-10 " style={{
-      background: 'linear-gradient(90deg, #9b08fe, #673ab7, #9c27b0)'
-    }}>
-      <div className="p-8"style={{color:'whitesmoke'}}>
+    <footer className="bg-white text-black mt-10 " >
+      <div className="p-8">
         <div className="flex flex-wrap justify-between"> {/* Main content container */}
           <CompanyInfo /> {/* Company information component */}
           <About /> {/* About component */}
