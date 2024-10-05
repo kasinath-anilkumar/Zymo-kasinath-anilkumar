@@ -110,7 +110,7 @@ const PopularCities = ({ onCitySelect }) => {
       <h1 className='font-semibold mt-2' style={{ marginBottom: '20px' }}>Popular Cities</h1>
       <Row>
         {cities.map((city) => (
-          <Col xs={6} sm={4} md={3} key={city.name} className="text-center mb-3">
+          <Col xs={6} sm={6} md={2} key={city.name} className="text-center mb-3">
             <div
               style={{
                 border: '1px solid #dee2e6',
@@ -134,7 +134,7 @@ const PopularCities = ({ onCitySelect }) => {
                 className="w-25"
                 style={{ display: 'block', margin: '0 auto', borderRadius: '8px', marginBottom: '10px' }}
               />
-              <h6 style={{ fontSize: '1rem', fontWeight: '500' }}>{city.name}</h6>
+              <h6 style={{ fontSize: 'auto', fontWeight: '500' }}>{city.name}</h6>
             </div>
           </Col>
         ))}
