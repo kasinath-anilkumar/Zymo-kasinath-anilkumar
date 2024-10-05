@@ -4,6 +4,7 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import PopularCities from '../PopularCities/PopularCities';
 import Banner from '../Banner/Banner'
+
 const CarRentalSearch = () => {
   const [location, setLocation] = useState('');
   const [pickupDate, setPickupDate] = useState('2024-10-03T09:30');
@@ -15,7 +16,7 @@ const CarRentalSearch = () => {
   const handleLocationSelect = (city) => {
     setLocation(city);
     setShowCities(false);
-    navigate(`/Zymo-self-drive-cars/city/${city.toLowerCase()}`);
+    navigate(`self-drive-cars/${city.toLowerCase()}`);
   };
 
   // const handleSearch = () => {
@@ -56,50 +57,76 @@ const CarRentalSearch = () => {
         </div>
 
         <Row>
-          <Col xs={12} md={3}>
-            <div>
-              <label>Location</label>
-              <Button 
-                onClick={() => setShowCities(!showCities)} 
-                style={{ width: '100%', padding: '10px', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#a11fdb', border: 'none' }}
-              >
-                {location || 'Select a location'}
-                {showCities ? <FaChevronUp /> : <FaChevronDown />}
-              </Button>
-            </div>
-          </Col>
-          <Col  xs={12} md={3} >
-            <div className='text-center'>
-              <label className='font-semibold'>Pick-Up Date</label>
-              <input 
-                type="datetime-local" 
-                value={pickupDate} 
-                onChange={(e) => setPickupDate(e.target.value)} 
-                style={{padding: '10px',backgroundColor:'rgba(75, 54, 117, 0.2)',borderRadius:'5px' }}
-              />
-            </div>
-          </Col>
-          <Col  xs={12} md={3}>
-            <div className='text-center' >
-              <label className='font-semibold'>Return Date</label>
-              <input 
-                type="datetime-local" 
-                value={returnDate} 
-                onChange={(e) => setReturnDate(e.target.value)} 
-                style={{padding: '10px',backgroundColor:'rgba(75, 54, 117, 0.2)',borderRadius:'5px'}}
-              />
-            </div>
-          </Col>
-          <Col  xs={12}  md={2}>
-            <Button 
-              variant="primary" 
-              style={{ width: '100%', backgroundColor: '#a11fdb', border: 'none', marginTop: '28px' }}
-              // onClick={handleSearch}
-            >
-              Search
-            </Button>
-          </Col>
-        </Row>
+  <Col xs={12} md={3}>
+    <div>
+      <label>Location</label>
+      <Button
+        onClick={() => setShowCities(!showCities)}
+        style={{
+          width: '100%',
+          padding: '10px',
+          textAlign: 'left',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          backgroundColor: '#a11fdb',
+          border: 'none',
+        }}
+      >
+        {location || 'Select a location'}
+        {showCities ? <FaChevronUp /> : <FaChevronDown />}
+      </Button>
+    </div>
+  </Col>
+  <Col xs={12} md={3}>
+    <div className="text-center">
+      <label className="font-semibold">Pick-Up Date</label>
+      <input
+        type="datetime-local"
+        value={pickupDate}
+        onChange={(e) => setPickupDate(e.target.value)}
+        style={{
+          padding: '10px',
+          backgroundColor: 'rgba(75, 54, 117, 0.2)',
+          borderRadius: '5px',
+          width: '100%',
+          boxSizing: 'border-box', 
+        }}
+      />
+    </div>
+  </Col>
+  <Col xs={12} md={3}>
+    <div className="text-center">
+      <label className="font-semibold">Return Date</label>
+      <input
+        type="datetime-local"
+        value={returnDate}
+        onChange={(e) => setReturnDate(e.target.value)}
+        style={{
+          padding: '10px',
+          backgroundColor: 'rgba(75, 54, 117, 0.2)',
+          borderRadius: '5px',
+          width: '100%',
+          boxSizing: 'border-box',
+        }}
+      />
+    </div>
+  </Col>
+  <Col xs={12} md={2}>
+    <Button
+      variant="primary"
+      style={{
+        width: '100%',
+        backgroundColor: '#a11fdb',
+        border: 'none',
+        marginTop: '28px',
+      }}
+    >
+      Search
+    </Button>
+  </Col>
+</Row>
+
       </div>
 
       {showCities && <PopularCities onCitySelect={handleLocationSelect} />}

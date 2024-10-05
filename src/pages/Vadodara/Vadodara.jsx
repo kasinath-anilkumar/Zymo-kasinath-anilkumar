@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
+import banner1 from '../../assets/banner1.jpg'
+import p1 from '../../assets/p1.png'
+import p2 from '../../assets/p2.png'
+import p3 from '../../assets/p3.png'
 
-const Banglore = () => {
-  const [index, setIndex] = useState(0); 
 
+
+const Vadodara = () => {
+  const [index, setIndex] = useState(0);
+
+  // Custom interval for the carousel that works even when the browser is inactive
   useEffect(() => {
-    // Set an interval to change the slide every 2 seconds
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % 3); // Change to the next slide
-    }, 2000); 
+      setIndex(prevIndex => (prevIndex + 1) % 4); 
+    }, 2000);
 
-    return () => clearInterval(interval); // Clear the interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
   const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex); // Update index on manual select
+    setIndex(selectedIndex);
   };
 
   return (
@@ -23,7 +29,7 @@ const Banglore = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 rounded p-1"
-            src="https://zymo.app/static/media/heroSecImage.012372867a73d0320a1b.jpg"
+            src={banner1}
             alt="First slide"
             style={{ border: 'solid' }}
           />
@@ -31,7 +37,15 @@ const Banglore = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 rounded p-1"
-            src="https://zymo.app/static/media/heroSecImage.012372867a73d0320a1b.jpg"
+            src={p1}
+            alt="slide"
+            style={{ border: 'solid' }}
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100 rounded p-1"
+            src={p2}
             alt="Second slide"
             style={{ border: 'solid' }}
           />
@@ -39,7 +53,7 @@ const Banglore = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 rounded p-1"
-            src="https://zymo.app/static/media/heroSecImage.012372867a73d0320a1b.jpg"
+            src={p3}
             alt="Third slide"
             style={{ border: 'solid' }}
           />
@@ -49,4 +63,4 @@ const Banglore = () => {
   );
 };
 
-export default Banglore;
+export default Vadodara;
