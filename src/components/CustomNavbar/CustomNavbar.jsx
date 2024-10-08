@@ -7,8 +7,8 @@ const CustomNavbar = () => {
   return (
     <Navbar expand="lg" sticky='top' style={{boxSizing:'border-box'}} className="shadow-sm px-24 bg-light">
       <Container>
-        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center" style={{ width: '12rem' }}>
-          <img src={ZymoLogo} className="img-fluid w-100" alt="Zymo Logo" />
+        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center w-20 sm:w-32 md:w-48" >
+          <img src={ZymoLogo}  className="img-fluid" alt="Zymo Logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

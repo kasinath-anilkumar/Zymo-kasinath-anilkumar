@@ -27,36 +27,44 @@ const Ahmedabad = () => {
     <div className='m-10'>
       <Carousel activeIndex={index} onSelect={handleSelect} controls={false} indicators={false}>
         <Carousel.Item>
-          <img
-            className="d-block w-100 rounded p-1"
-            src={banner1}
-            alt="First slide"
-            style={{ border: 'solid' }}
-          />
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block w-100 rounded p-1"
+              src={banner1}
+              alt="First slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
         </Carousel.Item>
         <Carousel.Item>
-          <img
-            className="d-block w-100 rounded p-1"
-            src={p1}
-            alt="slide"
-            style={{ border: 'solid' }}
-          />
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block w-100 rounded p-1"
+              src={p1}
+              alt="slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
         </Carousel.Item>
         <Carousel.Item>
-          <img
-            className="d-block w-100 rounded p-1"
-            src={p2}
-            alt="Second slide"
-            style={{ border: 'solid' }}
-          />
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block w-100 rounded p-1"
+              src={p2}
+              alt="Second slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
         </Carousel.Item>
         <Carousel.Item>
-          <img
-            className="d-block w-100 rounded p-1"
-            src={p3}
-            alt="Third slide"
-            style={{ border: 'solid' }}
-          />
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block w-100 rounded p-1"
+              src={p3}
+              alt="Third slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
         </Carousel.Item>
       </Carousel>
     </div>

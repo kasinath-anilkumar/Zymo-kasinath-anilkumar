@@ -109,7 +109,7 @@ const PopularCities = ({ onCitySelect }) => {
     <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '8px' }}>
 
       <h1 className='font-semibold mt-2' style={{ marginBottom: '20px' }}>Popular Cities</h1>
-      <Row xs={5}>
+      <Row xs={3} md={4} lg={5}>
         {cities.map((city) => (
           <Col  key={city.name} className="text-center mb-3">
             <div
