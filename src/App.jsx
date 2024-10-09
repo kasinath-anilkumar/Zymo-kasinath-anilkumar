@@ -35,12 +35,12 @@ const App = () => {
         <Route path="/" element={<CarRentalSearch />} />
 
         {/* Predefined Routes */}
-        <Route path="self-drive-cars/delhi" element={<Delhi />} />
-        <Route path="self-drive-cars/chennai" element={<Chennai />} />
-        <Route path="self-drive-cars/hyderabad" element={<Hyderabad />} />
-        <Route path="self-drive-cars/mumbai" element={<Mumbai />} />
-        <Route path="self-drive-cars/pune" element={<Pune />} />
-        <Route path="self-drive-cars/kolkata" element={<Kolkata />} />
+        <Route path="self-drive-car-rentals/delhi" element={<Delhi />} />
+        <Route path="self-drive-car-rentals/chennai" element={<Chennai />} />
+        <Route path="self-drive-car-rentals/hyderabad" element={<Hyderabad />} />
+        <Route path="self-drive-car-rentals/mumbai" element={<Mumbai />} />
+        <Route path="self-drive-car-rentals/pune" element={<Pune />} />
+        <Route path="self-drive-car-rentals/kolkata" element={<Kolkata />} />
         <Route path="/career" element={<Career />} />
 
         {/* Dynamic Routes */}
@@ -51,7 +51,7 @@ const App = () => {
           return (
             <Route
               key={index}
-              path={`self-drive-cars/${city.name.toLowerCase().replace(/\s+/g, '-')}`}
+              path={`self-drive-car-rentals/${city.name.toLowerCase().replace(/\s+/g, '-')}`}
               element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <CityComponent />
