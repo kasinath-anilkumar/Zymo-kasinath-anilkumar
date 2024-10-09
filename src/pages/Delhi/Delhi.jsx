@@ -4,6 +4,7 @@ import banner1 from '../../assets/banner1.jpg'
 import p1 from '../../assets/p1.png'
 import p2 from '../../assets/p2.png'
 import p3 from '../../assets/p3.png'
+import Example from "../../components/Example/Example"
 
 
 
@@ -25,6 +26,7 @@ const Delhi = () => {
 
   return (
     <div className='m-10'>
+      <Example />
       <Carousel activeIndex={index} onSelect={handleSelect} controls={false} indicators={false}>
         <Carousel.Item>
           <a href="http://get.zymo.app/car">
