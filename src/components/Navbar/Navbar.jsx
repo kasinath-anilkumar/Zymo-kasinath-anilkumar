@@ -5,6 +5,8 @@ import Logo from "/logo.png";
 import { useLocationContext } from "../../Context/Location";
 import l_icon from "/location-icon.png";
 import Dropdown from "../Dropdown/Dropdown";
+import { Link } from "react-router-dom";
+
 
 const navigation = [
   { name: "Fleet", id: "Home" },
@@ -27,7 +29,9 @@ const Navbar = () => {
       >
         {/* Logo Section */}
         <div className="flex lg:flex-1 items-center">
-          <img src={Logo} alt="Logo" className="h-15 w-40" />
+          <Link to="/">
+            <img src={Logo} alt="Logo" className="h-15 w-40" />
+          </Link>
         </div>
 
         {/* Desktop Navigation Links */}
