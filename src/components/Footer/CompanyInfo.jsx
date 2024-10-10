@@ -1,5 +1,5 @@
 import React from "react";
-import Zomo from "../Zymo/Zymo";
+import Zomo from "/Zymo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,

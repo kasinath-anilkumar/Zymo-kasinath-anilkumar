@@ -12,6 +12,7 @@ import Youtube from './components/Youtube/Youtube';
 import Faq from './components/FAQ/Faq';
 import Footer from './components/Footer/Footer';
 import ZymoOtherCities from './js/ZymoOtherCities';
+import Navbar from "./components/Navbar/Navbar"
 
 import Delhi from './pages/Delhi/Delhi';
 import Chennai from './pages/Chennai/Chennai';
@@ -27,7 +28,8 @@ const App = () => {
 
   return (
     <>
-      <CustomNavbar />
+      {/* <CustomNavbar /> */}
+      <Navbar />
 
       <Routes>
         <Route path="/" element={<CarRentalSearch />} />
