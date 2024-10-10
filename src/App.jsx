@@ -11,7 +11,7 @@ import Reviews from './components/Reviews/Reviews';
 import Youtube from './components/Youtube/Youtube';
 import Faq from './components/FAQ/Faq';
 import Footer from './components/Footer/Footer';
-import ZymoOtherCities from './js/ZymoOtherCities';
+import { ZymoFeaturedCityList, ZymoAllCityList } from './assets/ZymoCityList';
 import Navbar from "./components/Navbar/Navbar"
 
 import Delhi from './pages/Delhi/Delhi';
@@ -44,7 +44,7 @@ const App = () => {
         <Route path="/career" element={<Career />} />
 
         {/* Dynamic Routes */}
-        {ZymoOtherCities.map((city, index) => {
+        {ZymoAllCityList.map((city, index) => {
           const CityComponent = React.lazy(() =>
             import(`./pages/${city.name}/${city.name}.jsx`).catch(() => Promise.resolve(NotFound))
           );

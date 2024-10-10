@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import ZymoOtherCities from '../../js/ZymoOtherCities';
+import { ZymoFeaturedCityList, ZymoAllCityList } from '../../assets/ZymoCityList';
 
 const PopularCities = ({ onCitySelect }) => {
   const [UserLocation, setUserLocation] = useState({ latitude: null, longitude: null });
   const [error, setError] = useState(null);
+  const [toasts, setToasts] = useState([]);
 
   const cities = [
     { name: 'Delhi', image: 'https://cdn2.iconfinder.com/data/icons/indian-cities/64/Delhi-1024.png' },
@@ -21,22 +19,6 @@ const PopularCities = ({ onCitySelect }) => {
     { name: 'Amritsar', image: 'https://cdn2.iconfinder.com/data/icons/landmarks-55/96/Asset_18-1024.png' },
   ];
 
-  const OtherCities = [
-    { name: 'Bhopal' },
-    { name: 'Mangalore' },
-    { name: 'Nashik' },
-    { name: 'Goa' },
-    { name: 'Lucknow' },
-    { name: 'Indore' },
-    { name: 'Coimbatore' },
-    { name: 'Surat' },
-    { name: 'Siliguri' },
-    { name: 'Trichy' },
-    { name: 'Vadodara' },
-    { name: 'Thane' },
-  ];
-
-
   useEffect(() => {
     if (UserLocation.latitude && UserLocation.longitude) {
       const city = UserLocation.city?.toLowerCase();
@@ -50,47 +32,38 @@ const PopularCities = ({ onCitySelect }) => {
         async (position) => {
           const { latitude, longitude } = position.coords;
           setUserLocation({ latitude, longitude });
-  
-          // Fetch the city name from coordinates
+
           const city = await getCityFromCoords(latitude, longitude);
-          console.log('City fetched: ', city);
-  
           const cityNameLower = city.toLowerCase();
-          const isCityInZymoList = ZymoOtherCities.some((c) => c.name.toLowerCase() === cityNameLower);
-  
+          const isCityInZymoList = ZymoAllCityList.some((c) => c.name.toLowerCase() === cityNameLower);
+
           if (isCityInZymoList) {
-            // If the city is in ZymoOtherCities, pass the city
             onCitySelect(cityNameLower);
-            toast(`Your Location is Updated to ${city}`);
+            showToast(`Your Location is Updated to ${city}`, 'success');
           } else {
-            // If the city is not in ZymoOtherCities, alert the user
-            toast.warn(`Oops! "Cars are not available in "${city || town || village}".`);
+            showToast(`Oops! "Cars are not available in "${city}".`, 'warning');
           }
         },
         (err) => {
           console.error('Geolocation error:', err);
           setError(err.message);
-          toast.error("Unable to retrieve your location. Please allow location access.");
+          showToast("Unable to retrieve your location. Please allow location access.", 'error');
         }
       );
     } else {
       const errorMessage = 'Geolocation is not supported by this browser.';
       setError(errorMessage);
-      toast.error(errorMessage);
+      showToast(errorMessage, 'error');
     }
   };
-  
 
   const getCityFromCoords = async (latitude, longitude) => {
     const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&addressdetails=1&accept-language=en`;
-
     try {
       const response = await fetch(url);
       const data = await response.json();
-
       if (data && data.address) {
-        return data.address.city || data.address.town || data.address.village  || 'City not found';
-        
+        return data.address.city || data.address.town || data.address.village || 'City not found';
       } else {
         return 'City not found';
       }
@@ -101,99 +74,86 @@ const PopularCities = ({ onCitySelect }) => {
   };
 
   const handleLocation = () => {
-    console.log("Getting location...");
     getLocation();
   };
 
-  return (
-    <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '8px' }}>
+  const showToast = (message, type) => {
+    const id = Math.random().toString(36).substring(2, 15);
+    setToasts((prev) => [...prev, { id, message, type }]);
 
-      <h1 className='font-semibold mt-2' style={{ marginBottom: '20px' }}>Popular Cities</h1>
-      <Row xs={3} md={4} lg={5}>
+    setTimeout(() => {
+      setToasts((prev) => prev.filter((toast) => toast.id !== id));
+    }, 5000);
+  };
+
+  const renderToast = (toast) => {
+    const toastStyles = {
+      success: 'bg-green-500 text-white',
+      error: 'bg-red-500 text-white',
+      warning: 'bg-yellow-500 text-black',
+    };
+
+    return (
+      <div
+        key={toast.id}
+        className={`fixed top-5 right-5 w-64 p-3 mb-2 rounded-lg shadow-lg ${toastStyles[toast.type]}`}
+      >
+        {toast.message}
+      </div>
+    );
+  };
+
+  return (
+    <div className="bg-gray-100 p-5 rounded-lg">
+      <h1 className="font-semibold mb-5">Popular Cities</h1>
+      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {cities.map((city) => (
-          <Col  key={city.name} className="text-center mb-3">
-            <div
-              style={{
-                border: '1px solid #dee2e6',
-                borderRadius: '10px',
-                padding: '10px',
-                cursor: 'pointer',
-                transition: 'transform 0.3s, box-shadow 0.3s',
-                backgroundColor: '#fff',
-              }}
-              onClick={() => onCitySelect(city.name.toLowerCase())}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = 'none';
-              }}
-            >
-              <img
-                src={city.image}
-                alt={city.name}
-                className="w-25"
-                style={{ display: 'block', margin: '0 auto', borderRadius: '8px', marginBottom: '10px' }}
-              />
-              <h6 style={{ fontSize: 'auto', fontWeight: '500' }}>{city.name}</h6>
-            </div>
-          </Col>
-        ))}
-      </Row>
-      <h6 className='mb-3'>Other Cities..</h6>
-      <Row>
-        {OtherCities.map((city) => (
-          <Col xs={6} sm={4} md={2} key={city.name} className="text-center mb-3">
-            <div
-              style={{
-                borderRadius: '10px',
-                padding: '18px',
-                cursor: 'pointer',
-                transition: 'transform 0.3s, box-shadow 0.3s',
-                backgroundColor: '#fff',
-              }}
-              onClick={() => onCitySelect(city.name.toLowerCase())}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = 'none';
-              }}
-            >
-              <h6 style={{ fontSize: '14px', fontWeight: '500' }}>{city.name}</h6>
-            </div>
-          </Col>
-        ))}        
-      </Row>
-      <Row >
-      <Col  xs={12} sm={6} md={2}>
-          <div className='d-flex justify-center'
-            style={{
-              border: '1px solid #dee2e6',
-              borderRadius: '10px',
-              padding: '18px',
-              cursor: 'pointer',
-              transition: 'transform 0.3s, box-shadow 0.3s',
-              backgroundColor: '#fff',
-            }}
-            onClick={handleLocation}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = 'none';
-            }}
+          <div
+            key={city.name}
+            className="text-center p-3 border border-gray-300 rounded-lg cursor-pointer transition-transform transform hover:shadow-md"
+            onClick={() => onCitySelect(city.name.toLowerCase())}
+            onMouseEnter={(e) => e.currentTarget.classList.add('shadow-lg')}
+            onMouseLeave={(e) => e.currentTarget.classList.remove('shadow-lg')}
           >
-            <i style={{ color: 'red' }} className="fa-solid fa-location-crosshairs"></i>
-            <h6 className='ms-2 text-danger font-semibold' style={{fontSize:'12px'}}>Auto Detect</h6>   
+            <img
+              src={city.image}
+              alt={city.name}
+              className="w-16 h-16 mx-auto mb-3 rounded-lg"
+            />
+            <h6 className="font-medium">{city.name}</h6>
           </div>
-        </Col>
-      </Row>
-      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
-      <ToastContainer
-        theme="dark"
-        position="top-right"
-        autoClose={5000} />
+        ))}
+      </div>
+
+      <h6 className="mt-8 mb-4">Other Cities..</h6>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+        {ZymoFeaturedCityList.map((city) => (
+          <div
+            key={city.name}
+            className="text-center p-4 bg-white border border-gray-300 rounded-lg cursor-pointer transition-transform transform hover:shadow-md"
+            onClick={() => onCitySelect(city.name.toLowerCase())}
+            onMouseEnter={(e) => e.currentTarget.classList.add('shadow-lg')}
+            onMouseLeave={(e) => e.currentTarget.classList.remove('shadow-lg')}
+          >
+            <h6 className="text-sm font-medium">{city.name}</h6>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-6 flex justify-center">
+        <button
+          className="flex items-center justify-center bg-white border border-gray-300 rounded-lg p-4 hover:shadow-lg"
+          onClick={handleLocation}
+        >
+          <i className="fa-solid fa-location-crosshairs text-red-500"></i>
+          <h6 className="ml-2 text-red-500 font-semibold text-sm">Auto Detect</h6>
+        </button>
+      </div>
+
+      {error && <p className="text-red-500 mt-4">Error: {error}</p>}
+
+      {/* Custom Toasts */}
+      {toasts.map((toast) => renderToast(toast))}
     </div>
   );
 };
