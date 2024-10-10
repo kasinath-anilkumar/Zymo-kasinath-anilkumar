@@ -1,99 +1,88 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import FindCars from "../FindCars/FindCars";
+import carBg from "/cars-background/carsBg.png";
+import citiesBg from "/cars-background/citiesBg.png";
+import logoImage from "/cars-background/logoImage.jpeg";
+import serviceBg from "/cars-background/serviceBg.png";
+import { useParams } from "react-router-dom";
 
-const FindCars = () => {
-  const [carType, setCarType] = useState('New Car');
-  const [searchType, setSearchType] = useState('By Budget');
-  const [budget, setBudget] = useState('');
-  const [vehicleType, setVehicleType] = useState('');
+const Example = () => {
+  const { id } = useParams();
+
+  // Manage the active background image
+  const [activeImage, setActiveImage] = useState(carBg);
+
+  // Image options for the carousel
+  const images = {
+    carBg,
+    citiesBg,
+    logoImage,
+    serviceBg,
+  };
 
   return (
-    <div className="flex bg-white shadow-lg p-6 rounded-md w-96">
-      <div className="w-full">
-        <h2 className="text-2xl font-bold mb-4">Find your right car</h2>
-        <div className="flex justify-between mb-4">
-          <button
-            onClick={() => setCarType('New Car')}
-            className={`px-4 py-2 rounded-tl-md rounded-tr-md ${carType === 'New Car' ? 'bg-black text-white' : 'bg-gray-200'}`}
-          >
-            New Car
-          </button>
-          <button
-            onClick={() => setCarType('Used Car')}
-            className={`px-4 py-2 rounded-tl-md rounded-tr-md ${carType === 'Used Car' ? 'bg-black text-white' : 'bg-gray-200'}`}
-          >
-            Used Car
-          </button>
-        </div>
-
-        <div className="mb-4">
-          <div className="flex gap-4">
-            <label className="flex items-center gap-1">
-              <input
-                type="radio"
-                name="searchType"
-                value="By Budget"
-                checked={searchType === 'By Budget'}
-                onChange={(e) => setSearchType(e.target.value)}
-              />
-              By Budget
-            </label>
-            <label className="flex items-center gap-1">
-              <input
-                type="radio"
-                name="searchType"
-                value="By Brand"
-                checked={searchType === 'By Brand'}
-                onChange={(e) => setSearchType(e.target.value)}
-              />
-              By Brand
-            </label>
+    <div className="relative">
+      {/* Full-screen carousel background */}
+      <div
+        className="relative w-full h-[500px]" // Height set to 500px
+        style={{
+          backgroundImage: `url(${activeImage})`,
+          backgroundSize: "cover", // Ensures the image covers the screen
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Overlay for fixed FindCars component, aligned to the left */}
+        <div className="absolute font-poppins inset-0 bg-gray-700 bg-opacity-50 flex items-start justify-start">
+          <div className="w-full max-w-lg ml-10 mt-10">
+            {" "}
+            {/* Added margin for positioning */}
+            <FindCars />
           </div>
         </div>
 
-        {/* Select budget dropdown */}
-        <div className="mb-4">
-          <select
-            value={budget}
-            onChange={(e) => setBudget(e.target.value)}
-            className="w-full border border-gray-300 rounded-md p-2"
+        {/* Carousel controls with text links positioned at the bottom of the background image */}
+        <div className="absolute font-poppins text-white bottom-0 w-full flex justify-center space-x-8 mb-4">
+          <button
+            className={`text-lg ${
+              activeImage === carBg ? "font-bold underline" : "font-normal"
+            }`}
+            onClick={() => setActiveImage(images.carBg)}
           >
-            <option value="">Select Budget</option>
-            <option value="under 5 lakhs">Under 5 Lakhs</option>
-            <option value="5-10 lakhs">5-10 Lakhs</option>
-            <option value="10-15 lakhs">10-15 Lakhs</option>
-            <option value="15+ lakhs">15+ Lakhs</option>
-          </select>
-        </div>
-
-        {/* Select vehicle type dropdown */}
-        <div className="mb-4">
-          <select
-            value={vehicleType}
-            onChange={(e) => setVehicleType(e.target.value)}
-            className="w-full border border-gray-300 rounded-md p-2"
+            Cars
+          </button>
+          <button
+            className={`text-lg ${
+              activeImage === citiesBg ? "font-bold underline" : "font-normal"
+            }`}
+            onClick={() => setActiveImage(images.citiesBg)}
           >
-            <option value="">All Vehicle Types</option>
-            <option value="SUV">SUV</option>
-            <option value="Sedan">Sedan</option>
-            <option value="Hatchback">Hatchback</option>
-            <option value="Luxury">Luxury</option>
-          </select>
+            Cities
+          </button>
+          <button
+            className={`text-lg ${
+              activeImage === logoImage ? "font-bold underline" : "font-normal"
+            }`}
+            onClick={() => setActiveImage(images.logoImage)}
+          >
+            Logos
+          </button>
+          <button
+            className={`text-lg ${
+              activeImage === serviceBg ? "font-bold underline" : "font-normal"
+            }`}
+            onClick={() => setActiveImage(images.serviceBg)}
+          >
+            Services
+          </button>
         </div>
+      </div>
 
-        {/* Search Button */}
-        <button
-          className="w-full bg-orange-600 text-white rounded-md p-2 font-bold hover:bg-orange-500"
-        >
-          Search
-        </button>
-
-        {/* Advanced Search Link */}
-        <div className="mt-2 text-right">
-          <a href="#" className="text-sm text-gray-500 hover:underline">Advanced Search</a>
-        </div>
+      {/* Show selected location */}
+      <div className="mt-6 text-center">
+        <p>Location ID: {id}</p>
       </div>
     </div>
   );
 };
 
-export default FindCars;
+export default Example;

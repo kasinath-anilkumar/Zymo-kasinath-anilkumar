@@ -7,14 +7,20 @@ import l_icon from "/location-icon.png";
 import Dropdown from "../Dropdown/Dropdown";
 import { Link } from "react-router-dom";
 
-
 const navigation = [
-  { name: "Fleet", id: "Fleet",link:"/fleet" },
-  { name: "About Us", id: "About",link:"/about" },
-  { name: "Blogs", id: "Blogs" ,link:"/blogs" },
-  { name: "Careers", id: "Careers",link:"/careers" },
-  { name: "Contact Us", id: "Contact",link:"/contact" },
-  { name: "Cars", id: "Cars",link:"/cars" },
+  { name: "Fleet", id: "Fleet", link: "/fleet" },
+  { name: "About Us", id: "About", link: "/about" },
+  { name: "Blogs", id: "Blogs", link: "/blogs" },
+  { name: "Careers", id: "Careers", link: "/career" },
+  { name: "Contact Us", id: "Contact", link: "/contact" },
+  { name: "Cars", id: "Cars", link: "/cars" },
+];
+
+const carOptions = [
+  { name: "Sedan", link: "/cars/sedan" },
+  { name: "SUV", link: "/cars/suv" },
+  { name: "Hatchback", link: "/cars/hatchback" },
+  { name: "Luxury", link: "/cars/luxury" },
 ];
 
 const Navbar = () => {
@@ -22,30 +28,38 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white text-2xl h-20 font-poppins shadow-md">
+    <header className="sticky top-0 z-50 font-poppins bg-white text-2xl h-20 font-poppins shadow-md">
       <nav
-        className="container mx-auto px-6 lg:px-8 flex justify-between items-center h-full"
+        className="container mx-auto px-6 flex justify-between items-center h-full"
         aria-label="Global"
       >
         {/* Logo Section */}
-        <div className="flex lg:flex-1 items-center">
-          <Link to="/">
-            <img src={Logo} alt="Logo" className="h-15 w-40" />
+        <div className="items-center">
+          <Link
+            to={
+              location === "default"
+                ? "/"
+                : `/self-drive-car-rentals/${location}`
+            }
+          >
+            <img src={Logo} alt="Logo" className="h-10 w-32" />
           </Link>
         </div>
 
         {/* Desktop Navigation Links */}
-        <div className="items-center justify-center hidden lg:flex lg:gap-x-12 flex-grow">
+        <div className="items-center justify-center hidden lg:flex gap-3 md:gap-5 lg:gap-x-10 flex-grow">
           {navigation.map((item) => (
-            <div key={item.name} className="relative cursor-pointer group">
+            <div
+              key={item.name}
+              className="relative cursor-pointer group text-base md:text-lg"
+            >
               <div className="relative">
-                {item.name === "Cars" ? ( // Use a conditional operator
-                  <Dropdown
-                    options={["Sedan", "SUV", "Hatchback", "Luxury"]}
-                    first={item.name}
-                  />
+                {item.name === "Cars" ? (
+                  <Dropdown first={item.name} options={carOptions} />
                 ) : (
-                  <Link to={item.link}>item.name</Link>
+                  <Link to={item.link} className="p-3">
+                    {item.name}
+                  </Link>
                 )}
                 <span className="absolute left-0 bottom-0 h-0.5 w-full bg-indigo-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </div>
@@ -54,7 +68,7 @@ const Navbar = () => {
         </div>
 
         {/* Location Display */}
-        <div className="ml-6 cursor-pointer hidden lg:block border-blue-500 rounded-full bg-yellow-400 py-3 px-5">
+        <div className="ml-6 cursor-pointer hidden lg:block border-blue-500 rounded-full bg-yellow-400 py-2 text-lg px-2 md:px-5">
           <img
             src={l_icon}
             alt="Location Icon"
@@ -78,8 +92,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-        <DialogPanel className="fixed inset-0 z-50 overflow-y-auto bg-gray-100 p-6 lg:hidden top-0 right-0  px-6 py-6 w-60 lg:w-90 md:w-70 h-full">
-          <div className="flex items-center justify-between w-60">
+        <DialogPanel className="fixed inset-0 z-50 overflow-y-auto bg-gray-100 lg:hidden top-0 right-0 w-full max-w-xs p-6">
+          <div className="flex items-center justify-between">
             {/* Close Button */}
             <button
               type="button"
@@ -94,22 +108,30 @@ const Navbar = () => {
           <div className="mt-6">
             {/* Navigation Links in Mobile Menu */}
             <div className="space-y-6">
-              {navigation.map((item) => (
-                <div
-                  key={item.name}
-                  className="block rounded-lg py-2 px-4 text-xl font-normal"
-                >
-                  {item.name}
-                </div>
-              ))}
+              {navigation.map((item) =>
+                item.name === "Cars" ? (
+                  <Dropdown
+                    key={item.name}
+                    first={item.name}
+                    options={carOptions}
+                  />
+                ) : (
+                  <div
+                    key={item.name}
+                    className="block rounded-lg py-2 px-4 text-xl font-normal"
+                  >
+                    <Link to={item.link}>{item.name}</Link>
+                  </div>
+                )
+              )}
             </div>
 
             {/* Location in Mobile Menu */}
-            <div className=" rounded-full mt-10 text-xl font-normal cursor-pointer bg-yellow-400 py-5 px-4 h-auto">
+            <div className="rounded-full mt-3 text-xl font-normal cursor-pointer bg-yellow-400 py-3 px-3">
               <img
                 src={l_icon}
                 alt="Location Icon"
-                className="h-6 w-6 inline-block "
+                className="h-6 w-6 inline-block"
               />
               {location}
             </div>
