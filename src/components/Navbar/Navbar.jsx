@@ -9,12 +9,12 @@ import { Link } from "react-router-dom";
 
 
 const navigation = [
-  { name: "Fleet", id: "Home" },
-  { name: "About Us", id: "About" },
-  { name: "Blogs", id: "Education" },
-  { name: "Careers", id: "Projects" },
-  { name: "Contact Us", id: "Contact" },
-  { name: "Cars", id: "Cars" },
+  { name: "Fleet", id: "Fleet",link:"/fleet" },
+  { name: "About Us", id: "About",link:"/about" },
+  { name: "Blogs", id: "Blogs" ,link:"/blogs" },
+  { name: "Careers", id: "Careers",link:"/careers" },
+  { name: "Contact Us", id: "Contact",link:"/contact" },
+  { name: "Cars", id: "Cars",link:"/cars" },
 ];
 
 const Navbar = () => {
@@ -45,7 +45,7 @@ const Navbar = () => {
                     first={item.name}
                   />
                 ) : (
-                  item.name
+                  <Link to={item.link}>item.name</Link>
                 )}
                 <span className="absolute left-0 bottom-0 h-0.5 w-full bg-indigo-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </div>
