@@ -22,9 +22,11 @@ import Mumbai from './pages/Mumbai/Mumbai';
 import Kolkata from './pages/Kolkata/Kolkata';
 import NotFound from '../src/NotFound';
 import Career from './components/Career/Career';
+import {useLocationContext} from "./Context/Location"
 
 const App = () => {
-  const location = useLocation();
+  const {location}= useLocationContext();
+  const location1 = useLocation();
 
   return (
     <>
@@ -62,7 +64,7 @@ const App = () => {
         })}
       </Routes>
 
-      {location.pathname !== "/career" && (
+      {location1.pathname !== "/career" && (
         <>
           <Zymo />
           <Benefits />
