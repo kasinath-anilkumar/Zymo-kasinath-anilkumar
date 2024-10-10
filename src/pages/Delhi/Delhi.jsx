@@ -6,8 +6,6 @@ import p2 from '../../assets/p2.png'
 import p3 from '../../assets/p3.png'
 import Example from "../../components/Example/Example"
 
-
-
 const Delhi = () => {
   const [index, setIndex] = useState(0);
 
@@ -25,7 +23,7 @@ const Delhi = () => {
   };
 
   return (
-    <div className='m-10'>
+    <div className='m-10 font-poppins'>
       <Example />
       <Carousel activeIndex={index} onSelect={handleSelect} controls={false} indicators={false}>
         <Carousel.Item>

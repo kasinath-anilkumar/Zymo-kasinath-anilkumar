@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Import Link for routing
 
 const Dropdown = ({ options, first }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,10 +10,9 @@ const Dropdown = ({ options, first }) => {
   };
 
   const handleOptionClick = (option) => {
-    setSelectedOption(option);
+    setSelectedOption(option.name); // Update selected option's name
     setIsOpen(false);
   };
-
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -29,12 +29,10 @@ const Dropdown = ({ options, first }) => {
   }, []);
 
   return (
-    <div className="relative inline-block text-left font-poppins" >
+    <div className="relative inline-block text-left font-poppins">
       <div>
         <button
-           onMouseEnter={toggleDropdown}
-          //  onMouseLeave=
-        
+          onMouseEnter={toggleDropdown}
           className="inline-flex justify-between w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           aria-haspopup="true"
           aria-expanded={isOpen}
@@ -60,14 +58,15 @@ const Dropdown = ({ options, first }) => {
         <div className="absolute z-10 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
           <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             {options.map((option) => (
-              <button
-                key={option}
+              <Link
+                to={option.link} // Link to the option's corresponding path
+                key={option.name} // Using 'name' as the key
                 onClick={() => handleOptionClick(option)}
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
                 role="menuitem"
               >
-                {option}
-              </button>
+                {option.name}
+              </Link>
             ))}
           </div>
         </div>
