@@ -110,10 +110,8 @@ const PopularCities = ({ onCitySelect }) => {
         {cities.map((city) => (
           <div
             key={city.name}
-            className="text-center p-3 border border-gray-300 rounded-lg cursor-pointer transition-transform transform hover:shadow-md"
+            className="text-center p-3 border border-gray-300 rounded-lg cursor-pointer transition-transform transform hover:shadow-custom-purple"
             onClick={() => onCitySelect(city.name.toLowerCase())}
-            onMouseEnter={(e) => e.currentTarget.classList.add('shadow-lg')}
-            onMouseLeave={(e) => e.currentTarget.classList.remove('shadow-lg')}
           >
             <img
               src={city.image}
@@ -130,19 +128,17 @@ const PopularCities = ({ onCitySelect }) => {
         {ZymoFeaturedCityList.map((city) => (
           <div
             key={city.name}
-            className="text-center p-4 bg-white border border-gray-300 rounded-lg cursor-pointer transition-transform transform hover:shadow-md"
+            className="text-center p-4 border border-gray-300 rounded-lg cursor-pointer transition-transform transform hover:shadow-custom-purple"
             onClick={() => onCitySelect(city.name.toLowerCase())}
-            onMouseEnter={(e) => e.currentTarget.classList.add('shadow-lg')}
-            onMouseLeave={(e) => e.currentTarget.classList.remove('shadow-lg')}
           >
             <h6 className="text-sm font-medium">{city.name}</h6>
           </div>
         ))}
       </div>
 
-      <div className="mt-6 flex justify-center">
+      <div className="mt-6 flex">
         <button
-          className="flex items-center justify-center bg-white border border-gray-300 rounded-lg p-4 hover:shadow-lg"
+          className="flex items-center justify-center bg-white border-1 border-red-500 rounded-lg p-3 hover:shadow-lg"
           onClick={handleLocation}
         >
           <i className="fa-solid fa-location-crosshairs text-red-500"></i>

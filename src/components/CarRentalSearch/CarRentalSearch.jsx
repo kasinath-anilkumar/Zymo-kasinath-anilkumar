@@ -58,7 +58,7 @@ const CarRentalSearch = () => {
             <label className="block mb-2">Location</label>
             <button
               onClick={() => setShowCities(!showCities)}
-              className="w-full flex justify-between items-center p-2 bg-[#a11fdb] text-white rounded-md"
+              className="w-full flex justify-between items-center p-2 rounded-md text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br"
             >
               {location || 'Select a location'}
               <span className="ml-2">
