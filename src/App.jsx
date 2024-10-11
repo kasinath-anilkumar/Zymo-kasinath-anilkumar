@@ -32,13 +32,12 @@ const App = () => {
   const currentLocation = useLocation();
 
   useEffect(() => {
-    // Redirect if the location is not default
     if (location !== "Default") {
       const citySlug = location.toLowerCase().replace(/\s+/g, "-");
       const url = `/self-drive-car-rentals/${citySlug}`;
-      navigate(url);  // Redirect to the dynamic city route
+      navigate(url);
     }
-  }, [location, navigate]);
+  }, []);
 
   return (
     <>
@@ -49,11 +48,17 @@ const App = () => {
         {/* Predefined Routes */}
         <Route path="self-drive-car-rentals/delhi" element={<Delhi />} />
         <Route path="self-drive-car-rentals/chennai" element={<Chennai />} />
-        <Route path="self-drive-car-rentals/hyderabad" element={<Hyderabad />} />
+        <Route
+          path="self-drive-car-rentals/hyderabad"
+          element={<Hyderabad />}
+        />
         <Route path="self-drive-car-rentals/mumbai" element={<Mumbai />} />
         <Route path="self-drive-car-rentals/pune" element={<Pune />} />
         <Route path="self-drive-car-rentals/kolkata" element={<Kolkata />} />
-        <Route path="/career" element={<Career />} />
+        <Route
+          path={`self-drive-car-rentals/${location}/career`}
+          element={<Career />}
+        />
 
         {/* Dynamic Routes */}
         {ZymoAllCityList.map((city, index) => {
@@ -65,7 +70,9 @@ const App = () => {
           return (
             <Route
               key={index}
-              path={`self-drive-car-rentals/${city.name.toLowerCase().replace(/\s+/g, "-")}`}
+              path={`self-drive-car-rentals/${city.name
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
               element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <CityComponent />
@@ -77,10 +84,14 @@ const App = () => {
       </Routes>
 
       {/* Additional Components */}
-      {currentLocation.pathname !== "/career" &&
-        currentLocation.pathname !== "/about" &&
-        currentLocation.pathname !== "/fleet" &&
-        currentLocation.pathname !== "/blogs" && (
+      {currentLocation.pathname !==
+        `/self-drive-car-rentals/${location}/career` &&
+        currentLocation.pathname !==
+          `/self-drive-car-rentals/${location}/about` &&
+        currentLocation.pathname !==
+          `/self-drive-car-rentals/${location}/fleet` &&
+        currentLocation.pathname !==
+          `/self-drive-car-rentals/${location}/blogs` && (
           <>
             <CarRentalSearch />
             <Zymo />
