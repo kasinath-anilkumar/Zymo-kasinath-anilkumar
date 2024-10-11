@@ -86,24 +86,28 @@ const App = () => {
       {/* Additional Components */}
       {currentLocation.pathname !==
         `/self-drive-car-rentals/${location}/career` &&
-        currentLocation.pathname !==
-          `/self-drive-car-rentals/${location}/about` &&
-        currentLocation.pathname !==
-          `/self-drive-car-rentals/${location}/fleet` &&
-        currentLocation.pathname !==
-          `/self-drive-car-rentals/${location}/blogs` && (
-          <>
-            <CarRentalSearch />
-            <Zymo />
-            <Benefits />
-            <Refer />
-            <Cars />
-            <Featured />
-            <Reviews />
-            <Youtube />
-            <Faq />
-          </>
-        )}
+      currentLocation.pathname !==
+        `/self-drive-car-rentals/${location}/about` &&
+      currentLocation.pathname !==
+        `/self-drive-car-rentals/${location}/fleet` &&
+      currentLocation.pathname !==
+        `/self-drive-car-rentals/${location}/blogs` ? (
+        <>
+          <CarRentalSearch />
+          <Zymo />
+          <Benefits />
+          <Refer />
+          <Cars />
+          <Featured />
+          <Reviews />
+          <Youtube />
+          <Faq />
+        </>
+      ) : (
+        <>
+          <NotFound />
+        </>
+      )}
 
       <Footer />
 
