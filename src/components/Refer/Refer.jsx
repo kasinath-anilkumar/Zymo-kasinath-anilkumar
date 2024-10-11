@@ -13,7 +13,7 @@ const Refer = () => {
         <p className="py-6 text-lg">
           Download the App for Exclusive Deals and Ease of Booking
         </p>
-        <div className="flex gap-5 justify-center lg:justify-start">
+        <div className="flex gap-5 justify-center lg:justify-center">
           <a href="https://play.google.com/store/apps/details?id=com.letzrent.letzrentnew&referrer=utm_source%3Dplaystore%26utm_medium%3Dreferral%26utm_campaign%3Dapp_launch">
             <img
               src={PlayStore}
