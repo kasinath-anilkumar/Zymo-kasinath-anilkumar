@@ -8,7 +8,7 @@ export const useLocationContext = () => {
 
 export const LocationProvider = ({ children }) => {
   const [location, setLocation] = useState(() => {
-    return localStorage.getItem("location") || "Delhi";
+    return localStorage.getItem("location") || "Default";
   });
 
   useEffect(() => {

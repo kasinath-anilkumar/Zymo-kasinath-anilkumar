@@ -1,8 +1,16 @@
 import React from "react";
-import { useLocationContext } from "../../Context/Location"; // Assuming you are using this from context
+import { useLocationContext } from "../../Context/Location";
+import PopularCities from "../PopularCities/PopularCities";
+import { useNavigate } from "react-router-dom";
 
 const Select = () => {
-  const { setLocation } = useLocationContext(); // Access setLocation from the context
+  const { setLocation } = useLocationContext();
+  const navigate = useNavigate();
+
+  const handleLocationSelect = (city) => {
+    setLocation(city);
+    navigate(`/self-drive-car-rentals/${city.toLowerCase()}`);
+  };
 
   return (
     <>
@@ -11,16 +19,11 @@ const Select = () => {
 
       {/* Centered Modal */}
       <div className="fixed inset-0 flex items-center justify-center z-50">
-        <div className="text-center p-10 bg-yellow-200 rounded-md shadow-lg">
-          <p>Please select a location</p>
-          <div>
-            <button
-              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
-              onClick={() => setLocation("Mumbai")}
-            >
-              Change to Mumbai
-            </button>
-          </div>
+        <div className="p-6 bg-white rounded-lg shadow-lg max-w-lg w-full">
+          <h2 className="text-2xl font-semibold mb-6 text-center">
+            Please select your location
+          </h2>
+          <PopularCities onCitySelect={handleLocationSelect} />
         </div>
       </div>
     </>
