@@ -67,9 +67,10 @@ const App = () => {
       </Routes>
 
       {location1.pathname !== "/career" && (
-        <>
+        <>          
+          <CarRentalSearch />
           <Zymo />
-          <button onClick={() => setLocation("Default")}>Change Location</button>
+          {/* <button onClick={() => setLocation("Default")}>Change Location</button> */}
           <Benefits />
           <Refer />
           <Cars />
