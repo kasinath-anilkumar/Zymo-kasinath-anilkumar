@@ -28,7 +28,7 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 font-poppins bg-white text-2xl h-20 shadow-md">
+    <header className="sticky top-0 z-50 font-poppins bg-white text-2xl h-20 font-poppins shadow-md">
       <nav
         className="container mx-auto px-6 flex justify-between items-center h-full"
         aria-label="Global"
