@@ -1,5 +1,5 @@
-import React, { Suspense } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import React, { useEffect, Suspense } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import CustomNavbar from "./components/CustomNavbar/CustomNavbar";
 import CarRentalSearch from "./components/CarRentalSearch/CarRentalSearch";
 import Zymo from "./components/Zymo/Zymo";
@@ -11,11 +11,10 @@ import Reviews from "./components/Reviews/Reviews";
 import Youtube from "./components/Youtube/Youtube";
 import Faq from "./components/FAQ/Faq";
 import Footer from "./components/Footer/Footer";
-import { ZymoFeaturedCityList, ZymoAllCityList } from "./assets/ZymoCityList";
+import { ZymoAllCityList } from "./assets/ZymoCityList";
 import Navbar from "./components/Navbar/Navbar";
-import Banner1 from "./components/Banner/Banner1"
 import Banner from "./components/Banner/Banner";
-
+import Banner1 from "./components/Banner/Banner1";
 import Delhi from "./pages/Delhi/Delhi";
 import Chennai from "./pages/Chennai/Chennai";
 import Hyderabad from "./pages/Hyderabad/Hyderabad";
@@ -29,14 +28,24 @@ import SelectLocation from "./components/SelectLocation/Select";
 
 const App = () => {
   const { location, setLocation } = useLocationContext();
-  const location1 = useLocation();
+  const navigate = useNavigate();
+  const currentLocation = useLocation();
+
+  useEffect(() => {
+    // Redirect if the location is not default
+    if (location !== "Default") {
+      const citySlug = location.toLowerCase().replace(/\s+/g, "-");
+      const url = `/self-drive-car-rentals/${citySlug}`;
+      navigate(url);  // Redirect to the dynamic city route
+    }
+  }, [location, navigate]);
 
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Banner/>} />
-        
+        <Route path="/" element={<Banner1 />} />
+
         {/* Predefined Routes */}
         <Route path="self-drive-car-rentals/delhi" element={<Delhi />} />
         <Route path="self-drive-car-rentals/chennai" element={<Chennai />} />
@@ -45,7 +54,7 @@ const App = () => {
         <Route path="self-drive-car-rentals/pune" element={<Pune />} />
         <Route path="self-drive-car-rentals/kolkata" element={<Kolkata />} />
         <Route path="/career" element={<Career />} />
-        
+
         {/* Dynamic Routes */}
         {ZymoAllCityList.map((city, index) => {
           const CityComponent = React.lazy(() =>
@@ -67,21 +76,24 @@ const App = () => {
         })}
       </Routes>
 
-      {location1.pathname !== "/career" && location1.pathname !== "/about" && location1.pathname !== "/fleet" && location1.pathname !== "/blogs" && (
-        <>          
-          <CarRentalSearch />
-          <Zymo />
-          {/* <button onClick={() => setLocation("Default")}>Change Location</button> */}
-          <Benefits />
-          <Refer />
-          <Cars />
-          <Featured />
-          <Reviews />
-          <Youtube />
-          <Faq />
-        </>
-      )}
-      
+      {/* Additional Components */}
+      {currentLocation.pathname !== "/career" &&
+        currentLocation.pathname !== "/about" &&
+        currentLocation.pathname !== "/fleet" &&
+        currentLocation.pathname !== "/blogs" && (
+          <>
+            <CarRentalSearch />
+            <Zymo />
+            <Benefits />
+            <Refer />
+            <Cars />
+            <Featured />
+            <Reviews />
+            <Youtube />
+            <Faq />
+          </>
+        )}
+
       <Footer />
 
       {/* Overlay for SelectLocation */}
