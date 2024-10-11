@@ -40,19 +40,19 @@ const CompanyInfo = () => {
       <div className=" flex flex-col  text-center items-center mb-4">
       <h1 className="font-bold p-1 ">Follow Us</h1>
         <div className="flex">
-          <a href="#" className="mr-4 hover:text-gray-300">
+          <a href="https://www.facebook.com/zymo.official/" className="mr-4 hover:text-gray-300">
             <FontAwesomeIcon icon={faFacebook} size="2x" />
           </a>
-          <a href="#" className="mr-4 hover:text-gray-300">
+          <a href="https://www.instagram.com/zymo.app/" className="mr-4 hover:text-gray-300">
             <FontAwesomeIcon icon={faInstagram} size="2x" />
           </a>
-          <a href="#" className="mr-4 hover:text-gray-300">
+          <a href="https://in.linkedin.com/company/zymoapp" className="mr-4 hover:text-gray-300">
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
-          <a href="#" className="mr-4 hover:text-gray-300">
+          <a href="https://x.com/zymoapp" className="mr-4 hover:text-gray-300">
             <FontAwesomeIcon icon={faTwitter} size="2x" />
           </a>
-          <a href="#" className="mr-4 hover:text-gray-300">
+          <a href="https://www.youtube.com/channel/UCHUvrPwNYxw7bukWFjhNpag" className="mr-4 hover:text-gray-300">
             <FontAwesomeIcon icon={faYoutube} size="2x" />
           </a>
         </div>
