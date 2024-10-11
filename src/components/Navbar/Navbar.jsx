@@ -42,7 +42,7 @@ const Navbar = () => {
                 : `/self-drive-car-rentals/${location}`
             }
           >
-            <img src={Logo} alt="Logo" className="h-10 w-32" />
+            <img src={Logo} alt="Logo" className="md:h-10 h-8 w-32" />
           </Link>
         </div>
 
@@ -120,6 +120,7 @@ const Navbar = () => {
                   <div
                     key={item.name}
                     className="block rounded-lg py-2 px-4 text-xl font-normal"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     <Link to={item.link}>{item.name}</Link>
                   </div>
@@ -128,7 +129,10 @@ const Navbar = () => {
             </div>
 
             {/* Location in Mobile Menu */}
-            <div className="rounded-full mt-3 text-xl font-normal cursor-pointer bg-yellow-400 py-3 px-3">
+            <div className="rounded-full mt-3 text-xl font-normal cursor-pointer bg-yellow-400 py-3 px-3" onClick={() => {
+              setLocation("Default");
+              setMobileMenuOpen(false);
+            }}>
               <img
                 src={l_icon}
                 alt="Location Icon"
