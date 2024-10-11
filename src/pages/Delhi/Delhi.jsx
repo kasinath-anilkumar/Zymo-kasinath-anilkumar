@@ -23,9 +23,9 @@ const Delhi = () => {
   };
 
   return (
-    <div className='m-10 font-poppins'>
+    <div className='md:m-10 mx-3 my-2 font-poppins'>
       <Example />
-      <Carousel activeIndex={index} onSelect={handleSelect} controls={false} indicators={false}>
+      {/* <Carousel activeIndex={index} onSelect={handleSelect} controls={false} indicators={false}>
         <Carousel.Item>
           <a href="http://get.zymo.app/car">
             <img
@@ -66,7 +66,7 @@ const Delhi = () => {
             />
           </a>
         </Carousel.Item>
-      </Carousel>
+      </Carousel> */}
     </div>
   );
 };

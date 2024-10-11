@@ -11,6 +11,7 @@ export const ZymoFeaturedCityList = [
   { name: 'Trichy' },
   { name: 'Vadodara' },
   { name: 'Thane' },
+  {name: 'Ranchi'},
 ];
 
 export const ZymoAllCityList = [
@@ -61,4 +62,5 @@ export const ZymoAllCityList = [
   { name: 'Rishikesh' },
   { name: 'Komalapuram' },
   { name: 'Ernakulam' },
+  { name: 'Ranchi'},
 ]

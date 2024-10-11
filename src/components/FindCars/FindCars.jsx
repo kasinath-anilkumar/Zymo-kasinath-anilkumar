@@ -9,7 +9,7 @@ const FindCars = () => {
   const [div2, setDiv2] = useState('All vehicle types');
 
   return (
-    <div className="flex bg-white shadow-lg p-6 rounded-md max-w-sm w-full">
+    <div className="flex bg-white shadow-lg p-3 md:p-6 rounded-md max-w-sm w-full">
       <div className="w-full">
         <h2 className="text-2xl font-bold mb-4 text-center">Find Your Right Car</h2>
         
@@ -99,11 +99,7 @@ const FindCars = () => {
         <button className="w-full bg-violet-800 text-white rounded-md p-2 font-bold hover:bg-orange-500">
           Search
         </button>
-
-        {/* Advanced Search Link */}
-        <div className="mt-2 text-right">
-          <a href="#" className="text-sm text-gray-500 hover:underline">Advanced Search</a>
-        </div>
+        
       </div>
     </div>
   );

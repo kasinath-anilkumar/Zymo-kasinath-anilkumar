@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import FindCars from "../FindCars/FindCars";
 import carBg from "/cars-background/carsBg.png";
-import citiesBg from "/cars-background/citiesBg.png";
-import logoImage from "/cars-background/logoImage.jpeg";
+import citiesBg from "/cars-background/p1.png";
+import logoImage from "/cars-background/p3.png";
 import serviceBg from "/cars-background/serviceBg.png";
 import { useParams } from "react-router-dom";
 
@@ -21,19 +21,20 @@ const Example = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative mb-20">
       {/* Full-screen carousel background */}
       <div
-        className="relative w-full h-[500px]" // Height set to 500px
+        className="relative w-full h-[600px] md:h-[500px]" // Height set to 500px
         style={{
           backgroundImage: `url(${activeImage})`,
           backgroundSize: "cover", // Ensures the image covers the screen
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
         {/* Overlay for fixed FindCars component, aligned to the left */}
         <div className="absolute font-poppins inset-0 bg-gray-700 bg-opacity-50 flex items-start justify-start">
-          <div className="w-full max-w-lg ml-10 mt-10">
+          <div className="w-full max-w-lg md:ml-10 md:mt-10 ml-3 mr-3 mt-5">
             {" "}
             {/* Added margin for positioning */}
             <FindCars />
@@ -41,9 +42,9 @@ const Example = () => {
         </div>
 
         {/* Carousel controls with text links positioned at the bottom of the background image */}
-        <div className="absolute font-poppins text-white bottom-0 w-full flex justify-center space-x-8 mb-4">
+        <div className="absolute font-poppins text-white bottom-0 w-full flex justify-center space-x-5 mb-4 md:space-x-8">
           <button
-            className={`text-lg ${
+            className={`md:text-lg text-base ${
               activeImage === carBg ? "font-bold underline" : "font-normal"
             }`}
             onClick={() => setActiveImage(images.carBg)}
@@ -51,7 +52,7 @@ const Example = () => {
             Cars
           </button>
           <button
-            className={`text-lg ${
+            className={`md:text-lg text-base ${
               activeImage === citiesBg ? "font-bold underline" : "font-normal"
             }`}
             onClick={() => setActiveImage(images.citiesBg)}
@@ -59,7 +60,7 @@ const Example = () => {
             Cities
           </button>
           <button
-            className={`text-lg ${
+            className={`md:text-lg text-base ${
               activeImage === logoImage ? "font-bold underline" : "font-normal"
             }`}
             onClick={() => setActiveImage(images.logoImage)}
@@ -67,7 +68,7 @@ const Example = () => {
             Logos
           </button>
           <button
-            className={`text-lg ${
+            className={`md:text-lg text-base ${
               activeImage === serviceBg ? "font-bold underline" : "font-normal"
             }`}
             onClick={() => setActiveImage(images.serviceBg)}
@@ -75,11 +76,6 @@ const Example = () => {
             Services
           </button>
         </div>
-      </div>
-
-      {/* Show selected location */}
-      <div className="mt-6 text-center">
-        <p>Location ID: {id}</p>
       </div>
     </div>
   );
