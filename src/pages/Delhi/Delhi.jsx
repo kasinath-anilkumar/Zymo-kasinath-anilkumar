@@ -23,7 +23,7 @@ const Delhi = () => {
   };
 
   return (
-    <div className='m-10 font-poppins'>
+    <div className='md:m-10 mx-1 my-2 font-poppins'>
       <Example />
       <Carousel activeIndex={index} onSelect={handleSelect} controls={false} indicators={false}>
         <Carousel.Item>
