@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'; // Adjust this import as necessary
 import {LocationProvider} from "./Context/Location"
