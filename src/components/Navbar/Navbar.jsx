@@ -57,7 +57,7 @@ const Navbar = () => {
                 {item.name === "Cars" ? (
                   <Dropdown first={item.name} options={carOptions} />
                 ) : (
-                  <Link to={`self-drive-car-rentals/${location}${item.link}`} className="p-3">
+                  <Link to={`${item.link}`} className="p-3">
                     {item.name}
                   </Link>
                 )}

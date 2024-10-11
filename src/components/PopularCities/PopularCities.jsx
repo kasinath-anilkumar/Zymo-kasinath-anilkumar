@@ -162,7 +162,7 @@ const PopularCities = ({ onCitySelect }) => {
   };
 
   return (
-    <div className="flex justify-center  items-center min-h-screen bg-gray-100">
+    <div className="flex justify-center items-center p-5  bg-gray-100">
       <div className="w-full max-w-5xl bg-white p-3 rounded-lg shadow-lg">
         <h1 className="text-2xl font-bold text-center mb-2">
           Please select Location
@@ -177,7 +177,7 @@ const PopularCities = ({ onCitySelect }) => {
               <img
                 src={city.image}
                 alt={city.name}
-                className="w-5 h-5 mx-auto mb-2 rounded-lg"
+                className="w-12 h-12 mx-auto mb-2 rounded-lg"
               />
               <h6 className="font-medium text-xs whitespace-nowrap">
                 {city.name}
