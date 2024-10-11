@@ -43,7 +43,7 @@ const App = () => {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Banner1 />} />
+        <Route path="/" element={<Banner />} />
 
         {/* Predefined Routes */}
         <Route path="self-drive-car-rentals/delhi" element={<Delhi />} />
