@@ -24,11 +24,11 @@ const carOptions = [
 ];
 
 const Navbar = () => {
-  const { location } = useLocationContext();
+  const { location,setLocation } = useLocationContext();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 font-poppins bg-white text-2xl h-20 font-poppins shadow-md">
+    <header className="sticky top-0 z-50 font-poppins bg-white text-2xl h-20 shadow-md">
       <nav
         className="container mx-auto px-6 flex justify-between items-center h-full"
         aria-label="Global"
@@ -68,7 +68,8 @@ const Navbar = () => {
         </div>
 
         {/* Location Display */}
-        <div className="ml-6 cursor-pointer hidden lg:block border-blue-500 rounded-full bg-yellow-400 py-2 text-lg px-2 md:px-5">
+        <div className="ml-6 cursor-pointer hidden lg:block border-blue-500 rounded-full bg-yellow-400 py-2 text-lg px-2 md:px-5"
+        onClick={() => setLocation("Default")}>
           <img
             src={l_icon}
             alt="Location Icon"
