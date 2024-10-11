@@ -14,6 +14,7 @@ import Footer from "./components/Footer/Footer";
 import { ZymoFeaturedCityList, ZymoAllCityList } from "./assets/ZymoCityList";
 import Navbar from "./components/Navbar/Navbar";
 import Banner1 from "./components/Banner/Banner1"
+import Banner from "./components/Banner/Banner";
 
 import Delhi from "./pages/Delhi/Delhi";
 import Chennai from "./pages/Chennai/Chennai";
@@ -34,7 +35,7 @@ const App = () => {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Banner1/>} />
+        <Route path="/" element={<Banner/>} />
         
         {/* Predefined Routes */}
         <Route path="self-drive-car-rentals/delhi" element={<Delhi />} />
@@ -66,7 +67,7 @@ const App = () => {
         })}
       </Routes>
 
-      {location1.pathname !== "/career" && (
+      {location1.pathname !== "/career" && location1.pathname !== "/about" && location1.pathname !== "/fleet" && location1.pathname !== "/blogs" && (
         <>          
           <CarRentalSearch />
           <Zymo />

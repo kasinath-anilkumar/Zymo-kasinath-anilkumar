@@ -33,7 +33,7 @@ const Example = () => {
       >
         {/* Overlay for fixed FindCars component, aligned to the left */}
         <div className="absolute font-poppins inset-0 bg-gray-700 bg-opacity-50 flex items-start justify-start">
-          <div className="w-full max-w-lg ml-10 mt-10">
+          <div className="w-full max-w-lg md:ml-10 md:mt-10 ml-3 mr-3 mt-5">
             {" "}
             {/* Added margin for positioning */}
             <FindCars />
