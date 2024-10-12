@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Logo from "/logo.png";
@@ -26,6 +27,10 @@ const carOptions = [
 const Navbar = () => {
   const { location,setLocation } = useLocationContext();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <header className="sticky top-0 z-50 font-poppins bg-white text-2xl h-20 shadow-md">

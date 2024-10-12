@@ -86,7 +86,7 @@ const App = () => {
 
       {location1.pathname === `/self-drive-car-rentals/${location}` && (
         <>
-          <Banner />
+          {/* <Banner /> */}
           <CarRentalSearch />
           <Zymo />
           <Benefits />
