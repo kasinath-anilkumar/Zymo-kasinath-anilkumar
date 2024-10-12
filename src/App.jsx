@@ -66,7 +66,7 @@ const App = () => {
         })}
       </Routes>
 
-      {(location1.pathname === "/blogs" || location1.pathname === "/fleet" || location1.pathname === "/about") ? (
+      {(location1.pathname === "/blogs" || location1.pathname === "/fleet" || location1.pathname === "/about" || location1.pathname === "/contact") ? (
         <>          
           <NotFound />
         </>

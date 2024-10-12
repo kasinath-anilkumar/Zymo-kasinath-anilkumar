@@ -122,7 +122,7 @@ const Navbar = () => {
                     className="block rounded-lg py-2 px-4 text-xl font-normal"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    <Link to={`self-drive-car-rentals/${location}${item.link}`}>{item.name}</Link>
+                    <Link to={`${item.link}`}>{item.name}</Link>
                   </div>
                 )
               )}
