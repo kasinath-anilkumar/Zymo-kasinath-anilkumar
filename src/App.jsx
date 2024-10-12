@@ -1,5 +1,5 @@
-import React, { Suspense } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import React, { Suspense,useEffect } from "react";
+import { Routes, Route, useLocation,useNavigate } from "react-router-dom";
 import CustomNavbar from "./components/CustomNavbar/CustomNavbar";
 import CarRentalSearch from "./components/CarRentalSearch/CarRentalSearch";
 import Zymo from "./components/Zymo/Zymo";
@@ -28,13 +28,22 @@ import SelectLocation from "./components/SelectLocation/Select";
 
 const App = () => {
   const { location, setLocation } = useLocationContext();
+  const navigate = useNavigate();
   const location1 = useLocation();
+
+  useEffect(() => {
+    const location = localStorage.getItem('location');
+    if (location) {
+      const newUrl = `/self-drive-car-rentals/${location}`;
+      navigate(newUrl);
+    }
+  }, []);
 
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Banner />} />
+        {/* <Route path="/" element={} /> */}
 
         {/* Predefined Routes */}
         <Route path="self-drive-car-rentals/delhi" element={<Delhi />} />
@@ -77,6 +86,7 @@ const App = () => {
 
       {location1.pathname === `/self-drive-car-rentals/${location}` && (
         <>
+          {/* <Banner /> */}
           <CarRentalSearch />
           <Zymo />
           <Benefits />
