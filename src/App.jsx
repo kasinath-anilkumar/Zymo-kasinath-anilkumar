@@ -13,7 +13,7 @@ import Faq from "./components/FAQ/Faq";
 import Footer from "./components/Footer/Footer";
 import { ZymoFeaturedCityList, ZymoAllCityList } from "./assets/ZymoCityList";
 import Navbar from "./components/Navbar/Navbar";
-import Banner from "./components/Banner/Banner"
+import Banner from "./components/Banner/Banner";
 
 import Delhi from "./pages/Delhi/Delhi";
 import Chennai from "./pages/Chennai/Chennai";
@@ -39,12 +39,19 @@ const App = () => {
         {/* Predefined Routes */}
         <Route path="self-drive-car-rentals/delhi" element={<Delhi />} />
         <Route path="self-drive-car-rentals/chennai" element={<Chennai />} />
-        <Route path="self-drive-car-rentals/hyderabad" element={<Hyderabad />} />
+        <Route
+          path="self-drive-car-rentals/hyderabad"
+          element={<Hyderabad />}
+        />
         <Route path="self-drive-car-rentals/mumbai" element={<Mumbai />} />
         <Route path="self-drive-car-rentals/pune" element={<Pune />} />
         <Route path="self-drive-car-rentals/kolkata" element={<Kolkata />} />
         <Route path="/career" element={<Career />} />
-        
+        <Route path="/fleet" element={<NotFound />} />
+        <Route path="/about" element={<NotFound />} />
+        <Route path="/blogs" element={<NotFound />} />
+        <Route path="/contact" element={<NotFound />} />
+
         {/* Dynamic Routes */}
         {ZymoAllCityList.map((city, index) => {
           const CityComponent = React.lazy(() =>
@@ -55,7 +62,9 @@ const App = () => {
           return (
             <Route
               key={index}
-              path={`self-drive-car-rentals/${city.name.toLowerCase().replace(/\s+/g, "-")}`}
+              path={`self-drive-car-rentals/${city.name
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
               element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <CityComponent />
@@ -66,14 +75,10 @@ const App = () => {
         })}
       </Routes>
 
-      {(location1.pathname === "/blogs" || location1.pathname === "/fleet" || location1.pathname === "/about" || location1.pathname === "/contact") ? (
-        <>          
-          <NotFound />
-        </>
-      ): (
+      {location1.pathname === `/self-drive-car-rentals/${location}` && (
         <>
           <CarRentalSearch />
-          <Zymo />     
+          <Zymo />
           <Benefits />
           <Cars />
           <Refer />
@@ -81,9 +86,9 @@ const App = () => {
           <Reviews />
           <Youtube />
           <Faq />
-          </>
+        </>
       )}
-      
+
       <Footer />
 
       {/* Overlay for SelectLocation */}
