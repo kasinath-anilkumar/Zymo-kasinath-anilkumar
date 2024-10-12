@@ -19,10 +19,7 @@ const Select = () => {
 
       {/* Centered Modal */}
       <div className="fixed inset-0 flex items-center justify-center z-50">
-        <div className="p-6 bg-white rounded-lg shadow-lg max-w-lg w-full">
-          <h2 className="text-2xl font-semibold mb-6 text-center">
-            Please select your location
-          </h2>
+        <div className=" py-1 sm:p-6 bg-white rounded-lg shadow-lg max-w-lg w-full">
           <PopularCities onCitySelect={handleLocationSelect} />
         </div>
       </div>
