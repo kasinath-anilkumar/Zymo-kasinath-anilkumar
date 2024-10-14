@@ -6,7 +6,6 @@ import p2 from '../../assets/p2.png'
 import p3 from '../../assets/p3.png'
 import Example from "../../components/Example/Example"
 
-
 const Ahmedabad = () => {
   const [index, setIndex] = useState(0);
 
@@ -24,8 +23,50 @@ const Ahmedabad = () => {
   };
 
   return (
-    <div className='m-10'>
-      <Example />
+    <div className='md:m-10 mx-3 my-2 font-poppins'>
+      {/* <Example /> */}
+      <Carousel activeIndex={index} onSelect={handleSelect} controls={false} indicators={false}>
+        <Carousel.Item>
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block w-100 rounded p-1"
+              src={banner1}
+              alt="First slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
+        </Carousel.Item>
+        <Carousel.Item>
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block w-100 rounded p-1"
+              src={p1}
+              alt="slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
+        </Carousel.Item>
+        <Carousel.Item>
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block w-100 rounded p-1"
+              src={p2}
+              alt="Second slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
+        </Carousel.Item>
+        <Carousel.Item>
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block w-100 rounded p-1"
+              src={p3}
+              alt="Third slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
+        </Carousel.Item>
+      </Carousel>
     </div>
   );
 };

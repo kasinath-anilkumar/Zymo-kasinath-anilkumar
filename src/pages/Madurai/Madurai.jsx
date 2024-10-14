@@ -24,7 +24,8 @@ const Madurai = () => {
   };
 
   return (
-    <div className='m-10'>
+    <div className='md:m-10 mx-3 my-2 font-poppins'>
+      {/* <Example /> */}
       <Carousel activeIndex={index} onSelect={handleSelect} controls={false} indicators={false}>
         <Carousel.Item>
           <a href="http://get.zymo.app/car">
