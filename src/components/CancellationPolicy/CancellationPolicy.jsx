@@ -1,4 +1,3 @@
-import "./cancellationPolicyPage.scss";
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 
@@ -8,13 +7,13 @@ export function CancellationPolicy() {
   }, []);
 
   return (
-    <div>
+    <div className="m-10">
       <Helmet>
         <link rel="canonical" href="https://zymo.app/cancellation-policy" />
       </Helmet>
 
       <div className="cancellation-policy-container">
-        <h1>Cancellation Policy</h1>
+        <h1 className="mb-10 text-center">Cancellation Policy</h1>
         <hr />
         
         <p>
