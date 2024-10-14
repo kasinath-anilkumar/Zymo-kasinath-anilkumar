@@ -29,9 +29,8 @@ import Mumbai from "./pages/Mumbai/Mumbai";
 import Kolkata from "./pages/Kolkata/Kolkata";
 import NotFound from "../src/NotFound";
 import Career from "./components/Career/Career";
-import { useLocationContext } from "./Context/Location";
+import { useLocationContext } from "./Context/location";
 import SelectLocation from "./components/SelectLocation/Select";
-
 
 const App = () => {
   const { location, setLocation } = useLocationContext();
