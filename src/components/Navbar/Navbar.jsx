@@ -14,7 +14,6 @@ const navigation = [
   { name: "Blogs", id: "Blogs", link: "/blogs" },
   { name: "Careers", id: "Careers", link: "/career" },
   { name: "Contact Us", id: "Contact", link: "/contact" },
-  { name: "Cars", id: "Cars", link: "/cars" },
 ];
 
 const carOptions = [
@@ -59,8 +58,8 @@ const Navbar = () => {
               className="relative cursor-pointer group text-base md:text-lg"
             >
               <div className="relative">
-                {item.name === "Cars" ? (
-                  <Dropdown first={item.name} options={carOptions} />
+                {item.name === "Fleet" ? (
+                  <a href="#cars" className="p-3 text-xl">Fleet</a>
                 ) : (
                   <Link to={`${item.link}`} className="p-3">
                     {item.name}

@@ -25,6 +25,8 @@ import NotFound from "../src/NotFound";
 import Career from "./components/Career/Career";
 import { useLocationContext } from "./Context/Location";
 import SelectLocation from "./components/SelectLocation/Select";
+import About from "./components/About/About";
+import ContactPage from "./components/Contact/ContactPage";
 
 const App = () => {
   const { location, setLocation } = useLocationContext();
@@ -57,9 +59,9 @@ const App = () => {
         <Route path="self-drive-car-rentals/kolkata" element={<Kolkata />} />
         <Route path="/career" element={<Career />} />
         <Route path="/fleet" element={<NotFound />} />
-        <Route path="/about" element={<NotFound />} />
+        <Route path="/about" element={<About />} />
         <Route path="/blogs" element={<NotFound />} />
-        <Route path="/contact" element={<NotFound />} />
+        <Route path="/contact" element={<ContactPage />} />
 
         {/* Dynamic Routes */}
         {ZymoAllCityList.map((city, index) => {
