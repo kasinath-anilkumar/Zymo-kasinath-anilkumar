@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -25,7 +25,11 @@ const carOptions = [
 ];
 
 const Navbar = () => {
-  const { location,setLocation } = useLocationContext();
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
+  const { location, setLocation } = useLocationContext();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -60,7 +64,8 @@ const Navbar = () => {
             >
               <div className="relative">
                 {item.name === "Cars" ? (
-                  <Dropdown first={item.name} options={carOptions} />
+                  // <Dropdown first={item.name} options={carOptions} />
+                  <></>
                 ) : (
                   <Link to={`${item.link}`} className="p-3">
                     {item.name}
@@ -73,14 +78,16 @@ const Navbar = () => {
         </div>
 
         {/* Location Display */}
-        <div className="ml-6 cursor-pointer hidden lg:block border-blue-500 rounded-full bg-yellow-400 py-2 text-lg px-2 md:px-5"
-        onClick={() => setLocation("Default")}>
+        <div
+          className="ml-6 cursor-pointer hidden lg:block border-blue-500 rounded-full bg-violet-400 py-2 text-lg px-2 md:px-5"
+          onClick={() => setLocation("Default")}
+        >
           <img
             src={l_icon}
             alt="Location Icon"
             className="h-6 w-6 inline-block"
           />
-          {location}
+          {capitalizeFirstLetter(location)}
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -116,11 +123,12 @@ const Navbar = () => {
             <div className="space-y-6">
               {navigation.map((item) =>
                 item.name === "Cars" ? (
-                  <Dropdown
-                    key={item.name}
-                    first={item.name}
-                    options={carOptions}
-                  />
+                  <></>
+                  // <Dropdown
+                  //   key={item.name}
+                  //   first={item.name}
+                  //   options={carOptions}
+                  // />
                 ) : (
                   <div
                     key={item.name}
@@ -134,16 +142,19 @@ const Navbar = () => {
             </div>
 
             {/* Location in Mobile Menu */}
-            <div className="rounded-full mt-3 text-xl font-normal cursor-pointer bg-yellow-400 py-3 px-3" onClick={() => {
-              setLocation("Default");
-              setMobileMenuOpen(false);
-            }}>
+            <div
+              className="rounded-full mt-3 text-xl font-normal cursor-pointer bg-violet-400 py-3 px-3"
+              onClick={() => {
+                setLocation("Default");
+                setMobileMenuOpen(false);
+              }}
+            >
               <img
                 src={l_icon}
                 alt="Location Icon"
                 className="h-6 w-6 inline-block"
               />
-              {location}
+              {capitalizeFirstLetter(location)}
             </div>
           </div>
         </DialogPanel>
