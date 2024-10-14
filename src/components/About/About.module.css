@@ -1,0 +1,17 @@
+.aboutContainer {
+    width: 70%;
+    margin: auto;
+    padding: 3rem 0;
+    margin-bottom: 4rem;
+}
+
+.aboutContainer p,
+.aboutContainer h1 {
+    margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .aboutContainer {
+        width: 80%
+    }
+}

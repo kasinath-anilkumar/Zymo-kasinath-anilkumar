@@ -8,7 +8,7 @@ const About = () => {
       <ul>
         <li><Link to="/deals" className="hover:text-gray-300">Deals</Link></li>
         <li><Link to="/fleet" className="hover:text-gray-300">Fleet</Link></li>
-        <li><Link to="/about-us" className="hover:text-gray-300">About Us</Link></li>
+        <li><Link to="/about" className="hover:text-gray-300">About Us</Link></li>
         <li><Link to="/contact" className="hover:text-gray-300">Contact Us</Link></li>
         <li><Link to="/career" className="hover:text-gray-300">Career</Link></li>
       </ul>

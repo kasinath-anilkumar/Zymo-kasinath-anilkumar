@@ -15,11 +15,11 @@ import { ZymoFeaturedCityList, ZymoAllCityList } from "./assets/ZymoCityList";
 import Navbar from "./components/Navbar/Navbar";
 import Banner from "./components/Banner/Banner";
 import AboutUs from "./components/AboutUs/AboutUs";
-import BlogSection from "./components/Blog/BlogSection";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Privacy from "./components/PrivacyPolicy/Privacy";
-
-
+import Terms from "./components/TermsAndConditions/Terms"
+import CancellationPolicy from "./components/CancellationPolicy/CancellationPolicy"
+// import BlogsMainPage from "./components/blog/BlogsMainPage"
 
 import Delhi from "./pages/Delhi/Delhi";
 import Chennai from "./pages/Chennai/Chennai";
@@ -31,6 +31,7 @@ import NotFound from "../src/NotFound";
 import Career from "./components/Career/Career";
 import { useLocationContext } from "./Context/Location";
 import SelectLocation from "./components/SelectLocation/Select";
+
 
 const App = () => {
   const { location, setLocation } = useLocationContext();
@@ -64,12 +65,12 @@ const App = () => {
         <Route path="/career" element={<Career />} />
         <Route path="/fleet" element={<NotFound />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/blogs" element={<BlogSection />} />
+        <Route path="/blogs" element={<NotFound />} />
         <Route path="/contact" element={<ContactUs />} />
         {/* <Route path="/blogs" element={<NotFound />} /> */}
         <Route path="/privacy-policy" element={<Privacy />} />
-        <Route path="/terms-of-service" element={<NotFound />} />
-        <Route path="/cancellation-policy" element={<NotFound />} />
+        <Route path="/terms-of-service" element={<Terms />} />
+        <Route path="/cancellation-policy" element={<CancellationPolicy />} />
 
         {/* Dynamic Routes */}
         {ZymoAllCityList.map((city, index) => {

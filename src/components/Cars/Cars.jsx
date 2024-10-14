@@ -13,17 +13,37 @@ import c6 from "/c6.png";
 import c7 from "/c7.png";
 import c8 from "/c8.png";
 import c9 from "/c9.png";
+import c10 from "../../assets/cars/Brezza.png";
+import c11 from "../../assets/cars/Fortuner.png";
+import c12 from "../../assets/cars/Innova Crysta.png";
+import c13 from "../../assets/cars/Innova.png";
+import c14 from "../../assets/cars/Kia Sonet.png";
+import c15 from "../../assets/cars/MG-Hector.jpg";
+import c16 from "../../assets/cars/Nissan Magnite.png";
+import c17 from "../../assets/cars/TATA Nexon.png";
+import c18 from "../../assets/cars/xuv 300.png";
+import c19 from "../../assets/cars/Mahindra-Thar-Image-2-.jpg";
 
 const Car = [
-  { id: 1, name: "car1", image: c1, rate: "67" },
-  { id: 2, name: "car2", image: c2, rate: "67" },
-  { id: 3, name: "car3", image: c3, rate: "67" },
-  { id: 4, name: "car4", image: c4, rate: "67" },
-  { id: 5, name: "car5", image: c5, rate: "67" },
-  { id: 6, name: "car6", image: c6, rate: "67" },
-  { id: 7, name: "car7", image: c7, rate: "67" },
-  { id: 8, name: "car8", image: c8, rate: "67" },
-  { id: 9, name: "car9", image: c9, rate: "67" },
+  { id: 1, name: "Baleno", image: c1, rate: "120" },
+  { id: 2, name: "BMW", image: c2, rate: "450" },
+  { id: 3, name: "XUV 500", image: c3, rate: "299" },
+  { id: 4, name: "Brezza", image: c4, rate: "125" },
+  { id: 5, name: "Maruti Alto", image: c5, rate: "49" },
+  { id: 6, name: "Swift Dzire", image: c6, rate: "110" },
+  { id: 7, name: "Maruti Ertiga", image: c7, rate: "115" },
+  { id: 8, name: "Honda City", image: c8, rate: "130" },
+  { id: 9, name: "Renault Triber", image: c9, rate: "110" },
+  { id: 10, name: "Brezza", image: c10, rate: "125" },
+  { id: 11, name: "Fortuner", image: c11, rate: "349" },
+  { id: 12, name: "Innova Crysta", image: c12, rate: "320" },
+  { id: 13, name: "Innova", image: c13, rate: "280" },
+  { id: 14, name: "Kia Sonet", image: c14, rate: "139" },
+  { id: 15, name: "MG-Hector", image: c15, rate: "249" },
+  { id: 16, name: "Nissan Magnite", image: c16, rate: "144" },
+  { id: 17, name: "TATA Nexon", image: c17, rate: "110" },
+  { id: 18, name: "XUV 300", image: c18, rate: "89" },
+  { id: 19, name: "Mahindra Thar", image: c19, rate: "299" },
 ];
 
 const Cars = () => {
@@ -48,7 +68,7 @@ const Cars = () => {
   };
 
   return (
-    <div className="relative py-20 px-6 container-md">
+    <div id="cars" className="relative py-20 px-6 container-md">
       <h1 className="text-center text-4xl font-bold mb-8">
         Choose From Our Wide Range Of Cars
       </h1>
