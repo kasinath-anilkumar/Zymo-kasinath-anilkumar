@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useLocationContext } from "../../Context/location";
+
 import {
   ZymoFeaturedCityList,
   ZymoAllCityList,
 } from "../../assets/ZymoCityList";
 
 const PopularCities = ({ onCitySelect }) => {
+  const { setLocation } = useLocationContext();
   const [UserLocation, setUserLocation] = useState({
     latitude: null,
     longitude: null,
@@ -54,9 +57,9 @@ const PopularCities = ({ onCitySelect }) => {
         "https://res.cloudinary.com/stanza-living/image/upload/f_auto,q_auto/v1582114422/NewWebsite/cities/noida.png",
     },
     {
-      name: "Kochi",
+      name: "Bangalore",
       image:
-        "https://cdn4.iconfinder.com/data/icons/indian-cities-landmarks/100/kochi-512.png",
+        "https://cdn2.iconfinder.com/data/icons/indian-cities/64/Bangalore-512.png",
     },
     {
       name: "Amritsar",
@@ -191,7 +194,7 @@ const PopularCities = ({ onCitySelect }) => {
           {ZymoFeaturedCityList.map((city) => (
             <div
               key={city.name}
-              className="p-3 min-w-max border border-gray-300 rounded-lg cursor-pointer text-center transition-transform transform hover:scale-105 hover:bg-gray-100"
+              className="p-2 min-w-max border border-gray-300 rounded-lg cursor-pointer text-center transition-transform transform hover:scale-105 hover:bg-gray-100"
               onClick={() => onCitySelect(city.name.toLowerCase())}
             >
               <p className="text-sm font-medium">{city.name}</p>
