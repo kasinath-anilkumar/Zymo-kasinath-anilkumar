@@ -60,6 +60,10 @@ const App = () => {
         <Route path="/about" element={<NotFound />} />
         <Route path="/blogs" element={<NotFound />} />
         <Route path="/contact" element={<NotFound />} />
+        <Route path="/blogs" element={<NotFound />} />
+        <Route path="/privacy-policy" element={<NotFound />} />
+        <Route path="/terms-of-service" element={<NotFound />} />
+        <Route path="/cancellation-policy" element={<NotFound />} />
 
         {/* Dynamic Routes */}
         {ZymoAllCityList.map((city, index) => {
