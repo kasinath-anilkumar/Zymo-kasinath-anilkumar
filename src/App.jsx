@@ -14,6 +14,12 @@ import Footer from "./components/Footer/Footer";
 import { ZymoFeaturedCityList, ZymoAllCityList } from "./assets/ZymoCityList";
 import Navbar from "./components/Navbar/Navbar";
 import Banner from "./components/Banner/Banner";
+import AboutUs from "./components/AboutUs/AboutUs";
+import BlogSection from "./components/Blog/BlogSection";
+import ContactUs from "./components/ContactUs/ContactUs";
+import Privacy from "./components/PrivacyPolicy/Privacy";
+
+
 
 import Delhi from "./pages/Delhi/Delhi";
 import Chennai from "./pages/Chennai/Chennai";
@@ -57,9 +63,13 @@ const App = () => {
         <Route path="self-drive-car-rentals/kolkata" element={<Kolkata />} />
         <Route path="/career" element={<Career />} />
         <Route path="/fleet" element={<NotFound />} />
-        <Route path="/about" element={<NotFound />} />
-        <Route path="/blogs" element={<NotFound />} />
-        <Route path="/contact" element={<NotFound />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/blogs" element={<BlogSection />} />
+        <Route path="/contact" element={<ContactUs />} />
+        {/* <Route path="/blogs" element={<NotFound />} /> */}
+        <Route path="/privacy-policy" element={<Privacy />} />
+        <Route path="/terms-of-service" element={<NotFound />} />
+        <Route path="/cancellation-policy" element={<NotFound />} />
 
         {/* Dynamic Routes */}
         {ZymoAllCityList.map((city, index) => {
