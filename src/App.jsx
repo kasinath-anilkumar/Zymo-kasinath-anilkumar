@@ -20,6 +20,7 @@ import Privacy from "./components/PrivacyPolicy/Privacy";
 import Terms from "./components/TermsAndConditions/Terms"
 import CancellationPolicy from "./components/CancellationPolicy/CancellationPolicy"
 // import BlogsMainPage from "./components/blog/BlogsMainPage"
+import { Toaster } from "react-hot-toast";
 
 import Delhi from "./pages/Delhi/Delhi";
 import Chennai from "./pages/Chennai/Chennai";
@@ -118,6 +119,7 @@ const App = () => {
           <SelectLocation />
         </div>
       )}
+      <Toaster position="top-center" reverseOrder={false} />
     </>
   );
 };
