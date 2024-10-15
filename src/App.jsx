@@ -94,6 +94,29 @@ const App = () => {
             />
           );
         })}
+
+        {/* Zymo Featured city list */}
+
+        {ZymoFeaturedCityList.map((city, index) => {
+          const CityComponent = React.lazy(() =>
+            import(`./pages/${city.name}/${city.name}.jsx`).catch(() =>
+              Promise.resolve(NotFound)
+            )
+          );
+          return (
+            <Route
+              key={index}
+              path={`self-drive-car-rentals/${city.name
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <CityComponent />
+                </Suspense>
+              }
+            />
+          );
+        })}
       </Routes>
 
       {location1.pathname === `/self-drive-car-rentals/${location}` && (
