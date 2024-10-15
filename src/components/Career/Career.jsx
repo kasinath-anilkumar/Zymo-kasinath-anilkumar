@@ -1,374 +1,454 @@
-import "./careerPage.scss";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Select from "react-select";
-import { useSnackbar } from "notistack";
-import { useNavigate } from "react-router-dom";
-import { TextField, Button } from "@mui/material";
-import { styled } from '@mui/material/styles';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import VisuallyHiddenInput from '../../MaterialUi/VisuallyHiddenInput';
+import { storage, db } from "../../firebase-config";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { addDoc, collection } from "firebase/firestore";
+import { toast } from "react-hot-toast";
 
-// import { db } from "../../../src/firebase-config"; 
-// import { addDoc, collection } from "firebase/firestore"; 
+const saveSettings = (settings) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      Math.random() > 0.5 ? resolve() : reject();
+    }, 2000);
+  });
+};
 
-export function Career() {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+const Career = () => {
+  const [formData, setFormData] = useState({
+    FullName: "",
+    Role: "Internship",
+    resume: "",
+    City: "",
+    Email: "",
+    PhoneNo: "",
+    Aspirations: "",
+    SelectedSkill: "",
+    StipendMode: "",
+    StipendExpectation: "0",
+    SalaryExpectation: "",
+    Experience: "",
+    WhyWeNeedYou: "",
+  });
 
-    const options = [
-        { value: "Coding", label: "Coding" },
-        { value: "Marketing", label: "Marketing" },
-        { value: "Design", label: "Design" },
-        { value: "Operations", label: "Operations" },
-        { value: "Finance", label: "Finance" },
-        { value: "HR", label: "HR" },
-        { value: "Others", label: "Others" },
-    ];
+  const [click, setClick] = useState("Internship");
+  const [stipend, setStipend] = useState("unpaid");
+  const [amount, setAmount] = useState("0");
+  const [file, setFile] = useState(null);
+  const [fileName, setFileName] = useState(null);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [loading, setLoading] = useState(false);
 
-    const stipendOptions = [
-        { value: "unpaid", label: "Unpaid" },
-        { value: "expectedStipend", label: "Expected Stipend" },
-    ];
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-    const [values, setValues] = useState({});
-    const [selectedSkill, setSelectedSkill] = useState(null);
-    const [flauntSkills, setFlauntSkills] = useState("");
-    const [tabSelected, setTabSelected] = useState("internship");
-    const [otherSkill, setOtherSkill] = useState("");
-    const [customStipend, setCustomStipend] = useState("");
-    const [salaryExpectation, setSalaryExpectation] = useState("");
-    const [selectedExperience, setSelectedExperience] = useState(null);
-    const [selectedStipendType, setSelectedStipendType] = useState(null);
-    const [selectedStipendExpectation, setSelectedStipendExpectation] = useState("");
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+    setFileName(e.target.files[0].name);
+  };
 
-    const navigate = useNavigate();
-    const { enqueueSnackbar } = useSnackbar();
-    // const joinUsFormRef = collection(db, "joinusformdata");  // Firebase collection reference
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-    const handleInputsChange = (e) => {
-        setValues({ ...values, [e.target.name]: e.target.value });
-        console.log(e.target.value)
-    };
-
-    const handleSelectChange = (e) => {
-        setSelectedSkill(e.value);
-        console.log(e.value)
-    };
-
-    const handleFlauntSkill = (e) => {
-        setFlauntSkills(e.target.value);
-        console.log(e.target.value)
-    };
-
-    const handleStipendTypeChange = (e) => {
-        setSelectedStipendType(e.value);
-        if (e.value === "unpaid") {
-            setSelectedStipendExpectation("Unpaid");
-            console.log('unpaid')
-        } else {
-            setSelectedStipendExpectation("");
-        }
-    };
-
-    const handleStipendSelectChange = (e) => {
-        setSelectedStipendExpectation(e.value);
-        console.log(e.value)
-    };
-
-    const handleSalarySelectChange = (e) => {
-        setSalaryExpectation(e.value);
-        console.log(e.target.value)
-    };
-
-    const userSelectedExperience = (e) => {
-        setSelectedExperience(e)
+    if (!file) {
+      toast.error("Please select a file to upload");
+      setLoading(false);
+      return;
     }
 
-    const handleCareerFormSubmit = (e) => {
-        e.preventDefault();
-        let formData = {
-            ...values,
-            selectedSkill,
-            flauntSkills,
-        };
+    const storageRef = ref(storage, `resumes/${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
 
-        if (selectedSkill === "Others") {
-            formData = { ...formData, selectedSkill: otherSkill };
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setUploadProgress(progress);
+      },
+      (error) => {
+        toast.error(
+          "An error occurred while uploading the file. Please try again."
+        );
+        console.error("Error uploading file:", error);
+        setLoading(false); // Stop loading if an error occurs
+      },
+      async () => {
+        const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          resume: downloadURL,
+        }));
+        const finalFormData = { ...formData, resume: downloadURL };
+
+        try {
+          const jobApplicantsCollectionRef = collection(db, "joinusformdata");
+          await addDoc(jobApplicantsCollectionRef, finalFormData);
+          console.log(
+            "Application submitted successfully! Data: ",
+            finalFormData
+          );
+          setFormData({
+            FullName: "",
+            Role: "Internship",
+            resume: "",
+            City: "",
+            Email: "",
+            PhoneNo: "",
+            Aspirations: "",
+            SelectedSkill: "",
+            StipendMode: "",
+            StipendExpectation: "0",
+            SalaryExpectation: "",
+            Experience: "",
+            WhyWeNeedYou: "",
+          });
+          setFile(null);
+          setFileName(null);
+          setUploadProgress(0);
+          toast.promise(
+            saveSettings({
+              theme: "dark",
+              notificationsEnabled: true,
+              language: "en",
+            }),
+            {
+              loading: "Uploading your application....",
+              success: <b>Application submitted successfully!</b>,
+              error: <b>Duplicate Application submission!</b>,
+            },
+            {
+              style: {
+                backgroundColor: "#8b5cf6", // Violet background color
+                color: "white", // Text color
+              },
+              iconTheme: {
+                primary: "white", // Icon primary color
+                secondary: "#8b5cf6", // Icon secondary color (violet)
+              },
+            }
+          );
+        } catch (error) {
+          toast.error(
+            "An error occurred while submitting the application. Please try again."
+          );
+          console.error("Error submitting application: ", error);
+        } finally {
+          setLoading(false);
         }
-
-        if (tabSelected === "internship") {
-            if (selectedStipendType === "expectedStipend") {
-                if (selectedStipendExpectation === "customStipend") {
-                    formData = { ...formData, selectedStipendExpectation: customStipend };
-                } else {
-                    formData = { ...formData, selectedStipendExpectation };
-                }
-            } else {
-                formData = { ...formData, selectedStipendExpectation: "Unpaid" };
-            }
-        } else {
-            formData = { ...formData, salaryExpectation, selectedExperience };
-        }
-
-        uploadData(formData);
-    };
-
-    const handleTabSwitch = (tab) => {
-        setSelectedSkill(null);
-        setSelectedStipendExpectation("");
-        setSelectedStipendType(null);
-        setOtherSkill("");
-        setCustomStipend("");
-        setSalaryExpectation("");
-        setSelectedExperience(null);
-        setTabSelected(tab);
-    };
-
-    async function uploadData(formData) {
-        if (tabSelected === "internship") {
-            const { name, mobile, email, city, aspirations, selectedSkill, flauntSkills, selectedStipendExpectation } = formData;
-
-            if (!name || !mobile || !email || !city || !aspirations || !selectedSkill || !flauntSkills || !selectedStipendExpectation) {
-                enqueueSnackbar("Please provide all the fields", { variant: "error" });
-                return;
-            }
-
-            try {
-                // Uncomment to enable Firebase functionality
-                // await addDoc(joinUsFormRef, {
-                //   Role: "Internship",
-                //   FullName: formData.name,
-                //   PhoneNo: formData.mobile,
-                //   Email: formData.email,
-                //   City: formData.city,
-                //   Aspirations: formData.aspirations,
-                //   SelectedSkill: formData.selectedSkill,
-                //   WhyWeNeedYou: formData.flauntSkills,
-                //   StipendExpectation: formData.selectedStipendExpectation,
-                // });
-
-                enqueueSnackbar("Form Submitted Successfully", { variant: "success" });
-                navigate("/");
-            } catch (err) {
-                console.log("Error in CareerPage is: " + err);
-            }
-        }
-
-        if (tabSelected === "fulltime") {
-            const { name, mobile, email, city, aspirations, selectedSkill, flauntSkills, selectedExperience, salaryExpectation } = formData;
-
-            if (!name || !mobile || !email || !city || !aspirations || !selectedSkill || !flauntSkills || !selectedExperience || !salaryExpectation) {
-                enqueueSnackbar("Please provide all the fields", { variant: "error" });
-                return;
-            }
-
-            try {
-                // Uncomment to enable Firebase functionality
-                // await addDoc(joinUsFormRef, {
-                //   Role: "Full Time",
-                //   FullName: formData.name,
-                //   PhoneNo: formData.mobile,
-                //   Email: formData.email,
-                //   City: formData.city,
-                //   Aspirations: formData.aspirations,
-                //   SelectedSkill: formData.selectedSkill,
-                //   WhyWeNeedYou: formData.flauntSkills,
-                //   Experience: formData.selectedExperience,
-                //   SalaryExpectation: formData.salaryExpectation,
-                // });
-
-                enqueueSnackbar("Form Submitted Successfully", { variant: "success" });
-                navigate("/");
-            } catch (err) {
-                console.log(err);
-            }
-        }
-    }
-
-    return (
-        <div className="career-form-container shadow rounded-3xl">
-            <h1 className="text-4xl font-bold">
-                <span>“</span>Join Us<span>”</span>
-            </h1>
-
-            <form className="career-page-form" onSubmit={handleCareerFormSubmit}>
-                <div className="choose-adventure-container">
-                    <h2 className="adventure-heading text-2xl font-semibold">Choose your adventure.</h2>
-                    <div>
-                        <div
-                            className={tabSelected === "internship" ? "selected-button tab-button" : "tab-button"}
-                            onClick={() => handleTabSwitch("internship")}
-                        >
-                            Internship
-                        </div>
-                        <div
-                            className={tabSelected === "fulltime" ? "selected-button tab-button" : "tab-button"}
-                            onClick={() => handleTabSwitch("fulltime")}
-                        >
-                            Full time
-                        </div>
-                    </div>
-                </div>
-
-                <div className="personal-info-container">
-                    <h2 className="text-2xl font-semibold">Fill in your details like a true rockstar</h2>
-                    <TextField variant="standard" name="name" onChange={handleInputsChange} value={values.name} label="Full Name" className="text-field" />
-                    <TextField variant="standard" name="mobile" onChange={handleInputsChange} value={values.mobile} label="Phone No" className="text-field" />
-                    <TextField variant="standard" name="email" onChange={handleInputsChange} value={values.email} label="Email" className="text-field" />
-                    <TextField variant="standard" name="city" onChange={handleInputsChange} value={values.city} label="City" className="text-field" />
-                    <TextField variant="standard" name="aspirations" onChange={handleInputsChange} value={values.aspirations} label="Aspirations" className="text-field" />
-                </div>
-
-                <div className="choose-skills-container">
-                    <h2 className="text-xl font-semibold">Pick your superpower from the dropdown</h2>
-                    <div className="skills-options">
-                        <Select
-                            value={selectedSkill}
-                            onChange={handleSelectChange}
-                            options={options}
-                            placeholder={selectedSkill || "Select Skill"}
-                            isSearchable
-                        />
-                    </div>
-                    {selectedSkill === "Others" && (
-                        <TextField
-                            variant="standard"
-                            onChange={handleInputsChange}
-                            value={otherSkill}
-                            label="Other Skill"
-                            className="text-field"
-                        />
-                    )}
-                    {/* <TextField
-            variant="standard"
-            onChange={handleFlauntSkill}
-            value={flauntSkills}
-            label="Why We Need You?"
-            className="text-field"
-          /> */}
-                    <div className="text-center">
-                        <h4 className="m-5 font-semibold text-xl">Flaunt your skills in the "Tell us why we need you" box—impress us with your flair!</h4>
-                        <textarea
-                            style={{
-                                height: "10rem",
-                                width: "100%",
-                                fontSize: "1rem",
-                                border: 'solid 1px'
-                            }}
-                            onChange={handleFlauntSkill}
-                        ></textarea>
-                    </div>
-                </div>
-
-
-                {tabSelected === "internship" && (
-                    <div className="stipend-container">
-                        <h2 className="text-xl font-semibold m-3">What kind of stipend do you expect?</h2>
-                        <Select
-                            value={selectedStipendType}
-                            onChange={handleStipendTypeChange}
-                            options={stipendOptions}
-                            placeholder={selectedStipendType || "Select expected stipend Type"}
-                            isSearchable
-                        />
-                        {selectedStipendType === "expectedStipend" && (
-                            <>
-                                <Select
-                                    value={selectedStipendExpectation}
-                                    onChange={handleStipendSelectChange}
-                                    options={[
-                                        { value: "customStipend", label: "Custom Stipend" },
-                                        { value: "2000", label: "₹2000" },
-                                        { value: "5000", label: "₹5000" },
-                                        { value: "10000", label: "₹10000" },
-                                    ]}
-                                    placeholder={"Select Stipend Expectation" || selectedStipendExpectation}
-                                    isSearchable
-                                />
-                                {selectedStipendExpectation === "customStipend" && (
-                                    <TextField
-                                        variant="standard"
-                                        name="customStipend"
-                                        onChange={(e) => setCustomStipend(e.target.value)}
-                                        value={customStipend}
-                                        // label="Enter Custom Stipend"
-                                        className="text-field"
-                                        placeholder={"enter stipend" || setCustomStipend}
-                                    />
-                                )}
-                            </>
-                        )}
-                    </div>
-                )}
-
-                {/* File Upload */}
-
-
-                <div className="fileUpload-container text-center shadow-md w-100 py-14 rounded-3xl" style={{border:'solid 1px', borderColor:'#9435b6'}}>
-                    <h6 className="mb-6 text-2xl font-semibold">Upload Resume</h6>
-                    <Button
-                        component="label"
-                        role={undefined}
-                        variant="contained"
-                        tabIndex={-1}
-                        startIcon={<CloudUploadIcon />}
-                        style={{
-                            backgroundColor:'#9435b6'
-                        }}
-                    >
-                        Upload files
-                        <VisuallyHiddenInput
-                            type="file"
-                            onChange={(event) => console.log(event.target.files)}
-                            multiple
-                        />
-                    </Button>
-                </div>
-
-
-                {/* Salary Expectation */}
-
-                {tabSelected === "fulltime" && (
-                    <div className="salary-container">
-                        <h2 className="text-xl font-semibold m-2">What is your salary expectation?</h2>
-                        {/* <Select
-              value={salaryExpectation}
-              onChange={handleSalarySelectChange}
-            //   options={[
-            //     { value: "30000", label: "₹30,000" },
-            //     { value: "40000", label: "₹40,000" },
-            //     { value: "50000", label: "₹50,000" },
-            //   ]}
-              placeholder="Select Salary Expectation"
-              isSearchable
-            /> */}
-                        <TextField variant="standard" name="name" onChange={handleSalarySelectChange} value={values.name} label="Enetr expected salary" className="text-field w-100 mb-3" />
-                        <h2 className="text-xl font-semibold my-3">What is your experience level?</h2>
-                        <Select
-                            value={selectedExperience}
-                            onChange={userSelectedExperience}
-                            options={[
-                                { value: "Fresher", label: "Fresher" },
-                                { value: "1 Year", label: "1 Year" },
-                                { value: "2 Years", label: "2 Years" },
-                                { value: "3+ Years", label: "3+ Years" },
-                            ]}
-                            placeholder="Select Experience Level"
-                            isSearchable
-                        />
-                    </div>
-                )}
-                <div className="submit-button-container text-center">
-                    <h1 className="mb-6 mx-10 text-3xl font-semibold" style={{ color: '#9c9b9b' }}>Hit that submit button like a boss and cross your fingers for a reply!</h1>
-                    <button className="submit-button text-lg" type="submit" style={{ backgroundColor: '#9435b6', width: '20rem', height: '3rem', borderRadius: '5rem', color: 'white' }}>
-                        Submit
-                    </button>
-                </div>
-            </form>
-        </div>
+      }
     );
-}
+  };
 
+  return (
+    <div className="flex flex-col items-center min-h-screen py-8 font-poppins">
+      <h1 className="text-3xl font-bold text-violet-700 mb-3">“Join Us”</h1>
+      <div className="">
+        <p className="text-2xl text-gray-600 mb-10 font-semibold text-center">
+          Choose your adventure.
+        </p>
+        <div className="flex mx-auto items-center space-x-5 sm:space-x-10 text-xl font-semibold">
+          <button
+            className={`${
+              click === "Internship" ? "bg-violet-500 text-white" : ""
+            } p-3 border rounded-xl transition-transform duration-200 hover:scale-110 hover:bg-violet-500 hover:text-white`}
+            onClick={() => {
+              setClick("Internship");
+              setFormData({ ...formData, Role: "Internship" });
+            }}
+          >
+            Internship
+          </button>
+          <button
+            className={`${
+              click === "Full time" ? "bg-violet-500 text-white" : ""
+            } p-3 border rounded-xl transition-transform duration-200 hover:scale-110 hover:bg-violet-500 hover:text-white`}
+            onClick={() => {
+              setClick("Full time");
+              setFormData({ ...formData, Role: "Full time" });
+            }}
+          >
+            Full-time
+          </button>
+        </div>
+      </div>
+      <form onSubmit={handleSubmit} className="w-full max-w-lg p-6  space-y-4">
+        <input
+          type="text"
+          name="FullName"
+          placeholder="Full Name"
+          value={formData.FullName}
+          onChange={handleChange}
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+        />
+        <input
+          type="email"
+          name="Email"
+          placeholder="Email"
+          value={formData.Email}
+          onChange={handleChange}
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+        />
+        <input
+          type="text"
+          name="City"
+          placeholder="City"
+          value={formData.City}
+          onChange={handleChange}
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+        />
+        <input
+          type="tel"
+          name="PhoneNo"
+          placeholder="Phone Number"
+          value={formData.PhoneNo}
+          onChange={handleChange}
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+        />
+        <input
+          type="text"
+          name="Aspirations"
+          placeholder="Aspirations"
+          value={formData.Aspirations}
+          onChange={handleChange}
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+        />
 
-export default Career
+        <div className="py-3">
+          <h1 className="text-center py-3 font-semibold text-base sm:text-xl">
+            Pick your superpower from the dropdown
+          </h1>
+          <Select
+            name="SelectedSkill"
+            options={[
+              { value: "Coding", label: "Coding" },
+              { value: "Marketing", label: "Marketing" },
+              { value: "Design", label: "Design" },
+              { value: "Operations", label: "Operations" },
+              { value: "Finance", label: "Finance" },
+              { value: "HR", label: "HR" },
+              { value: "Others", label: "Others" },
+            ]}
+            onChange={(e) => {
+              setFormData({ ...formData, SelectedSkill: e.value });
+            }}
+            className="w-full text-lg"
+            placeholder="Select Primary Skill"
+            styles={{
+              control: (provided) => ({
+                ...provided,
+                border: "1px solid #D1D5DB",
+                boxShadow: "none",
+                "&:hover": {
+                  border: "1px solid #4F46E5",
+                },
+              }),
+            }}
+          />
+        </div>
+
+        <div className="py-3">
+          <h1 className="text-center py-3 font-semibold text-base sm:text-xl">
+            Flaunt your skills in the "Tell us why we need you" box—impress us
+            with your flair!
+          </h1>
+          <textarea
+            name="WhyWeNeedYou"
+            placeholder="write here.."
+            value={formData.WhyWeNeedYou}
+            onChange={handleChange}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+          />
+        </div>
+
+        <div className="flex flex-col items-start px-5 py-5 mt-5 border rounded-xl bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer">
+          <label
+            htmlFor="file-upload"
+            className="flex items-center space-x-2 text-blue-600 hover:text-blue-800 cursor-pointer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 4v16h16V4H4zm16-2a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2h16zM6 9l3 3m0 0l3-3m-3 3v6"
+              />
+            </svg>
+            <span className="text-xl font-medium">Upload Resume</span>
+          </label>
+          <input
+            id="file-upload"
+            type="file"
+            onChange={handleFileChange}
+            className="hidden"
+          />
+          {fileName && (
+            <p className="mt-2 text-green-600 font-medium">
+              Selected File: {fileName}
+            </p>
+          )}
+        </div>
+
+        {click === "Internship" ? (
+          <div className="py-3 space-y-5">
+            <h1 className="text-center py-3 font-semibold text-base sm:text-xl">
+              What kind of stipend do you expect?
+            </h1>
+            <Select
+              name="ExpendedStipend"
+              options={[
+                { value: "Unpaid", label: "Unpaid" },
+                { value: "Expected Paid", label: "Expected Paid" },
+              ]}
+              onChange={(e) => {
+                setStipend(e.value);
+                setFormData({ ...formData, StipendMode: e.value });
+              }}
+              className="w-full text-lg"
+              placeholder="Expected Stipend"
+              styles={{
+                control: (provided) => ({
+                  ...provided,
+                  border: "1px solid #D1D5DB",
+                  boxShadow: "none",
+                  "&:hover": {
+                    border: "1px solid #4F46E5",
+                  },
+                }),
+              }}
+            />
+            {stipend === "Expected Paid" && (
+              <Select
+                name="StipendExpectation"
+                options={[
+                  { value: "Custom stipend", label: "Custom stipend" },
+                  { value: "10000 Rs", label: "10000 Rs" },
+                  { value: "5000 Rs", label: "5000 Rs" },
+                  { value: "2000 Rs", label: "2000 Rs" },
+                ]}
+                onChange={(e) => {
+                  setAmount(e.value);
+                  if (e.value !== "Custom stipend") {
+                    setFormData({ ...formData, StipendExpectation: e.value });
+                  } else {
+                    setFormData({ ...formData, StipendExpectation: "" });
+                  }
+                }}
+                className="w-full text-lg"
+                placeholder="Select Primary Skill"
+                styles={{
+                  control: (provided) => ({
+                    ...provided,
+                    border: "1px solid #D1D5DB",
+                    boxShadow: "none",
+                    "&:hover": {
+                      border: "1px solid #4F46E5",
+                    },
+                  }),
+                }}
+              />
+            )}
+            {amount === "Custom stipend" && (
+              <input
+                type="text"
+                name="StipendExpectation"
+                placeholder="Stipend Expectation"
+                value={formData.StipendExpectation}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+              />
+            )}
+          </div>
+        ) : (
+          <>
+            <div className="font-poppins mt-5">
+              <h1 className="text-center py-3 font-semibold text-base sm:text-xl">
+                What is your salary expectation?
+              </h1>
+              <input
+                type="text"
+                name="SalaryExpectation"
+                placeholder="Salary Expectation"
+                value={formData.SalaryExpectation}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+              />
+            </div>
+            <Select
+              name="Experience"
+              options={[
+                { value: "Fresher", label: "Fresher" },
+                { value: "1-2 years", label: "1-2 years" },
+                { value: "3-5 years", label: "3-5 years" },
+                { value: "5+ years", label: "5+ years" },
+              ]}
+              onChange={(e) => {
+                setFormData({ ...formData, Experience: e.value });
+              }}
+              className="w-full text-lg"
+              placeholder="Select Experience level"
+              styles={{
+                control: (provided) => ({
+                  ...provided,
+                  border: "1px solid #D1D5DB",
+                  boxShadow: "none",
+                  "&:hover": {
+                    border: "1px solid #4F46E5",
+                  },
+                }),
+              }}
+            />
+          </>
+        )}
+
+        <h1 className="py-5 text-lg  sm:text-2xl font-semibold text-center">
+          Hit that submit button like a boss and cross your fingers for a reply!
+        </h1>
+
+        <button
+          type="submit"
+          className="w-full p-3 bg-violet-400 text-white rounded-lg hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500"
+        >
+          {loading ? (
+            <svg
+              className="animate-spin h-5 w-5 text-white mx-auto"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V4"
+              ></path>
+            </svg>
+          ) : (
+            "Submit Application"
+          )}
+        </button>
+        {uploadProgress > 0 && (
+          <p className="text-sm text-gray-500 text-center">
+            Upload Progress: {uploadProgress.toFixed(2)}%
+          </p>
+        )}
+      </form>
+    </div>
+  );
+};
+
+export default Career;
