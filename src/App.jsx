@@ -22,7 +22,6 @@ import CancellationPolicy from "./components/CancellationPolicy/CancellationPoli
 // import BlogsMainPage from "./components/blog/BlogsMainPage"
 
 import { Toaster } from "react-hot-toast";
-=======
 // import BlogDetailPage from "./components/blog/blogDetailPage";
 
 import Delhi from "./pages/Delhi/Delhi";
