@@ -20,7 +20,10 @@ import Privacy from "./components/PrivacyPolicy/Privacy";
 import Terms from "./components/TermsAndConditions/Terms"
 import CancellationPolicy from "./components/CancellationPolicy/CancellationPolicy"
 // import BlogsMainPage from "./components/blog/BlogsMainPage"
+
 import { Toaster } from "react-hot-toast";
+=======
+// import BlogDetailPage from "./components/blog/blogDetailPage";
 
 import Delhi from "./pages/Delhi/Delhi";
 import Chennai from "./pages/Chennai/Chennai";
@@ -32,7 +35,7 @@ import NotFound from "../src/NotFound";
 import Career from "./components/Career/Career";
 import { useLocationContext } from "./Context/Location";
 import SelectLocation from "./components/SelectLocation/Select";
-
+import WhatsAppIcon from "./components/whatsappIcon/whatsapp";
 
 const App = () => {
   const { location, setLocation } = useLocationContext();
@@ -67,14 +70,37 @@ const App = () => {
         <Route path="/fleet" element={<NotFound />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/blogs" element={<NotFound />} />
+        {/* <Route path="/blog/:id" element={<BlogDetailPage />} /> */}
         <Route path="/contact" element={<ContactUs />} />
-        {/* <Route path="/blogs" element={<NotFound />} /> */}
         <Route path="/privacy-policy" element={<Privacy />} />
         <Route path="/terms-of-service" element={<Terms />} />
         <Route path="/cancellation-policy" element={<CancellationPolicy />} />
 
         {/* Dynamic Routes */}
         {ZymoAllCityList.map((city, index) => {
+          const CityComponent = React.lazy(() =>
+            import(`./pages/${city.name}/${city.name}.jsx`).catch(() =>
+              Promise.resolve(NotFound)
+            )
+          );
+          return (
+            <Route
+              key={index}
+              path={`self-drive-car-rentals/${city.name
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <CityComponent />
+                </Suspense>
+              }
+            />
+          );
+        })}
+
+        {/* Zymo Featured city list */}
+
+        {ZymoFeaturedCityList.map((city, index) => {
           const CityComponent = React.lazy(() =>
             import(`./pages/${city.name}/${city.name}.jsx`).catch(() =>
               Promise.resolve(NotFound)
@@ -107,6 +133,7 @@ const App = () => {
           <Featured />
           <Reviews />
           <Youtube />
+          <WhatsAppIcon />
           <Faq />
         </>
       )}

@@ -84,7 +84,7 @@ export const ZymoAllCityList = [
   { name: 'Jodhpur' },
   { name: 'Haridwar' },
   { name: 'Rishikesh' },
-  { name: 'Komalapuram' },
   { name: 'Ernakulam' },
   { name: 'Ranchi'},
+  // { name: 'Komalapuram' }, used for test purpose.
 ]

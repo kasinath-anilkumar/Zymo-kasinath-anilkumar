@@ -12,7 +12,7 @@ export const LocationProvider = ({ children }) => {
   });
 
   useEffect(() => {
-   
+
     if (location) {
       localStorage.setItem("location", location);
     }

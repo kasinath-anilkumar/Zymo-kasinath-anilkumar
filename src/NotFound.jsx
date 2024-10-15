@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import NotFoundImage from '/notfound.jpg'; // Example image path
 import { useLocationContext } from "./Context/Location";
 
+
 const NotFound = () => {
   const { location } = useLocationContext();
   return (
