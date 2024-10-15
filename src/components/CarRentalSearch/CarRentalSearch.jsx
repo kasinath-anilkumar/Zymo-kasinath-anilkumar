@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PopularCities from '../PopularCities/PopularCities';
-import { useLocationContext } from "../../Context/location";
+import { useLocationContext } from "../../Context/Location";
+
 
 const CarRentalSearch = () => {
   const { setLocation } = useLocationContext();
@@ -27,7 +28,7 @@ const CarRentalSearch = () => {
     <div className="mt-14 container mx-auto rounded-lg">
       <div className="bg-white p-5 rounded-lg shadow-md">
         <div className="flex mb-5">
-          {['rent', 'subscription', 'buy'].map((tab) => (
+          {['rent', 'subscribe', 'buy'].map((tab) => (
             <button
               key={tab}
               className={`w-36 py-3 rounded-lg ${
@@ -64,7 +65,7 @@ const CarRentalSearch = () => {
             </button>
           </div>
 
-          <div>
+          {/* <div>
             <label className="block font-semibold mb-2">Pick-Up Date</label>
             <input
               type="datetime-local"
@@ -82,7 +83,7 @@ const CarRentalSearch = () => {
               onChange={(e) => setReturnDate(e.target.value)}
               className="w-full p-2 bg-purple-200 rounded-md"
             />
-          </div>
+          </div> */}
 
           <div className="flex items-end">
             <button className="w-full bg-[#a11fdb] text-white p-2 rounded-md">
