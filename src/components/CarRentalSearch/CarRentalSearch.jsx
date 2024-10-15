@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PopularCities from '../PopularCities/PopularCities';
-import { useLocationContext } from "../../Context/location";
+import { useLocationContext } from "../../Context/Location";
+
 
 const CarRentalSearch = () => {
   const { setLocation } = useLocationContext();
