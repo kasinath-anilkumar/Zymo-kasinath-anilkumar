@@ -1,5 +1,5 @@
-import React, { Suspense,useEffect } from "react";
-import { Routes, Route, useLocation,useNavigate } from "react-router-dom";
+import React, { useState, Suspense, useEffect } from "react";
+import { Routes, Route, useLocation, useNavigate, RouterProvider } from "react-router-dom";
 import CustomNavbar from "./components/CustomNavbar/CustomNavbar";
 import CarRentalSearch from "./components/CarRentalSearch/CarRentalSearch";
 import Zymo from "./components/Zymo/Zymo";
@@ -17,9 +17,9 @@ import Banner from "./components/Banner/Banner";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Privacy from "./components/PrivacyPolicy/Privacy";
-import Terms from "./components/TermsAndConditions/Terms"
-import CancellationPolicy from "./components/CancellationPolicy/CancellationPolicy"
-// import BlogsMainPage from "./components/blog/BlogsMainPage"
+import Terms from "./components/TermsAndConditions/Terms";
+import CancellationPolicy from "./components/CancellationPolicy/CancellationPolicy";
+import BlogsMainPage from "./components/blog/BlogsMainPage";
 // import BlogDetailPage from "./components/blog/blogDetailPage";
 
 import Delhi from "./pages/Delhi/Delhi";
@@ -33,14 +33,17 @@ import Career from "./components/Career/Career";
 import { useLocationContext } from "./Context/Location";
 import SelectLocation from "./components/SelectLocation/Select";
 import WhatsAppIcon from "./components/whatsappIcon/whatsapp";
+import BlogContext from "./Context/BlogContext";
+import BlogDetailPage from "./components/blog/blogDetailPage";
 
 const App = () => {
   const { location, setLocation } = useLocationContext();
   const navigate = useNavigate();
   const location1 = useLocation();
+  const [blogsList, setBlogsList] = useState([]);
 
   useEffect(() => {
-    const location = localStorage.getItem('location');
+    const location = localStorage.getItem("location");
     if (location) {
       const newUrl = `/self-drive-car-rentals/${location}`;
       navigate(newUrl);
@@ -50,74 +53,71 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <Routes>
-        {/* <Route path="/" element={} /> */}
+      <BlogContext.Provider value={{ blogsList, setBlogsList }}>
+        <Routes>
+          <Route path="self-drive-car-rentals/delhi" element={<Delhi />} />
+          <Route path="self-drive-car-rentals/chennai" element={<Chennai />} />
+          <Route path="self-drive-car-rentals/hyderabad" element={<Hyderabad />} />
+          <Route path="self-drive-car-rentals/mumbai" element={<Mumbai />} />
+          <Route path="self-drive-car-rentals/pune" element={<Pune />} />
+          <Route path="self-drive-car-rentals/kolkata" element={<Kolkata />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/fleet" element={<NotFound />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/blogs" element={<BlogsMainPage />} />
+          <Route path="/blog/:id" element={<BlogDetailPage />} />
+          
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path="/terms-of-service" element={<Terms />} />
+          <Route path="/cancellation-policy" element={<CancellationPolicy />} />
 
-        {/* Predefined Routes */}
-        <Route path="self-drive-car-rentals/delhi" element={<Delhi />} />
-        <Route path="self-drive-car-rentals/chennai" element={<Chennai />} />
-        <Route
-          path="self-drive-car-rentals/hyderabad"
-          element={<Hyderabad />}
-        />
-        <Route path="self-drive-car-rentals/mumbai" element={<Mumbai />} />
-        <Route path="self-drive-car-rentals/pune" element={<Pune />} />
-        <Route path="self-drive-car-rentals/kolkata" element={<Kolkata />} />
-        <Route path="/career" element={<Career />} />
-        <Route path="/fleet" element={<NotFound />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/blogs" element={<NotFound />} />
-        {/* <Route path="/blog/:id" element={<BlogDetailPage />} /> */}
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/privacy-policy" element={<Privacy />} />
-        <Route path="/terms-of-service" element={<Terms />} />
-        <Route path="/cancellation-policy" element={<CancellationPolicy />} />
+          {/* Dynamic Routes */}
+          {ZymoAllCityList.map((city, index) => {
+            const CityComponent = React.lazy(() =>
+              import(`./pages/${city.name}/${city.name}.jsx`).catch(() =>
+                Promise.resolve(NotFound)
+              )
+            );
+            return (
+              <Route
+                key={index}
+                path={`self-drive-car-rentals/${city.name
+                  .toLowerCase()
+                  .replace(/\s+/g, "-")}`}
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <CityComponent />
+                  </Suspense>
+                }
+              />
+            );
+          })}
 
-        {/* Dynamic Routes */}
-        {ZymoAllCityList.map((city, index) => {
-          const CityComponent = React.lazy(() =>
-            import(`./pages/${city.name}/${city.name}.jsx`).catch(() =>
-              Promise.resolve(NotFound)
-            )
-          );
-          return (
-            <Route
-              key={index}
-              path={`self-drive-car-rentals/${city.name
-                .toLowerCase()
-                .replace(/\s+/g, "-")}`}
-              element={
-                <Suspense fallback={<div>Loading...</div>}>
-                  <CityComponent />
-                </Suspense>
-              }
-            />
-          );
-        })}
+          {/* Zymo Featured city list */}
 
-        {/* Zymo Featured city list */}
-
-        {ZymoFeaturedCityList.map((city, index) => {
-          const CityComponent = React.lazy(() =>
-            import(`./pages/${city.name}/${city.name}.jsx`).catch(() =>
-              Promise.resolve(NotFound)
-            )
-          );
-          return (
-            <Route
-              key={index}
-              path={`self-drive-car-rentals/${city.name
-                .toLowerCase()
-                .replace(/\s+/g, "-")}`}
-              element={
-                <Suspense fallback={<div>Loading...</div>}>
-                  <CityComponent />
-                </Suspense>
-              }
-            />
-          );
-        })}
-      </Routes>
+          {ZymoFeaturedCityList.map((city, index) => {
+            const CityComponent = React.lazy(() =>
+              import(`./pages/${city.name}/${city.name}.jsx`).catch(() =>
+                Promise.resolve(NotFound)
+              )
+            );
+            return (
+              <Route
+                key={index}
+                path={`self-drive-car-rentals/${city.name
+                  .toLowerCase()
+                  .replace(/\s+/g, "-")}`}
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <CityComponent />
+                  </Suspense>
+                }
+              />
+            );
+          })}
+        </Routes>
+      </BlogContext.Provider>
 
       {location1.pathname === `/self-drive-car-rentals/${location}` && (
         <>
