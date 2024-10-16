@@ -47,10 +47,19 @@ const App = () => {
   useEffect(() => {
     const location = localStorage.getItem("location");
     if (location) {
-      const newUrl = `/self-drive-car-rentals/${location}`;
+      const newUrl = `/self-drive-car-rentals/${location}${window.location.hash}`;
       navigate(newUrl);
     }
   }, []);
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
 
   return (
     <>

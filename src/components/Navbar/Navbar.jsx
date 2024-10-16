@@ -63,7 +63,7 @@ const Navbar = () => {
             >
               <div className="relative">
                 {item.name === "Fleet" ? (
-                  <a href="#cars" className="p-3 text-xl">Fleet</a>
+                  <a href={`/self-drive-car-rentals/${location}#cars`} className="p-3 text-xl">Fleet</a>
                 ) : (
                   <Link to={`${item.link}`} className="p-3">
                     {item.name}
