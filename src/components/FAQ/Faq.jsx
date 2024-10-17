@@ -107,31 +107,7 @@ const Faq = () => {
             </li>
           ))}
         </ul>
-      </div>
-      {/* Email Subscription Section */}
-      <div className="mt-4 w-full max-w-xl bg-gray-100 p-6 rounded-lg ">
-        <h3 className="text-2xl mb-4 text-center">
-          Enter your email for the latest updates
-        </h3>
-          <form onSubmit={handleEmailSubmit} className="flex">
-            <div className="flex w-full border border-black rounded-lg overflow-hidden">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email address"
-                className="flex-grow p-2 sm:p-3 border-none focus:outline-none"
-                required
-              />
-              <button
-                type="submit"
-                className="bg-red-600 text-base sm:text-lg text-white px-1 sm:px-5 py-1 sm:py-3 hover:bg-red-700 transition duration-300"
-              >
-                Get Started
-              </button>
-            </div>
-        </form>
-      </div>
+      </div>    
     </div>
   );
 };

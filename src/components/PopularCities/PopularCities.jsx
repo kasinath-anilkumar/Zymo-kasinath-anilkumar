@@ -181,7 +181,7 @@ const PopularCities = ({ onCitySelect }) => {
               <img
                 src={city.image}
                 alt={city.name}
-                className="w-10 md:w-14 h-8 mx-auto mb-2 rounded-lg"
+                className="w-10 md:w-14 h-14 mx-auto mb-2 rounded-lg"
               />
               <h6 className="font-medium text-xs whitespace-nowrap">
                 {city.name}
