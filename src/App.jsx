@@ -45,11 +45,7 @@ const App = () => {
   const [blogsList, setBlogsList] = useState([]);
 
   useEffect(() => {
-    logEvent(analytics, "page_view", {
-      page_title: document.title,
-      page_location: window.location.href,
-      page_path: window.location.pathname,
-    });
+    logEvent(analytics);
 
     window.scrollTo(0, 0); 
   }, [location1]); 
