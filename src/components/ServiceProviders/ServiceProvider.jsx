@@ -39,7 +39,7 @@ const brand1 = [
 const ServiceProvider = () => {
   return (
     <div className='main-section text-center' >
-        <h1 className='text-4xl font-bold py-9'>Service Providers</h1>
+        <h1 className='text-4xl font-bold py-9'>Compare and Choose from :</h1>
       <div className="service-carousel-container d-grid" >
           <div className="service-carousel">
             {brand1.map((brand) => (
