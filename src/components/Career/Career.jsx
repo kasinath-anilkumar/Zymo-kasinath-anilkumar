@@ -107,7 +107,7 @@ const Career = () => {
           setFile(null);
           setFileName(null);
           setUploadProgress(0);
-          toast.promise(
+          await toast.promise(
             saveSettings({
               theme: "dark",
               notificationsEnabled: true,
@@ -116,7 +116,7 @@ const Career = () => {
             {
               loading: "Uploading your application....",
               success: <b>Application submitted successfully!</b>,
-              error: <b>Duplicate Application submission!</b>,
+              error: <b>Please try again!</b>,
             },
             {
               style: {
@@ -142,16 +142,18 @@ const Career = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen py-8 font-poppins">
+    <div className="flex flex-col items-center min-h-screen py-8 font-poppins bg-slate-100 ">
       <h1 className="text-3xl font-bold text-violet-700 mb-3">“Join Us”</h1>
       <div className="">
         <p className="text-2xl text-gray-600 mb-10 font-semibold text-center">
           Choose your adventure.
         </p>
-        <div className="flex mx-auto items-center space-x-5 sm:space-x-10 text-xl font-semibold">
+        <div className="flex mx-auto items-center space-x-5 sm:space-x-10 text-xl font-semibold py-3">
           <button
             className={`${
-              click === "Internship" ? "bg-violet-500 text-white" : ""
+              click === "Internship"
+                ? "bg-violet-500 text-white"
+                : "bg-slate-300"
             } p-3 border rounded-xl transition-transform duration-200 hover:scale-110 hover:bg-violet-500 hover:text-white`}
             onClick={() => {
               setClick("Internship");
@@ -162,7 +164,9 @@ const Career = () => {
           </button>
           <button
             className={`${
-              click === "Full time" ? "bg-violet-500 text-white" : ""
+              click === "Full time"
+                ? "bg-violet-500 text-white"
+                : "bg-slate-300"
             } p-3 border rounded-xl transition-transform duration-200 hover:scale-110 hover:bg-violet-500 hover:text-white`}
             onClick={() => {
               setClick("Full time");
@@ -173,14 +177,17 @@ const Career = () => {
           </button>
         </div>
       </div>
-      <form onSubmit={handleSubmit} className="w-full max-w-lg p-6  space-y-4">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-lg p-6 shadow-lg space-y-4"
+      >
         <input
           type="text"
           name="FullName"
           placeholder="Full Name"
           value={formData.FullName}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-slate-300 text-gray-700 font-medium text-lg"
         />
         <input
           type="email"
@@ -188,7 +195,7 @@ const Career = () => {
           placeholder="Email"
           value={formData.Email}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-slate-300 text-gray-700 font-medium text-lg"
         />
         <input
           type="text"
@@ -196,7 +203,7 @@ const Career = () => {
           placeholder="City"
           value={formData.City}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-slate-300 text-gray-700 font-medium text-lg"
         />
         <input
           type="tel"
@@ -204,7 +211,7 @@ const Career = () => {
           placeholder="Phone Number"
           value={formData.PhoneNo}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-slate-300 text-gray-700 font-medium text-lg"
         />
         <input
           type="text"
@@ -212,7 +219,7 @@ const Career = () => {
           placeholder="Aspirations"
           value={formData.Aspirations}
           onChange={handleChange}
-          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-slate-300 text-gray-700 font-medium text-lg"
         />
 
         <div className="py-3">
@@ -258,11 +265,11 @@ const Career = () => {
             placeholder="write here.."
             value={formData.WhyWeNeedYou}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-slate-300 text-gray-700 font-medium text-lg"
           />
         </div>
 
-        <div className="flex flex-col items-start px-5 py-5 mt-5 border rounded-xl bg-gray-100 hover:bg-gray-200 transition-colors duration-200 cursor-pointer">
+        <div className="flex flex-col items-start px-5 py-5 mt-5 border rounded-xl bg-slate-200 hover:bg-slate-300 hover:shadow-xl transition-colors duration-200 cursor-pointer">
           <label
             htmlFor="file-upload"
             className="flex items-center space-x-2 text-blue-600 hover:text-blue-800 cursor-pointer"
@@ -281,7 +288,7 @@ const Career = () => {
                 d="M4 4v16h16V4H4zm16-2a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2h16zM6 9l3 3m0 0l3-3m-3 3v6"
               />
             </svg>
-            <span className="text-xl font-medium">Upload Resume</span>
+            <span className="text-xl font-medium  ">Upload Resume</span>
           </label>
           <input
             id="file-upload"
@@ -362,7 +369,7 @@ const Career = () => {
                 placeholder="Stipend Expectation"
                 value={formData.StipendExpectation}
                 onChange={handleChange}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-slate-300 text-gray-700 font-medium text-lg"
               />
             )}
           </div>
@@ -378,7 +385,7 @@ const Career = () => {
                 placeholder="Salary Expectation"
                 value={formData.SalaryExpectation}
                 onChange={handleChange}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 bg-slate-300 text-gray-700 font-medium text-lg"
               />
             </div>
             <Select
@@ -414,29 +421,11 @@ const Career = () => {
 
         <button
           type="submit"
-          className="w-full p-3 bg-violet-400 text-white rounded-lg hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500"
+          className="w-full p-3 bg-violet-700 text-white rounded-xl hover:shadow-xl
+           focus:outline-none focus:ring-2 focus:ring-violet-500"
         >
           {loading ? (
-            <svg
-              className="animate-spin h-5 w-5 text-white mx-auto"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-              ></circle>
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V4"
-              ></path>
-            </svg>
+            <span className="loading loading-spinner text-primary"></span>
           ) : (
             "Submit Application"
           )}
