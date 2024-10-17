@@ -31,13 +31,35 @@ import Privacy from "./components/PrivacyPolicy/Privacy";
 import Terms from "./components/TermsAndConditions/Terms";
 import CancellationPolicy from "./components/CancellationPolicy/CancellationPolicy";
 import BlogsMainPage from "./components/blog/BlogsMainPage";
+
 import BlogDetailPage from "./components/blog/blogDetailPage";
+
+
+import { Toaster } from "react-hot-toast";
+
+// import BlogDetailPage from "./components/blog/blogDetailPage";
+
+
 import Delhi from "./pages/Delhi/Delhi";
 import Chennai from "./pages/Chennai/Chennai";
 import Hyderabad from "./pages/Hyderabad/Hyderabad";
 import Pune from "./pages/Pune/Pune";
 import Mumbai from "./pages/Mumbai/Mumbai";
 import Kolkata from "./pages/Kolkata/Kolkata";
+
+import NotFound from "../src/NotFound";
+import Career from "./components/Career/Career";
+import { useLocationContext } from "./Context/Location";
+import SelectLocation from "./components/SelectLocation/Select";
+import WhatsAppIcon from "./components/whatsappIcon/whatsapp";
+
+import BrandCarousel from "./components/BrandsAvailable/BrandCarousel";
+import ServiceProvider from "./components/ServiceProviders/ServiceProvider";
+
+import BlogContext from "./Context/BlogContext";
+import BlogDetailPage from "./components/blog/blogDetailPage";
+
+
 
 const App = () => {
   const { location, setLocation, locationShow } = useLocationContext();
@@ -119,7 +141,9 @@ const App = () => {
         <>
           <CarRentalSearch />
           <Zymo />
+          <BrandCarousel/>
           <Benefits />
+          <ServiceProvider/>
           <Cars />
           <Refer />
           <Featured />
