@@ -1,10 +1,7 @@
 import React, { useState, Suspense, useEffect } from "react";
-import {
-  Routes,
-  Route,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { analytics } from "./firebase-config";
+import { logEvent } from "firebase/analytics";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Banner from "./components/Banner/Banner";
 import Footer from "./components/Footer/Footer";
@@ -48,8 +45,14 @@ const App = () => {
   const [blogsList, setBlogsList] = useState([]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location1]);
+    logEvent(analytics, "page_view", {
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: window.location.pathname,
+    });
+
+    window.scrollTo(0, 0); 
+  }, [location1]); 
 
   useEffect(() => {
     if (location.hash) {
@@ -68,7 +71,10 @@ const App = () => {
           <Route path="/" element={<Banner />} />
           <Route path="/self-drive-car-rentals/delhi" element={<Delhi />} />
           <Route path="/self-drive-car-rentals/chennai" element={<Chennai />} />
-          <Route path="/self-drive-car-rentals/hyderabad" element={<Hyderabad />} />
+          <Route
+            path="/self-drive-car-rentals/hyderabad"
+            element={<Hyderabad />}
+          />
           <Route path="/self-drive-car-rentals/mumbai" element={<Mumbai />} />
           <Route path="/self-drive-car-rentals/pune" element={<Pune />} />
           <Route path="/self-drive-car-rentals/kolkata" element={<Kolkata />} />
@@ -83,12 +89,16 @@ const App = () => {
 
           {ZymoAllCityList.concat(ZymoFeaturedCityList).map((city, index) => {
             const CityComponent = React.lazy(() =>
-              import(`./pages/${city.name}/${city.name}.jsx`).catch(() => Promise.resolve(NotFound))
+              import(`./pages/${city.name}/${city.name}.jsx`).catch(() =>
+                Promise.resolve(NotFound)
+              )
             );
             return (
               <Route
                 key={index}
-                path={`self-drive-car-rentals/${city.name.toLowerCase().replace(/\s+/g, "-")}`}
+                path={`self-drive-car-rentals/${city.name
+                  .toLowerCase()
+                  .replace(/\s+/g, "-")}`}
                 element={
                   <Suspense fallback={<div>Loading...</div>}>
                     <CityComponent />
@@ -100,7 +110,8 @@ const App = () => {
         </Routes>
       </BlogContext.Provider>
 
-      {(location1.pathname.includes(`/self-drive-car-rentals/${location}`) || location1.pathname === `/`) && (
+      {(location1.pathname.includes(`/self-drive-car-rentals/${location}`) ||
+        location1.pathname === `/`) && (
         <>
           <CarRentalSearch />
           <Zymo />
