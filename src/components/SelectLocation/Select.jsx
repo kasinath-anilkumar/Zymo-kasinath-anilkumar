@@ -4,11 +4,13 @@ import PopularCities from "../PopularCities/PopularCities";
 import { useNavigate } from "react-router-dom";
 
 const Select = () => {
-  const { setLocation } = useLocationContext();
+  const { setLocation, setLocationShow } =
+    useLocationContext();
   const navigate = useNavigate();
 
   const handleLocationSelect = (city) => {
     setLocation(city);
+    setLocationShow(false);
     navigate(`/self-drive-car-rentals/${city.toLowerCase()}`);
   };
 

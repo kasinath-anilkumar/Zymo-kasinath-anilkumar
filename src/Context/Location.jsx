@@ -11,15 +11,23 @@ export const LocationProvider = ({ children }) => {
     return localStorage.getItem("location") || "Default";
   });
 
-  useEffect(() => {
+  const [locationShow, setLocationShow] = useState(false);
 
+  useEffect(() => {
     if (location) {
       localStorage.setItem("location", location);
     }
   }, [location]);
 
   return (
-    <LocationContext.Provider value={{ location, setLocation }}>
+    <LocationContext.Provider
+      value={{
+        location,
+        setLocation,
+        locationShow,
+        setLocationShow,
+      }}
+    >
       {children}
     </LocationContext.Provider>
   );
