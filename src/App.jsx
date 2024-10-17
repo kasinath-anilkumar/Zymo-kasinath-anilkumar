@@ -17,6 +17,8 @@ import Featured from "./components/Featured/Featured";
 import Reviews from "./components/Reviews/Reviews";
 import Youtube from "./components/Youtube/Youtube";
 import Faq from "./components/FAQ/Faq";
+import BrandCarousel from "./components/BrandsAvailable/BrandCarousel";
+import ServiceProvider from "./components/ServiceProviders/ServiceProvider";
 import { ZymoFeaturedCityList, ZymoAllCityList } from "./assets/ZymoCityList";
 import NotFound from "./NotFound";
 import { Toaster } from "react-hot-toast";
@@ -31,35 +33,13 @@ import Privacy from "./components/PrivacyPolicy/Privacy";
 import Terms from "./components/TermsAndConditions/Terms";
 import CancellationPolicy from "./components/CancellationPolicy/CancellationPolicy";
 import BlogsMainPage from "./components/blog/BlogsMainPage";
-
 import BlogDetailPage from "./components/blog/blogDetailPage";
-
-
-import { Toaster } from "react-hot-toast";
-
-// import BlogDetailPage from "./components/blog/blogDetailPage";
-
-
 import Delhi from "./pages/Delhi/Delhi";
 import Chennai from "./pages/Chennai/Chennai";
 import Hyderabad from "./pages/Hyderabad/Hyderabad";
 import Pune from "./pages/Pune/Pune";
 import Mumbai from "./pages/Mumbai/Mumbai";
 import Kolkata from "./pages/Kolkata/Kolkata";
-
-import NotFound from "../src/NotFound";
-import Career from "./components/Career/Career";
-import { useLocationContext } from "./Context/Location";
-import SelectLocation from "./components/SelectLocation/Select";
-import WhatsAppIcon from "./components/whatsappIcon/whatsapp";
-
-import BrandCarousel from "./components/BrandsAvailable/BrandCarousel";
-import ServiceProvider from "./components/ServiceProviders/ServiceProvider";
-
-import BlogContext from "./Context/BlogContext";
-import BlogDetailPage from "./components/blog/blogDetailPage";
-
-
 
 const App = () => {
   const { location, setLocation, locationShow } = useLocationContext();
@@ -101,24 +81,7 @@ const App = () => {
           <Route path="/terms-of-service" element={<Terms />} />
           <Route path="/cancellation-policy" element={<CancellationPolicy />} />
 
-          {ZymoAllCityList.map((city, index) => {
-            const CityComponent = React.lazy(() =>
-              import(`./pages/${city.name}/${city.name}.jsx`).catch(() => Promise.resolve(NotFound))
-            );
-            return (
-              <Route
-                key={index}
-                path={`self-drive-car-rentals/${city.name.toLowerCase().replace(/\s+/g, "-")}`}
-                element={
-                  <Suspense fallback={<div>Loading...</div>}>
-                    <CityComponent />
-                  </Suspense>
-                }
-              />
-            );
-          })}
-
-          {ZymoFeaturedCityList.map((city, index) => {
+          {ZymoAllCityList.concat(ZymoFeaturedCityList).map((city, index) => {
             const CityComponent = React.lazy(() =>
               import(`./pages/${city.name}/${city.name}.jsx`).catch(() => Promise.resolve(NotFound))
             );
@@ -141,9 +104,9 @@ const App = () => {
         <>
           <CarRentalSearch />
           <Zymo />
-          <BrandCarousel/>
+          <BrandCarousel />
           <Benefits />
-          <ServiceProvider/>
+          <ServiceProvider />
           <Cars />
           <Refer />
           <Featured />
