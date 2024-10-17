@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-// import { getAnalytics, logEvent } from "firebase/analytics";
+import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
@@ -12,11 +12,12 @@ const firebaseConfig = {
   storageBucket: "zymo-prod.appspot.com",
   messagingSenderId: "34164434278",
   appId: "1:34164434278:web:eb478d1c92e1e430a214a7",
-  measurementId: "G-4S0VP49V1E",
+  measurementId: "G-DMTRQ4DDX4"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+export const analytics = getAnalytics(app);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
