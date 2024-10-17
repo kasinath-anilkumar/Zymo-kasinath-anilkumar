@@ -22,7 +22,7 @@ import CancellationPolicy from "./components/CancellationPolicy/CancellationPoli
 // import BlogsMainPage from "./components/blog/BlogsMainPage"
 
 import { Toaster } from "react-hot-toast";
-=======
+// =======
 // import BlogDetailPage from "./components/blog/blogDetailPage";
 
 import Delhi from "./pages/Delhi/Delhi";
@@ -36,6 +36,8 @@ import Career from "./components/Career/Career";
 import { useLocationContext } from "./Context/Location";
 import SelectLocation from "./components/SelectLocation/Select";
 import WhatsAppIcon from "./components/whatsappIcon/whatsapp";
+import BrandCarousel from "./components/BrandsAvailable/BrandCarousel";
+import ServiceProvider from "./components/ServiceProviders/ServiceProvider";
 
 const App = () => {
   const { location, setLocation } = useLocationContext();
@@ -127,7 +129,9 @@ const App = () => {
           {/* <Banner /> */}
           <CarRentalSearch />
           <Zymo />
+          <BrandCarousel/>
           <Benefits />
+          <ServiceProvider/>
           <Cars />
           <Refer />
           <Featured />
