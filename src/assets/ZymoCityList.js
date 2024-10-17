@@ -30,7 +30,6 @@ export const ZymoFeaturedCityList = [
   {name: 'Jodhpur'},
   {name: 'Dombivli'},
   {name: 'Palava'},
-  {name: 'Siliguri'},
   {name: 'Vijaywada'},
   {name: 'Vijag'},
   {name: 'Udupi'},
