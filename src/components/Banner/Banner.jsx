@@ -14,10 +14,10 @@ const Banner = () => {
   // Custom interval for the carousel that works even when the browser is inactive
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex(prevIndex => (prevIndex + 1) % 4);
-    }, 2000); 
+      setIndex(prevIndex => (prevIndex + 1) % 4); 
+    }, 2000);
 
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, []);
 
   const handleSelect = (selectedIndex) => {
@@ -25,43 +25,53 @@ const Banner = () => {
   };
 
   return (
-    <div className='container-md mt-5'>
+    <div className='md:m-10 mx-3 my-2 font-poppins'>
+      {/* <Example /> */}
       <Carousel activeIndex={index} onSelect={handleSelect} controls={false} indicators={false}>
         <Carousel.Item>
-          <img
-            className="d-block w-100 rounded p-1"
-            src={banner1}
-            alt="First slide"
-            style={{ border: 'solid' }}
-          />
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block  rounded p-1"
+              src={banner1}
+              alt="First slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
         </Carousel.Item>
         <Carousel.Item>
-          <img
-            className="d-block w-100 rounded p-1 img-fluid"
-            src={p1}
-            alt="Second slide"
-            style={{ border: 'solid' }}
-          />
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block w-100 rounded p-1"
+              src={p2}
+              alt="Second slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
         </Carousel.Item>
         <Carousel.Item>
-          <img
-            className="d-block w-100 rounded p-1 img-fluid"
-            src={p3}
-            alt="Third slide"
-            style={{ border: 'solid' }}
-          />
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block w-100 rounded p-1"
+              src={p3}
+              alt="Third slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
         </Carousel.Item>
         <Carousel.Item>
-          <img
-            className="d-block w-100 rounded p-1 img-fluid"
-            src={p2}
-            alt="Forth slide"
-            style={{ border: 'solid' }}
-          />
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block mt-4 m-auto rounded p-1"
+              src={p4}
+              alt="Fourth slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
         </Carousel.Item>
       </Carousel>
     </div>
   );
 };
+
 
 export default Banner;
