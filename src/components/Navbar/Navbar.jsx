@@ -47,7 +47,7 @@ const Navbar = () => {
             <div key={item.name} className="relative cursor-pointer group text-base md:text-lg">
               <div className="relative">
                 {item.name === "Fleet" ? (
-                  <a href="#cars" className="p-3 text-xl">Fleet</a>
+                  <a href={`/#cars`} className="p-3 text-xl">Fleet</a>
                 ) : (
                   <Link to={`${item.link}`} className="p-3">{item.name}</Link>
                 )}
@@ -90,7 +90,11 @@ const Navbar = () => {
             <div className="space-y-6">
               {navigation.map((item) => (
                 <div key={item.name} className="block rounded-lg py-2 px-4 text-xl font-normal" onClick={() => setMobileMenuOpen(false)}>
-                  <Link to={`${item.link}`}>{item.name}</Link>
+                  {item.name === "Fleet" ? (
+                  <a href={`/#cars`} className="p-3 text-xl">Fleet</a>
+                ) : (
+                  <Link to={`${item.link}`} className="p-3">{item.name}</Link>
+                )}
                 </div>
               ))}
             </div>

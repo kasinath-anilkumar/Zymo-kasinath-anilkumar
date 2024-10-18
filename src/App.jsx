@@ -55,6 +55,15 @@ const App = () => {
   }, [location1]); 
 
   useEffect(() => {
+    const href = window.location.href.substring(
+      window.location.href.lastIndexOf('#') + 1,
+    );
+    if (window.location.href.lastIndexOf('#') > 0) {
+      document.getElementById(href)?.scrollIntoView();
+    }
+  })
+
+  useEffect(() => {
     if (location.hash) {
       const element = document.getElementById(location.hash.slice(1));
       if (element) {
