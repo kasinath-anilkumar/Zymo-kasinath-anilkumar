@@ -70,7 +70,7 @@ const ServiceProvider = () => {
           {brand1.map((brand) => (
             <motion.div
               key={brand.id}
-              className="min-w-[180px] max-w-[200px] h-[190px] bg-white rounded-lg shadow-xl flex items-center justify-center p-4"
+              className="min-w-[180px] max-w-[200px] h-[190px] bg-violet-100 rounded-lg shadow-xl flex items-center justify-center p-4"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: brand.id * 0.1 }}

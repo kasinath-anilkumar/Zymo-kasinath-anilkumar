@@ -166,12 +166,12 @@ const PopularCities = ({ onCitySelect }) => {
   };
 
   return (
-    <div className="flex justify-center items-center sm:p-2 md:p-5  bg-gray-100">
-      <div className="w-full max-w-5xl bg-white p-3 rounded-lg shadow-lg">
-        <h1 className=" text-base md:text-2xl font-bold text-center mb-2">
+    <div className="flex justify-center items-center sm:p-2 md:p-5 font-poppins bg-gray-100">
+      <div className="w-full max-w-5xl bg-white p-2 rounded-lg shadow-lg">
+        <h1 className=" text-base md:text-2xl font-bold text-center mb-1">
           Please select Location
         </h1>
-        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
+        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-5 gap-1 md:gap-4">
           {cities.map((city) => (
             <div
               key={city.name}
@@ -181,7 +181,7 @@ const PopularCities = ({ onCitySelect }) => {
               <img
                 src={city.image}
                 alt={city.name}
-                className="w-10 md:w-14 h-14 mx-auto mb-2 rounded-lg"
+                className="w-10 md:w-14 h-8 mx-auto mb-2 rounded-lg"
               />
               <h6 className="font-medium text-xs whitespace-nowrap">
                 {city.name}
@@ -190,8 +190,8 @@ const PopularCities = ({ onCitySelect }) => {
           ))}
         </div>
 
-        <h2 className="mt-3 text-lg font-bold">Other Cities :</h2>
-        <div className="flex flex-wrap gap-2 mt-2 md:mt-4 justify-center">
+        <h2 className="mt-2 text-lg font-bold text-center">Other Cities :</h2>
+        <div className="flex flex-wrap gap-1 mt-2 md:mt-4 justify-center">
           {ZymoFeaturedCityList.map((city) => (
             <div
               key={city.name}
