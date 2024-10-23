@@ -1,5 +1,9 @@
 import React from "react";
 import Slider from "react-slick";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+// Import Images
 import WNN from "/WNN.png";
 import INDNN from "/INDNN.png";
 import BNN from "/BNN.png";
@@ -124,19 +128,35 @@ const Featured = () => {
       <h1 className="text-center text-4xl font-bold mb-8">Featured In</h1>
       <Slider {...settings}>
         {Car.map((car) => (
-          <div key={car.id} className="p-2">
-            <a href={car.url} target="_blank" rel="">
-              <div className="w-60 h-24">
-                <img
-                  src={car.image}
-                  alt={car.name}
-                  className="w-full h-full object-contain rounded-lg mx-auto"
-                />
-              </div>
-            </a>
-          </div>
+          <FeaturedSlide key={car.id} car={car} />
         ))}
       </Slider>
+    </div>
+  );
+};
+
+// Slide Component with Scale Up/Down on Scroll In and Out
+const FeaturedSlide = ({ car }) => {
+  const { ref, inView } = useInView({
+    threshold: 0.5, // Trigger when 50% of the image is visible
+  });
+
+  return (
+    <div ref={ref} className="p-2">
+      <a href={car.url} target="_blank" rel="noopener noreferrer">
+        <motion.div
+          className="w-60 h-24"
+          initial={{ scale: 0 }} // Start from scale 0
+          animate={inView ? { scale: 1 } : { scale: 0 }} // Scale up/down based on inView
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          <img
+            src={car.image}
+            alt={car.name}
+            className="w-full h-full object-contain rounded-lg mx-auto"
+          />
+        </motion.div>
+      </a>
     </div>
   );
 };
