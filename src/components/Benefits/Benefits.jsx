@@ -58,7 +58,7 @@ const Benefits = () => {
   };
 
   return (
-    <div className="flex flex-col mx-auto py-20 px-5 max-w-6xl">
+    <div className="flex flex-col mx-auto py-20 px-5 max-w-6xl mt-10">
       <h1 className="text-center text-4xl font-bold mb-8">Zymo Benefits</h1>
       <Slider {...settings} className="w-full py-4">
         {All.map((item, index) => (

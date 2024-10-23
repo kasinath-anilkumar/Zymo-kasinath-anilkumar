@@ -25,7 +25,7 @@ const Zymo = () => {
       initial={{ opacity: 0, y: 50 }} // Starts hidden and slightly below
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }} // Slide in when visible
       transition={{ duration: 0.5 }} // Control animation speed
-      className="text-center pt-10 flex flex-col items-center justify-center"
+      className="text-center py-20 flex flex-col items-center justify-center mt-5"
     >
       <h1 className="text-4xl font-bold mb-8">Why Zymo?</h1>
       <div className="grid grid-cols-2 lg:grid-cols-4 sm:gap-28 gap-16 p-10">

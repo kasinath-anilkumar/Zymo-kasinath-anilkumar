@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer"; // Import hook
 
 const brand1 = [
   {
@@ -100,29 +101,41 @@ const BrandCarousel = () => {
         ref={scrollRef}
       >
         <motion.div
-          className="flex gap-8 whitespace-nowrap bg-white"
+          className="flex gap-8 whitespace-nowrap bg-white "
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: isScrolling ? 1 : 0, y: isScrolling ? 0 : 50 }}
           transition={{ duration: 0.5 }}
         >
           {brand1.map((brand) => (
-            <motion.div
-              key={brand.id}
-              className="flex flex-col items-center justify-center min-w-[180px] max-w-[200px] h-[190px] p-4 bg-white rounded-lg shadow-md"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: brand.id * 0.1 }}
-            >
-              <img
-                src={brand.src}
-                alt={`Brand ${brand.id}`}
-                className="max-w-full max-h-[100px] object-contain mb-4 rounded bg-white"
-              />
-              <p className="text-xl font-semibold">{brand.name}</p>
-            </motion.div>
+            <BrandCard key={brand.id} brand={brand} />
           ))}
         </motion.div>
       </div>
+    </div>
+  );
+};
+
+// Brand card component with scaling effect
+const BrandCard = ({ brand }) => {
+  const { ref, inView } = useInView({
+    threshold: 0.5, // Trigger when 50% of the element is visible
+  });
+
+  return (
+    <div ref={ref}>
+      <motion.div
+        className="flex flex-col items-center justify-center min-w-[180px] max-w-[200px] h-[190px] p-4  rounded-lg shadow-md bg-violet-100"
+        initial={{ scale: 0 }} // Start scaled down
+        animate={inView ? { scale: 1 } : { scale: 0 }} // Scale up when in view, down when out of view
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+      >
+        <img
+          src={brand.src}
+          alt={`Brand ${brand.id}`}
+          className="max-w-full max-h-[100px] object-contain mb-4 bg-white rounded-full"
+        />
+        <p className="text-xl font-semibold">{brand.name}</p>
+      </motion.div>
     </div>
   );
 };
