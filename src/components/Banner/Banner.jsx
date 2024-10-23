@@ -30,7 +30,7 @@ const Banner = () => {
         <Carousel.Item>
           <a href="http://get.zymo.app/car">
             <img
-              className="d-block  rounded p-1"
+              className="d-block w-100 rounded p-1"
               src={p1}
               alt="First slide"
               style={{ border: 'solid' }}
@@ -60,7 +60,7 @@ const Banner = () => {
         <Carousel.Item>
           <a href="http://get.zymo.app/car">
             <img
-              className="d-block mt-4 m-auto rounded p-1"
+              className="d-block w-100 rounded p-1"
               src={p4}
               alt="Fourth slide"
               style={{ border: 'solid' }}
