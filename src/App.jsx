@@ -45,23 +45,23 @@ const App = () => {
   const [blogsList, setBlogsList] = useState([]);
 
   useEffect(() => {
-    logEvent(analytics, 'page_view', {
+    logEvent(analytics, "page_view", {
       page_path: location1.pathname,
       page_location: window.location.href,
       page_title: document.title,
     });
-    
-    window.scrollTo(0, 0); 
-  }, [location1]); 
+
+    window.scrollTo(0, 0);
+  }, [location1]);
 
   useEffect(() => {
     const href = window.location.href.substring(
-      window.location.href.lastIndexOf('#') + 1,
+      window.location.href.lastIndexOf("#") + 1
     );
-    if (window.location.href.lastIndexOf('#') > 0) {
+    if (window.location.href.lastIndexOf("#") > 0) {
       document.getElementById(href)?.scrollIntoView();
     }
-  })
+  });
 
   useEffect(() => {
     if (location.hash) {
@@ -119,8 +119,7 @@ const App = () => {
         </Routes>
       </BlogContext.Provider>
 
-      {(location1.pathname.includes(`/self-drive-car-rentals/${location}`) ||
-        location1.pathname === `/`) && (
+      {location1.pathname === `/` && (
         <>
           <CarRentalSearch />
           <Zymo />
