@@ -1,21 +1,9 @@
-import React, { useState, Suspense, useEffect } from "react";
+import React, { useState, Suspense, useEffect, lazy } from "react";
 import { analytics } from "./firebase-config";
 import { logEvent } from "firebase/analytics";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Banner from "./components/Banner/Banner";
 import Footer from "./components/Footer/Footer";
-import CarRentalSearch from "./components/CarRentalSearch/CarRentalSearch";
-import Zymo from "./components/Zymo/Zymo";
-import Benefits from "./components/Benefits/Benefits";
-import Cars from "./components/Cars/Cars";
-import Refer from "./components/Refer/Refer";
-import Featured from "./components/Featured/Featured";
-import Reviews from "./components/Reviews/Reviews";
-import Youtube from "./components/Youtube/Youtube";
-import Faq from "./components/FAQ/Faq";
-import BrandCarousel from "./components/BrandsAvailable/BrandCarousel";
-import ServiceProvider from "./components/ServiceProviders/ServiceProvider";
 import { ZymoFeaturedCityList, ZymoAllCityList } from "./assets/ZymoCityList";
 import NotFound from "./NotFound";
 import { Toaster } from "react-hot-toast";
@@ -23,20 +11,36 @@ import { useLocationContext } from "./Context/Location";
 import SelectLocation from "./components/SelectLocation/Select";
 import WhatsAppIcon from "./components/whatsappIcon/whatsapp";
 import BlogContext from "./Context/BlogContext";
-import Career from "./components/Career/Career";
-import AboutUs from "./components/AboutUs/AboutUs";
-import ContactUs from "./components/ContactUs/ContactUs";
-import Privacy from "./components/PrivacyPolicy/Privacy";
-import Terms from "./components/TermsAndConditions/Terms";
-import CancellationPolicy from "./components/CancellationPolicy/CancellationPolicy";
-import BlogsMainPage from "./components/blog/BlogsMainPage";
-import BlogDetailPage from "./components/blog/blogDetailPage";
-import Delhi from "./pages/Delhi/Delhi";
-import Chennai from "./pages/Chennai/Chennai";
-import Hyderabad from "./pages/Hyderabad/Hyderabad";
-import Pune from "./pages/Pune/Pune";
-import Mumbai from "./pages/Mumbai/Mumbai";
-import Kolkata from "./pages/Kolkata/Kolkata";
+import LoadingPlaceholder from "./components/LoadingPlaceholder/LoadingPlaceholder";
+
+
+// Lazy-loaded components
+const Banner = lazy(() => import("./components/Banner/Banner"));
+const CarRentalSearch = lazy(() => import("./components/CarRentalSearch/CarRentalSearch"));
+const Zymo = lazy(() => import("./components/Zymo/Zymo"));
+const Benefits = lazy(() => import("./components/Benefits/Benefits"));
+const Cars = lazy(() => import("./components/Cars/Cars"));
+const Refer = lazy(() => import("./components/Refer/Refer"));
+const Featured = lazy(() => import("./components/Featured/Featured"));
+const Reviews = lazy(() => import("./components/Reviews/Reviews"));
+const Youtube = lazy(() => import("./components/Youtube/Youtube"));
+const Faq = lazy(() => import("./components/FAQ/Faq"));
+const BrandCarousel = lazy(() => import("./components/BrandsAvailable/BrandCarousel"));
+const ServiceProvider = lazy(() => import("./components/ServiceProviders/ServiceProvider"));
+const Career = lazy(() => import("./components/Career/Career"));
+const AboutUs = lazy(() => import("./components/AboutUs/AboutUs"));
+const ContactUs = lazy(() => import("./components/ContactUs/ContactUs"));
+const Privacy = lazy(() => import("./components/PrivacyPolicy/Privacy"));
+const Terms = lazy(() => import("./components/TermsAndConditions/Terms"));
+const CancellationPolicy = lazy(() => import("./components/CancellationPolicy/CancellationPolicy"));
+const BlogsMainPage = lazy(() => import("./components/blog/BlogsMainPage"));
+const BlogDetailPage = lazy(() => import("./components/blog/blogDetailPage"));
+const Delhi = lazy(() => import("./pages/Delhi/Delhi"));
+const Chennai = lazy(() => import("./pages/Chennai/Chennai"));
+const Hyderabad = lazy(() => import("./pages/Hyderabad/Hyderabad"));
+const Pune = lazy(() => import("./pages/Pune/Pune"));
+const Mumbai = lazy(() => import("./pages/Mumbai/Mumbai"));
+const Kolkata = lazy(() => import("./pages/Kolkata/Kolkata"));
 
 const App = () => {
   const { location, setLocation, locationShow } = useLocationContext();
@@ -52,7 +56,7 @@ const App = () => {
     });
     
     window.scrollTo(0, 0); 
-  }, [location1]); 
+  }, [location1]);
 
   useEffect(() => {
     const href = window.location.href.substring(
@@ -61,7 +65,7 @@ const App = () => {
     if (window.location.href.lastIndexOf('#') > 0) {
       document.getElementById(href)?.scrollIntoView();
     }
-  })
+  }, []);
 
   useEffect(() => {
     if (location.hash) {
@@ -76,64 +80,85 @@ const App = () => {
     <>
       <Navbar />
       <BlogContext.Provider value={{ blogsList, setBlogsList }}>
-        <Routes>
-          <Route path="/" element={<Banner />} />
-          <Route path="/self-drive-car-rentals/delhi" element={<Delhi />} />
-          <Route path="/self-drive-car-rentals/chennai" element={<Chennai />} />
-          <Route
-            path="/self-drive-car-rentals/hyderabad"
-            element={<Hyderabad />}
-          />
-          <Route path="/self-drive-car-rentals/mumbai" element={<Mumbai />} />
-          <Route path="/self-drive-car-rentals/pune" element={<Pune />} />
-          <Route path="/self-drive-car-rentals/kolkata" element={<Kolkata />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/blogs" element={<BlogsMainPage />} />
-          <Route path="/blog/:id" element={<BlogDetailPage />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/privacy-policy" element={<Privacy />} />
-          <Route path="/terms-of-service" element={<Terms />} />
-          <Route path="/cancellation-policy" element={<CancellationPolicy />} />
+        <Suspense fallback={<LoadingPlaceholder height="400px" />}>
+          <Routes>
+            <Route path="/" element={<Banner />} />
+            <Route path="/self-drive-car-rentals/delhi" element={<Delhi />} />
+            <Route path="/self-drive-car-rentals/chennai" element={<Chennai />} />
+            <Route path="/self-drive-car-rentals/hyderabad" element={<Hyderabad />} />
+            <Route path="/self-drive-car-rentals/mumbai" element={<Mumbai />} />
+            <Route path="/self-drive-car-rentals/pune" element={<Pune />} />
+            <Route path="/self-drive-car-rentals/kolkata" element={<Kolkata />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/blogs" element={<BlogsMainPage />} />
+            <Route path="/blog/:id" element={<BlogDetailPage />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/privacy-policy" element={<Privacy />} />
+            <Route path="/terms-of-service" element={<Terms />} />
+            <Route path="/cancellation-policy" element={<CancellationPolicy />} />
 
-          {ZymoAllCityList.concat(ZymoFeaturedCityList).map((city, index) => {
-            const CityComponent = React.lazy(() =>
-              import(`./pages/${city.name}/${city.name}.jsx`).catch(() =>
-                Promise.resolve(NotFound)
-              )
-            );
-            return (
-              <Route
-                key={index}
-                path={`self-drive-car-rentals/${city.name
-                  .toLowerCase()
-                  .replace(/\s+/g, "-")}`}
-                element={
-                  <Suspense fallback={<div>Loading...</div>}>
-                    <CityComponent />
-                  </Suspense>
-                }
-              />
-            );
-          })}
-        </Routes>
+            {ZymoAllCityList.concat(ZymoFeaturedCityList).map((city, index) => {
+              const CityComponent = lazy(() =>
+                import(`./pages/${city.name}/${city.name}.jsx`).catch(() =>
+                  Promise.resolve(NotFound)
+                )
+              );
+              return (
+                <Route
+                  key={index}
+                  path={`self-drive-car-rentals/${city.name
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")}`}
+                  element={
+                    <Suspense fallback={<LoadingPlaceholder height="500px" />}>
+                      <CityComponent />
+                    </Suspense>
+                  }
+                />
+              );
+            })}
+          </Routes>
+        </Suspense>
       </BlogContext.Provider>
 
       {(location1.pathname.includes(`/self-drive-car-rentals/${location}`) ||
         location1.pathname === `/`) && (
         <>
-          <CarRentalSearch />
-          <Zymo />
-          <BrandCarousel />
-          <Benefits />
-          <ServiceProvider />
-          <Cars />
-          <Refer />
-          <Featured />
-          <Reviews />
-          <Youtube />
+          <Suspense fallback={<LoadingPlaceholder height="200px" />}>
+            <CarRentalSearch />
+          </Suspense>
+          <Suspense fallback={<LoadingPlaceholder height="300px" />}>
+            <Zymo />
+          </Suspense>
+          <Suspense fallback={<LoadingPlaceholder height="300px" />}>
+            <BrandCarousel />
+          </Suspense>
+          <Suspense fallback={<LoadingPlaceholder height="200px" />}>
+            <Benefits />
+          </Suspense>
+          <Suspense fallback={<LoadingPlaceholder height="300px" />}>
+            <ServiceProvider />
+          </Suspense>
+          <Suspense fallback={<LoadingPlaceholder height="300px" />}>
+            <Cars />
+          </Suspense>
+          <Suspense fallback={<LoadingPlaceholder height="200px" />}>
+            <Refer />
+          </Suspense>
+          <Suspense fallback={<LoadingPlaceholder height="300px" />}>
+            <Featured />
+          </Suspense>
+          <Suspense fallback={<LoadingPlaceholder height="300px" />}>
+            <Reviews />
+          </Suspense>
+          <Suspense fallback={<LoadingPlaceholder height="300px" />}>
+            <Youtube />
+          </Suspense>
           <WhatsAppIcon />
-          <Faq />
+          <Suspense fallback={<LoadingPlaceholder height="200px" />}>
+            <Faq />
+          </Suspense>
         </>
       )}
 
