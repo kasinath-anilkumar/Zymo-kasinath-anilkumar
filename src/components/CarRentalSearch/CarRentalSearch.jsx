@@ -38,13 +38,14 @@ const CarRentalSearch = () => {
               }`}
               onClick={() => setActiveTab(tab)}
             >
-              {tab === "buy" ? (
+              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              {/* {tab === "buy" ? (
                 <Link to="/explore-new-cars">
                   {tab.charAt(0).toUpperCase() + tab.slice(1)}
                 </Link>
               ) : (
                 tab.charAt(0).toUpperCase() + tab.slice(1)
-              )}
+              )} */}
             </button>
           ))}
         </div>
