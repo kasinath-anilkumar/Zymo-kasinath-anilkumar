@@ -12,6 +12,7 @@ import SelectLocation from "./components/SelectLocation/Select";
 import WhatsAppIcon from "./components/whatsappIcon/whatsapp";
 import BlogContext from "./Context/BlogContext";
 import LoadingPlaceholder from "./components/LoadingPlaceholder/LoadingPlaceholder";
+import ExploreNewCars from "./components/ExploreNewCars/ExploreNewCars";
 
 
 // Lazy-loaded components
@@ -41,6 +42,7 @@ const Hyderabad = lazy(() => import("./pages/Hyderabad/Hyderabad"));
 const Pune = lazy(() => import("./pages/Pune/Pune"));
 const Mumbai = lazy(() => import("./pages/Mumbai/Mumbai"));
 const Kolkata = lazy(() => import("./pages/Kolkata/Kolkata"));
+
 
 const App = () => {
   const { location, setLocation, locationShow } = useLocationContext();
@@ -94,6 +96,7 @@ const App = () => {
             <Route path="/self-drive-car-rentals/kolkata" element={<Kolkata />} />
             <Route path="/career" element={<Career />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/explore-new-cars" element={<ExploreNewCars />} />
             <Route path="/blogs" element={<BlogsMainPage />} />
             <Route path="/blog/:id" element={<BlogDetailPage />} />
             <Route path="/contact" element={<ContactUs />} />
