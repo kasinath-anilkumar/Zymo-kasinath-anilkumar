@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
-import banner1 from '../../assets/banner1.jpg'
 import p4 from '../../assets/p4.png'
 import p2 from '../../assets/p2.png'
 import p3 from '../../assets/p3.png'
-import p1 from '../../assets/p1.png'
-import Example from "../../components/Example/Example"
+import p1 from '../../assets/p1.jpg'
+import ExploreCars from "../../components/ExploreCars/ExploreCars"
 
 
 const Banner = () => {
@@ -31,8 +30,8 @@ const Banner = () => {
         <Carousel.Item>
           <a href="http://get.zymo.app/car">
             <img
-              className="d-block  rounded p-1"
-              src={banner1}
+              className="d-block w-100 rounded p-1"
+              src={p1}
               alt="First slide"
               style={{ border: 'solid' }}
             />
@@ -61,7 +60,7 @@ const Banner = () => {
         <Carousel.Item>
           <a href="http://get.zymo.app/car">
             <img
-              className="d-block mt-4 m-auto rounded p-1"
+              className="d-block w-100 rounded p-1"
               src={p4}
               alt="Fourth slide"
               style={{ border: 'solid' }}

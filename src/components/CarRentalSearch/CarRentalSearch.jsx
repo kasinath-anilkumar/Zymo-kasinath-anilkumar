@@ -25,16 +25,16 @@ const CarRentalSearch = () => {
   };
 
   return (
-    <div className="mt-14 container mx-auto rounded-lg">
-      <div className="bg-white p-5 rounded-lg shadow-md">
-        <div className="flex mb-5">
+    <div className="mt-3 sm:mt-8 md:mt-14 container mx-auto rounded-lg py-10">
+      <div className="bg-violet-200 p-5 rounded-xl shadow-xl">
+        <div className="flex gap-2 md:gap-5 mb-5">
           {['rent', 'subscribe', 'buy'].map((tab) => (
             <button
               key={tab}
-              className={`w-36 py-3 rounded-lg ${
+              className={`w-36 md:py-3 p-2 rounded-lg shadow-xl ${
                 activeTab === tab
                   ? 'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700'
-                  : 'bg-purple-200 text-black'
+                  : 'bg-purple-300 text-black'
               }`}
               onClick={() => setActiveTab(tab)}
             >

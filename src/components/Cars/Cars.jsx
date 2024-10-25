@@ -1,8 +1,10 @@
 import React, { useRef } from "react";
 import Slider from "react-slick";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-import Next from "/next.png"
-import Prev from "/prev.png"
+import Next from "/next.png";
+import Prev from "/prev.png";
 
 import c1 from "/c1.png";
 import c2 from "/c2.png";
@@ -53,7 +55,7 @@ const Cars = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1, // Show only 1 image at a time
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -74,32 +76,53 @@ const Cars = () => {
       </h1>
       <Slider {...settings} ref={sliderRef} className="relative">
         {Car.map((car) => (
-          <div key={car.id} className="text-center">
-            <img
-              src={car.image}
-              alt={car.name}
-              className="w-9/12 h-4/6 object-cover mx-auto"
-            />
-            {/* <h1 className="text-lg text-gray-600">₹{car.rate}/hr</h1> */}
-            <pre><h3 className="text-3xl font-bold mt-1">{car.name}  -  ₹{car.rate}/hr</h3></pre>
-            
-          </div>
-        ))} 
+          <CarSlide key={car.id} car={car} />
+        ))}
       </Slider>
       <button
         onClick={goToPrevious}
         className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full"
       >
-        <img src={Prev} alt="" 
-        className="w-6 h-6" />
+        <img src={Prev} alt="Previous" className="w-6 h-6" />
       </button>
       <button
         onClick={goToNext}
         className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full"
       >
-        <img src={Next} alt="" 
-        className="w-6 h-6" />
+        <img src={Next} alt="Next" className="w-6 h-6" />
       </button>
+    </div>
+  );
+};
+
+const CarSlide = ({ car }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5, // Trigger animation when 50% in view
+  });
+
+  return (
+    <div ref={ref} className="text-center">
+      {/* Car Image Sliding in from the Right */}
+      <motion.img
+        src={car.image}
+        alt={car.name}
+        className="w-9/12 h-4/6 object-cover mx-auto"
+        initial={{ opacity: 0, x: 100 }} // Start off-screen to the right
+        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }} // Slide in when in view
+        transition={{ duration: 0.6 }}
+      />
+      
+      {/* Car Name and Rate Sliding in from the Left */}
+      <motion.div
+        initial={{ opacity: 0, x: -100 }} // Start off-screen to the left
+        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }} // Slide in when in view
+        transition={{ duration: 0.6 }}
+      >
+        <h3 className="text-3xl font-bold mt-1">
+          {car.name} - ₹{car.rate}/hr
+        </h3>
+      </motion.div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import logoImage from "/cars-background/p3.png";
 import serviceBg from "/cars-background/serviceBg.png";
 import { useParams } from "react-router-dom";
 
-const Example = () => {
+const ExploreCars= () => {
   const { id } = useParams();
 
   // Image options for the carousel
@@ -43,4 +43,4 @@ const Example = () => {
   );
 };
 
-export default Example;
+export default ExploreCars;
