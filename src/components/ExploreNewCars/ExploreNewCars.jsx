@@ -1,5 +1,5 @@
 import React from 'react'
-import ExploreCars from "../ExploreCars/ExploreCars"
+import ExploreCars from "./ExploreCars/ExploreCars"
 
 const ExploreNewCars = () => {
   return (
