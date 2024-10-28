@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import FindCars from "../FindCars/FindCars";
-import car1 from "../../../assets/explore-cars/tata-altroz.png";
-import car2 from "../../../assets/explore-cars/wp13378255-mercedes-benz-amg-gt-63-wallpapers.jpg";
-import car3 from "../../../assets/explore-cars/wp10764957-tata-nexon-dark-wallpapers.jpg";
-import car4 from "../../../assets/explore-cars/Tata Punch Creative Plus S Camo AMT.jpg";
+import car1 from "/explore-cars/tata-altroz.png";
+import car2 from "/explore-cars/wp13378255-mercedes-benz-amg-gt-63-wallpapers.jpg";
+import car3 from "/explore-cars/wp10764957-tata-nexon-dark-wallpapers.jpg";
+import car4 from "/explore-cars/Tata Punch Creative Plus S Camo AMT.jpg";
 import { useParams } from "react-router-dom";
 
 const ExploreCars = () => {
