@@ -1,35 +1,31 @@
 import React from "react";
 import carSkeleton from "/car-skeleton.png";
+import { getDocs, collection } from "firebase/firestore";
+import { useEffect, useContext } from "react";
+import BlogContext from "../../../../Context/BlogContext";
+import { db } from "../../../../firebase-config";
 
 const BlogSection = () => {
-  const blogs = [
-    {
-      id: 1,
-      title: "Zymo Cars And Zoom Car:",
-      subtitle: "Driving The Future Of Self-Drive Rental Cars",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      id: 2,
-      title: "Zymo Cars:",
-      subtitle: "Luxury Option For Car Rental In India",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      id: 3,
-      title:
-        "Introduction: Exploring Temporary Transportation Services In India",
-      subtitle: "",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      id: 4,
-      title: "Explore India In Style:",
-      subtitle:
-        "Renting A Baleno For A Memorable Self-Drive Experience With Zymo",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-  ];
+  const blogsCollectionRef = collection(db, "blogs");
+  const { blogsList, setBlogsList } = useContext(BlogContext);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const getBlogsList = async () => {
+      try {
+        const data = await getDocs(blogsCollectionRef);
+        const filteredBlogsList = data.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        console.log(filteredBlogsList);
+        setBlogsList(filteredBlogsList.slice(0, 4));
+      } catch (e) {
+        console.error(e);
+      }
+    };
+    getBlogsList();
+  }, []);
 
   return (
     <div className="bg-gradient-to-r from-[#5542b1e5] to-[#a738d3] py-16 font-poppins mx-4 rounded-2xl">
@@ -44,24 +40,24 @@ const BlogSection = () => {
         </div>
 
         <div className="grid gap-5 text-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-          {blogs.map((blog) => (
+          {blogsList.map((blog, id) => (
             <div
-              key={blog.id}
+              key={id}
               className="bg-white rounded-xl shadow-lg p-2 md:p-3 lg:p-6 transition-transform duration-300 hover:scale-105 mx-4"
             >
               <img
-                src={carSkeleton}
+                src={blog.cover}
                 alt="Car"
-                className="rounded-md mb-6 w-full h-40 sm:h-44 md:h-48 lg:h-36 px-12 sm:px-13 lg:px-28"
+                className="rounded-md mb-6 w-full sm:h-44 md:h-48 lg:h-52 px-12 sm:px-13 lg:px-28"
               />
               <h3 className="text-lg md:text-xl font-bold text-gray-800">
                 {blog.title}
               </h3>
               <h4 className="text-sm text-gray-600 font-semibold mb-2">
-                {blog.subtitle}
+                {blog.category}
               </h4>
               <p className="text-gray-600 mb-4 text-sm px-2 md:px-5">
-                {blog.desc}
+                {blog.metaDescription}
               </p>
               <button className="bg-purple-700 text-white px-3 py-2 text-sm shadow-xl rounded-lg hover:bg-purple-800">
                 View Details
