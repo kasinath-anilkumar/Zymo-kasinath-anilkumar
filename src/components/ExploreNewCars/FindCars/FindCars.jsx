@@ -16,7 +16,7 @@ const FindCars = () => {
       animate={{ opacity: 1, y: 0 }} // Fade in and slide to normal position
       transition={{ duration: 0.6 }} // Smooth transition
     >
-      <div className="w-full">
+      <div className="w-full font-poppins">
         <h2 className="text-2xl font-bold mb-4 text-center">
           Find Your Right Car
         </h2>
