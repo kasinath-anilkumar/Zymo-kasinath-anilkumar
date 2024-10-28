@@ -4,7 +4,6 @@ import banner1 from '../../assets/banner1.jpg'
 import p4 from '../../assets/p4.png'
 import p2 from '../../assets/p2.png'
 import p3 from '../../assets/p3.png'
-import Example from "../../components/Example/Example"
 
 
 const Surat = () => {
