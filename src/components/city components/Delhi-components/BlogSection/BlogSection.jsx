@@ -26,7 +26,8 @@ const BlogSection = ({ cityName }) => {
               (blog.metaDescription && blog.metaDescription.toLowerCase().includes(searchTerm)) ||
               (blog.category && blog.category.toLowerCase().includes(searchTerm))
             );
-          });
+          })
+          .slice(0, 6); // Limit to 6 blogs
         
         console.log(filteredBlogsList);
         setBlogsList(filteredBlogsList);
