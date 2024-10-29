@@ -1,6 +1,6 @@
 import React from "react";
-import background from "../../../../assets/Background/bg-1.png";
-import selfPickup from "../../../../assets/self-pickup.png";
+import background from "../../../assets/Background/bg-1.png";
+import selfPickup from "../../../assets/self-pickup.png";
 import { FaRegSquareCheck, FaMapLocationDot } from "react-icons/fa6";
 
 const Benefits = () => {
