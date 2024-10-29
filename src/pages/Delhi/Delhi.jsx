@@ -1,9 +1,9 @@
 import React from "react";
-import CompareAndChoice from "../../components/city components/Delhi-components/CompareAndChoice/CompareAndChoice";
-import Benefits from "../../components/city components/Delhi-components/Benefits/Benefits";
-import BlogSection from "../../components/city components/Delhi-components/BlogSection/BlogSection";
-import Banner from "../../components/city components/Delhi-components/Banner/Banner";
-import IndiaGate from "/india-gate-car.png";
+import CompareAndChoice from "../../components/city components/CompareAndChoice/CompareAndChoice";
+import Benefits from "../../components/city components/Benefits/Benefits";
+import BlogSection from "../../components/city components/BlogSection/BlogSection";
+import Banner from "../../components/city components/Banner/Banner";
+import IndiaGate from "../../assets/City-Logo/delhi.png";
 
 const Delhi = () => {
   return (

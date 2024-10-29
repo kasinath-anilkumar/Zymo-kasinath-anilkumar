@@ -2,8 +2,8 @@ import React from "react";
 import carSkeleton from "/car-skeleton.png";
 import { getDocs, collection } from "firebase/firestore";
 import { useEffect, useContext } from "react";
-import BlogContext from "../../../../Context/BlogContext";
-import { db } from "../../../../firebase-config";
+import BlogContext from "../../../Context/BlogContext";
+import { db } from "../../../firebase-config";
 
 const BlogSection = ({ cityName }) => {
   const blogsCollectionRef = collection(db, "blogs");

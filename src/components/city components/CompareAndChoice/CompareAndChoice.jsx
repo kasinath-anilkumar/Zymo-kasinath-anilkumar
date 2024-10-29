@@ -1,5 +1,5 @@
 import React from "react";
-import background from "../../../../assets/Background/bg-1.png";
+import background from "../../../assets/Background/bg-1.png";
 import { FaHandPointer, FaCar, FaWallet } from "react-icons/fa";
 
 const CompareAndChoice = () => {

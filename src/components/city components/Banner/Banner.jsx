@@ -2,7 +2,7 @@ import React from "react";
 import Play_store from "/Play_store.png";
 import App_store from "/App_store.png";
 
-const Banner = ({bg}) => {
+const Banner = ({ bg }) => {
   return (
     <div className="bg-gradient-to-b from-[#5542b1e5] to-[#a738d3] rounded-xl mx-4 my-10 font-poppins">
       {/* Main Content */}
@@ -16,7 +16,7 @@ const Banner = ({bg}) => {
             And get a voucher worth Rs.100
           </p>
 
-          <div className="flex justify-center  space-x-4 py-2">
+          <div className="flex justify-center space-x-4 py-2">
             <a href="https://apps.apple.com/in/app/zymo-self-drive-car-rental/id1547829759?utm_source=apple_ios&utm_medium=referral&utm_campaign=app_launch">
               <img
                 src={App_store}
@@ -35,8 +35,12 @@ const Banner = ({bg}) => {
         </div>
 
         {/* Image Section */}
-        <div className="md:w-1/3">
-          <img src={bg} alt="India Gate with Car" className="w-full" />
+        <div className="md:w-1/2 w-full flex justify-center">
+          <img
+            src={bg}
+            alt="India Gate with Car"
+            className="w-full md:w-auto h-88 md:h-96 object-contain"
+          />
         </div>
       </div>
 
