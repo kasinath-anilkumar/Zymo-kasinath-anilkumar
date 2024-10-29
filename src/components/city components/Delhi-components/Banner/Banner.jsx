@@ -1,13 +1,12 @@
 import React from "react";
-import IndiaGate from "/india-gate-car.png";
 import Play_store from "/Play_store.png";
 import App_store from "/App_store.png";
 
-const Banner = () => {
+const Banner = ({bg}) => {
   return (
     <div className="bg-gradient-to-b from-[#5542b1e5] to-[#a738d3] rounded-xl mx-4 my-10 font-poppins">
       {/* Main Content */}
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between p-4 md:p-12 lg:p-16">
+      <div className="min-h-[50vh] flex flex-col-reverse md:flex-row items-center justify-between p-4 md:p-12 lg:p-16">
         {/* Text Section */}
         <div className="text-white md:w-1/2 text-center md:text-left">
           <h1 className="text-3xl md:text-5xl font-bold py-2">
@@ -37,7 +36,7 @@ const Banner = () => {
 
         {/* Image Section */}
         <div className="md:w-1/3">
-          <img src={IndiaGate} alt="India Gate with Car" className="w-full" />
+          <img src={bg} alt="India Gate with Car" className="w-full" />
         </div>
       </div>
 
