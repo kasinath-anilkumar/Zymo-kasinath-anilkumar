@@ -12,9 +12,8 @@ const Bangalore = () => {
       <Banner bg={bangalore}/>
       <CompareAndChoice />
       <Benefits />
-      <BlogSection />
-    </>
-  );
+      <BlogSection cityName={"bangalore"} />
+    </>  );
 };
 
 export default Bangalore;

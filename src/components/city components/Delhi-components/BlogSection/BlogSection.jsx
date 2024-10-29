@@ -5,7 +5,7 @@ import { useEffect, useContext } from "react";
 import BlogContext from "../../../../Context/BlogContext";
 import { db } from "../../../../firebase-config";
 
-const BlogSection = () => {
+const BlogSection = ({ cityName }) => {
   const blogsCollectionRef = collection(db, "blogs");
   const { blogsList, setBlogsList } = useContext(BlogContext);
 
@@ -14,12 +14,23 @@ const BlogSection = () => {
     const getBlogsList = async () => {
       try {
         const data = await getDocs(blogsCollectionRef);
-        const filteredBlogsList = data.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        }));
+        const filteredBlogsList = data.docs
+          .map((doc) => ({
+            ...doc.data(),
+            id: doc.id,
+          }))
+          .filter((blog) => {
+            const searchTerm = cityName;
+            return (
+              (blog.title && blog.title.toLowerCase().includes(searchTerm)) ||
+              (blog.metaDescription && blog.metaDescription.toLowerCase().includes(searchTerm)) ||
+              (blog.category && blog.category.toLowerCase().includes(searchTerm))
+            );
+          })
+          .slice(0, 6); // Limit to 6 blogs
+        
         console.log(filteredBlogsList);
-        setBlogsList(filteredBlogsList.slice(0, 4));
+        setBlogsList(filteredBlogsList);
       } catch (e) {
         console.error(e);
       }
