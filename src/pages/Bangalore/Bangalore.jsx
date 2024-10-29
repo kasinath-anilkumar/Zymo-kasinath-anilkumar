@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import bangalore from "../../assets/HeroSection/bangalore-image.jpg"
+import bangalore from "../../assets/City-Logo/Bangalore.png"
 import CompareAndChoice from "../../components/city components/CompareAndChoice/CompareAndChoice";
 import Benefits from "../../components/city components/Benefits/Benefits";
 import BlogSection from "../../components/city components/BlogSection/BlogSection";
