@@ -61,7 +61,7 @@ const Banner = () => {
           <a href="http://get.zymo.app/car">
             <img
               className="d-block w-100 rounded p-1"
-              src={p4}
+              src={p5}
               alt="Fourth slide"
               style={{ border: 'solid' }}
             />
