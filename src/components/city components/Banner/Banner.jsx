@@ -6,7 +6,7 @@ const Banner = ({ bg }) => {
   return (
     <div className="bg-gradient-to-b from-[#5542b1e5] to-[#a738d3] rounded-xl mx-4 my-10 font-poppins">
       {/* Main Content */}
-      <div className="min-h-[50vh] flex flex-col-reverse md:flex-row items-center justify-between p-4 md:p-12 lg:p-16">
+      <div className="min-h-[50vh] flex flex-col-reverse md:flex-row items-center justify-center gap-16  lg:p-6">
         {/* Text Section */}
         <div className="text-white md:w-1/2 text-center md:text-left">
           <h1 className="text-3xl md:text-5xl font-bold py-2">
@@ -35,11 +35,11 @@ const Banner = ({ bg }) => {
         </div>
 
         {/* Image Section */}
-        <div className="md:w-1/2 w-full flex justify-center">
+        <div>
           <img
             src={bg}
             alt="India Gate with Car"
-            className="w-full md:w-auto h-88 md:h-96 object-contain"
+            className="w-full md:w-auto h-max object-contain"
           />
         </div>
       </div>
