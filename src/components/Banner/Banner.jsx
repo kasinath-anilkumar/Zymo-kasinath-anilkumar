@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
-import p4 from '../../assets/p4.png'
 import p2 from '../../assets/p2.png'
 import p3 from '../../assets/p3.png'
 import p1 from '../../assets/p1.jpg'
-import p5 from "../../assets/p5.png"
 
 
 const Banner = () => {
@@ -13,7 +11,7 @@ const Banner = () => {
   // Custom interval for the carousel that works even when the browser is inactive
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex(prevIndex => (prevIndex + 1) % 4); 
+      setIndex(prevIndex => (prevIndex + 1) % 3); 
     }, 2000);
 
     return () => clearInterval(interval);
@@ -53,16 +51,6 @@ const Banner = () => {
               className="d-block w-100 rounded p-1"
               src={p3}
               alt="Third slide"
-              style={{ border: 'solid' }}
-            />
-          </a>
-        </Carousel.Item>
-        <Carousel.Item>
-          <a href="http://get.zymo.app/car">
-            <img
-              className="d-block w-100 rounded p-1"
-              src={p5}
-              alt="Fourth slide"
               style={{ border: 'solid' }}
             />
           </a>
