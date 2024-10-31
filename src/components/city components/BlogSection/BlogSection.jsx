@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import carSkeleton from "/car-skeleton.png";
 import { getDocs, collection } from "firebase/firestore";
 import { useEffect, useContext } from "react";
@@ -8,6 +8,8 @@ import { db } from "../../../firebase-config";
 const BlogSection = ({ cityName }) => {
   const blogsCollectionRef = collection(db, "blogs");
   const { blogsList, setBlogsList } = useContext(BlogContext);
+  const [currentPage, setCurrentPage] = useState(1);
+  const blogsPerPage = 4;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -20,23 +22,27 @@ const BlogSection = ({ cityName }) => {
             id: doc.id,
           }))
           .filter((blog) => {
-            const searchTerm = cityName;
+            const searchTerm = cityName.toLowerCase();
             return (
               (blog.title && blog.title.toLowerCase().includes(searchTerm)) ||
               (blog.metaDescription && blog.metaDescription.toLowerCase().includes(searchTerm)) ||
               (blog.category && blog.category.toLowerCase().includes(searchTerm))
             );
-          })
-          .slice(0, 6); // Limit to 6 blogs
-        
-        console.log(filteredBlogsList);
+          });
+
         setBlogsList(filteredBlogsList);
       } catch (e) {
         console.error(e);
       }
     };
     getBlogsList();
-  }, []);
+  }, [cityName]);
+
+  const indexOfLastBlog = currentPage * blogsPerPage;
+  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+  const currentBlogs = blogsList.slice(indexOfFirstBlog, indexOfLastBlog);
+
+  const totalPages = Math.ceil(blogsList.length / blogsPerPage);
 
   return (
     <div className="bg-gradient-to-r from-[#5542b1e5] to-[#a738d3] py-16 font-poppins mx-4 rounded-2xl">
@@ -51,13 +57,13 @@ const BlogSection = ({ cityName }) => {
         </div>
 
         <div className="grid gap-5 text-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-          {blogsList.map((blog, id) => (
+          {currentBlogs.map((blog, id) => (
             <div
               key={id}
               className="bg-white rounded-xl shadow-lg p-2 md:p-3 lg:p-6 transition-transform duration-300 hover:scale-105 mx-4"
             >
               <img
-                src={blog.cover}
+                src={blog.cover || carSkeleton}
                 alt="Car"
                 className="rounded-md mb-6 w-full sm:h-44 md:h-48 lg:h-52 px-12 sm:px-13 lg:px-28"
               />
@@ -75,6 +81,27 @@ const BlogSection = ({ cityName }) => {
               </button>
             </div>
           ))}
+        </div>
+
+        {/* Pagination Controls */}
+        <div className="flex justify-center mt-4">
+          <button
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className="px-4 py-2 mx-1 text-white bg-purple-700 rounded-lg hover:bg-purple-800"
+          >
+            Previous
+          </button>
+          <span className="px-4 py-2 mx-1 text-white">
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+            disabled={currentPage === totalPages}
+            className="px-4 py-2 mx-1 text-white bg-purple-700 rounded-lg hover:bg-purple-800"
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>
