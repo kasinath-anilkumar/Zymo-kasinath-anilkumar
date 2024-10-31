@@ -13,6 +13,7 @@ import WhatsAppIcon from "./components/whatsappIcon/whatsapp";
 import BlogContext from "./Context/BlogContext";
 import LoadingPlaceholder from "./components/LoadingPlaceholder/LoadingPlaceholder";
 import ExploreNewCars from "./components/ExploreNewCars/ExploreNewCars";
+import Banner1 from "./components/Banner/Banner1"
 
 
 // Lazy-loaded components
@@ -132,6 +133,9 @@ const App = () => {
         <>
           <Suspense fallback={<LoadingPlaceholder height="200px" />}>
             <CarRentalSearch />
+          </Suspense>
+          <Suspense fallback={<LoadingPlaceholder height="200px" />}>
+            <Banner1 />
           </Suspense>
           <Suspense fallback={<LoadingPlaceholder height="300px" />}>
             <Zymo />
