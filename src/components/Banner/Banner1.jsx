@@ -7,7 +7,7 @@ import Logo from "/logo.png";
 
 const Banner1 = () => {
   return (
-    <div className="md:py-10 py-5 text-white font-poppins px-5 md:px-10">
+    <div className="md:py-10 py-5 text-white font-poppins px-4 md:px-10">
       <div className="relative w-full h-auto md:h-[500px] px-5 md:px-20 rounded-2xl ">
         {/* Background Image with Blur */}
         <div
