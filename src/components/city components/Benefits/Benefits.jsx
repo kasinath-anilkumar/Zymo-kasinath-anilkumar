@@ -13,7 +13,7 @@ const Benefits = () => {
     >
       <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-purple-100 to-white/60 opacity-50 rounded-xl"></div>
 
-      <div className="relative flex flex-col md:flex-row justify-around items-center space-y-8 md:space-y-0 md:space-x-8 text-black">
+      <div className="relative flex flex-col md:flex-row justify-center gap-36 items-center space-y-8 md:space-y-0 md:space-x-8 text-black">
         <div className="text-center">
           <img
             src={selfPickup}
@@ -23,30 +23,20 @@ const Benefits = () => {
           <h3 className="text-lg md:text-xl font-semibold mb-2 opacity-90">
             Self PickUp Or Get it Delivered
           </h3>
-          <p className="text-gray-600 px-5">
-            Diam tincidunt tincidunt erat at semper fermentum. Id ultricies quis
-          </p>
         </div>
 
         <div className="text-center">
           <FaMapLocationDot className="text-4xl md:text-5xl mx-auto mb-4 opacity-90" />
           <h3 className="text-lg md:text-xl font-semibold mb-2 opacity-90">
-            2000+ Locations in Cities
+            2000+ Locations in 59 Cities
           </h3>
-          <p className="text-gray-600 px-5">
-            Gravida auctor fermentum morbi vulputate ac egestas orci etium
-            convallis
-          </p>
         </div>
 
-        <div className="text-center ">
+        <div className="text-center w-80">
           <FaRegSquareCheck className="text-4xl md:text-5xl mx-auto mb-4 opacity-90" />
-          <h3 className="text-lg md:text-xl font-semibold mb-2 opacity-90 px-5">
+          <h3 className="text-wrap text-lg md:text-xl font-semibold mb-2 opacity-90 ">
             Select from Limited Or Unlimited Kms Packages
           </h3>
-          <p className="px-5 text-gray-600">
-            Pretium convallis id diam sed commodo vestibulum lobortis volutpat
-          </p>
         </div>
       </div>
     </div>
