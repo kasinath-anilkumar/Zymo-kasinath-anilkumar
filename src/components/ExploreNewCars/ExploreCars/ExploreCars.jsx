@@ -13,7 +13,7 @@ const ExploreCars = () => {
     { src: car1, name: "Tata Altroz" },
     { src: car2, name: "Mercedes AMG GT" },
     { src: car3, name: "Tata Nexon" },
-    { src: car4, name: "Tata Punch" },
+    { src: car4, name: "BYD Song Plus" },
   ];
   
   const [activeIndex, setActiveIndex] = useState(0);
