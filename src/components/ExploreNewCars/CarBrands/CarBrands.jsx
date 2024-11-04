@@ -80,14 +80,14 @@ const CarBrands = () => {
           {left.map((brand) => (
             <div
               key={brand.id}
-              className="flex flex-col items-center justify-center text-center h-full min-h-[150px]"
+              className="flex flex-col w-10 h-full min-h-[150px]"
             >
               <img
                 src={brand.image}
                 alt={brand.name}
-                className="w-20 h-20 object-contain mb-2" // Ensures uniform image size and aspect ratio
+                className="w-10 h-20 object-contain mb-2" // Ensures uniform image size and aspect ratio
               />
-              <p className="text-sm font-medium font-poppins text-gray-700">
+              <p className="text-sm  font-medium font-poppins text-gray-700">
                 {brand.name}
               </p>
             </div>
@@ -101,14 +101,14 @@ const CarBrands = () => {
           {right.map((brand) => (
             <div
               key={brand.id}
-              className="flex flex-col items-center justify-center text-center h-full min-h-[150px]"
+              className="flex flex-col h-full min-h-[150px]"
             >
               <img
                 src={brand.image}
                 alt={brand.name}
-                className="w-20 h-20 object-contain mb-2" // Ensures uniform image size and aspect ratio
+                className="w-10 h-20 object-contain mb-2" // Ensures uniform image size and aspect ratio
               />
-              <p className="text-sm font-medium font-poppins text-gray-700">
+              <p className="text-sm  font-medium font-poppins text-gray-700">
                 {brand.name}
               </p>
             </div>
