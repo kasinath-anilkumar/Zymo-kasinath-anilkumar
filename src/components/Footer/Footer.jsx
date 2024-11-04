@@ -15,7 +15,7 @@ const Footer = () => {
           <Features /> {/* Features component */}
           <InstallApp /> {/* Install app component */}
         </div>
-        <p className="text-center mt-4">Copyright © 2024 Zymo Rental service Ltd. All Rights Reserved.</p>
+        <p className="text-center mt-4">Copyright © 2023 Zep Tepi Technologies Pvt Ltd. All Rights Reserved.</p>
       </div>
     </footer>
   );
