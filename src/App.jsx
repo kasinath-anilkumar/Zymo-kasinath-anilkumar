@@ -43,7 +43,8 @@ const Hyderabad = lazy(() => import("./pages/Hyderabad/Hyderabad"));
 const Pune = lazy(() => import("./pages/Pune/Pune"));
 const Mumbai = lazy(() => import("./pages/Mumbai/Mumbai"));
 const Kolkata = lazy(() => import("./pages/Kolkata/Kolkata"));
-
+const CreateBlogPage = lazy(() => import("./components/blog/CreateBlogPage"));
+const CreateEditBlogPage = lazy(() => import("./components/blog/createEditBlogPage"));
 
 const App = () => {
   const { location, setLocation, locationShow } = useLocationContext();
@@ -100,6 +101,8 @@ const App = () => {
             <Route path="/explore-new-cars" element={<ExploreNewCars />} />
             <Route path="/blogs" element={<BlogsMainPage />} />
             <Route path="/blog/:id" element={<BlogDetailPage />} />
+            <Route path= "/createblog/:id" element={ <CreateBlogPage />} />
+            <Route path= "/createblog" element= {<CreateEditBlogPage /> }  />          
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/terms-of-service" element={<Terms />} />

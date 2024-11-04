@@ -3,12 +3,12 @@ import "react-quill/dist/quill.snow.css";
 import React from "react";
 import ReactQuill from "react-quill";
 
-// import { db } from "../../../src/firebase-config";
+import { db } from "../../firebase-config";
 import { useEffect } from "react";
 import { TextField } from "@mui/material";
 import { useParams } from "react-router-dom";
-// import { PasswordDialog } from "../../components/blogs/PasswordDialog";
-// import { collection, getDocs, query, where } from "firebase/firestore";
+import { PasswordDialog } from "./PasswordDialog";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 function CreateBlogPage() {
   const { id } = useParams();
@@ -17,7 +17,7 @@ function CreateBlogPage() {
   const [image, setImage] = React.useState(null);
   const [open, setOpen] = React.useState(false);
 
-  // const blogsCollectionRef = collection(db, "blogs");
+  const blogsCollectionRef = collection(db, "blogs");
 
   let blogSlug = "";
   if (id !== "create") {
@@ -30,10 +30,10 @@ function CreateBlogPage() {
       .join("-");
   }
 
-  // const getBlogQuery = query(
-  //   blogsCollectionRef,
-  //   where("title", "==", blogSlug)
-  // );
+  const getBlogQuery = query(
+    blogsCollectionRef,
+    where("title", "==", blogSlug)
+  );
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -41,26 +41,26 @@ function CreateBlogPage() {
 
     async function getDocumentByTitle() {
       try {
-        // const querySnapshot = await getDocs(getBlogQuery);
+        const querySnapshot = await getDocs(getBlogQuery);
 
-        // if (querySnapshot.empty) {
-        //   console.log("No matching documents.");
-        //   return null;
-        // }
+        if (querySnapshot.empty) {
+          console.log("No matching documents.");
+          return null;
+        }
 
-        // const document = querySnapshot.docs[0];
-        // const data = { id: document.id, ...document.data() };
-        // const {
-        //   title,
-        //   metaDescription,
-        //   subheading,
-        //   category,
-        //   description,
-        //   altText,
-        // } = data;
+        const document = querySnapshot.docs[0];
+        const data = { id: document.id, ...document.data() };
+        const {
+          title,
+          metaDescription,
+          subheading,
+          category,
+          description,
+          altText,
+        } = data;
 
-        // setValues({ title, metaDescription, subheading, category, altText });
-        // setDescription(description);
+        setValues({ title, metaDescription, subheading, category, altText });
+        setDescription(description);
       } catch (error) {
         console.error("Error getting document(CreateBlogPage.js):", error);
         return null;
@@ -144,7 +144,7 @@ function CreateBlogPage() {
         value={values.altText || ""}
       />
       <button onClick={handleSubmit}>Upload Blog</button>
-      {/* {id === "create" ? (
+      {id === "create" ? (
         <PasswordDialog
           open={open}
           setOpen={setOpen}
@@ -163,7 +163,7 @@ function CreateBlogPage() {
           operation="edit"
           blogSlug={blogSlug}
         />
-      )} */}
+      )}
     </div>
   );
 }

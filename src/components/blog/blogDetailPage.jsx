@@ -2,15 +2,15 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import { db } from "../../../src/firebase-config";
-// import { collection, query, where, onSnapshot } from "firebase/firestore";
+import { db } from "../../firebase-config";
+import { collection, query, where, onSnapshot } from "firebase/firestore";
 
 import "./blogDetailPage.scss";
 
 function BlogDetailPage() {
   const { id } = useParams();
   const [filteredBlog, setFilteredBlog] = useState({});
-  // const blogsCollectionRef = collection(db, "blogs");
+  const blogsCollectionRef = collection(db, "blogs");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -24,20 +24,20 @@ function BlogDetailPage() {
     .split("_")
     .join("-");
 
-  // const getBlogQuery = query(
-  //   blogsCollectionRef,
-  //   where("title", "==", blogSlug)
-  // );
+  const getBlogQuery = query(
+    blogsCollectionRef,
+    where("title", "==", blogSlug)
+  );
 
-  // useEffect(() => {
-  //   const unsubscribe = onSnapshot(getBlogQuery, (snapshot) => {
-  //     snapshot.docs.forEach((doc) => {
-  //       setFilteredBlog({ ...doc.data(), id: doc.id });
-  //     });
-  //   });
+  useEffect(() => {
+    const unsubscribe = onSnapshot(getBlogQuery, (snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        setFilteredBlog({ ...doc.data(), id: doc.id });
+      });
+    });
 
-  //   return () => unsubscribe();
-  // }, [blogSlug]);
+    return () => unsubscribe();
+  }, [blogSlug]);
 
   return (
     <div>

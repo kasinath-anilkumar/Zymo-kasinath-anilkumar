@@ -1,19 +1,19 @@
 import "./createEditBlog.scss";
 
 import React from "react";
-// import BlogContext from "./";
+import BlogContext from "../../Context/BlogContext";
 import EditBlogCard from "./EditBlogCard";
 
-// import { db } from "../../firebase-config";
+import { db } from "../../firebase-config";
 import { useEffect, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { getDocs, collection } from "firebase/firestore";
-import { PasswordDialog } from "../../components/blogs/PasswordDialog";
+import { getDocs, collection } from "firebase/firestore";
+import { PasswordDialog } from "./PasswordDialog";
 
 function CreateEditBlogPage() {
-  // const [isDialogOpen, setDialogOpen] = useState(true);
+  const [isDialogOpen, setDialogOpen] = useState(true);
   const navigate = useNavigate();
-  // const blogsCollectionRef = collection(db, "blogs");
+  const blogsCollectionRef = collection(db, "blogs");
   const [open, setOpen] = useState(true);
   const [isPageVisible, setPageVisible] = useState(false);
   const { blogsList, setBlogsList } = useContext(BlogContext);
@@ -23,13 +23,13 @@ function CreateEditBlogPage() {
 
     const getBlogsList = async () => {
       try {
-        // const data = await getDocs(blogsCollectionRef);
-        // const filteredBlogsList = data.docs.map((doc) => ({
-        //   ...doc.data(),
-        //   id: doc.id,
-        // }));
-        // console.log(filteredBlogsList);
-        // setBlogsList(filteredBlogsList);
+        const data = await getDocs(blogsCollectionRef);
+        const filteredBlogsList = data.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        console.log(filteredBlogsList);
+        setBlogsList(filteredBlogsList);
       } catch (e) {
         console.error(e);
       }
