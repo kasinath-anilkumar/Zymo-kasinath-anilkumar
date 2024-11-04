@@ -6,6 +6,7 @@ import p2 from '../../assets/p2.png'
 import p3 from '../../assets/p3.png'
 
 
+
 const Nagpur = () => {
   const [index, setIndex] = useState(0);
 
@@ -24,7 +25,48 @@ const Nagpur = () => {
 
   return (
     <div className='m-10'>
-      <Example />
+      <Carousel activeIndex={index} onSelect={handleSelect} controls={false} indicators={false}>
+        <Carousel.Item>
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block  rounded p-1"
+              src={banner1}
+              alt="First slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
+        </Carousel.Item>
+        <Carousel.Item>
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block w-100 rounded p-1"
+              src={p2}
+              alt="Second slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
+        </Carousel.Item>
+        <Carousel.Item>
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block w-100 rounded p-1"
+              src={p3}
+              alt="Third slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
+        </Carousel.Item>
+        <Carousel.Item>
+          <a href="http://get.zymo.app/car">
+            <img
+              className="d-block mt-4 m-auto rounded p-1"
+              src={p4}
+              alt="Fourth slide"
+              style={{ border: 'solid' }}
+            />
+          </a>
+        </Carousel.Item>
+      </Carousel>
     </div>
   );
 };
