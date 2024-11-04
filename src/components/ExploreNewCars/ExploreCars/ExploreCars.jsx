@@ -13,9 +13,9 @@ const ExploreCars = () => {
     { src: car1, name: "Tata Altroz" },
     { src: car2, name: "Mercedes AMG GT" },
     { src: car3, name: "Tata Nexon" },
-    { src: car4, name: "Tata Punch" },
+    { src: car4, name: "BYD Song Plus" },
   ];
-  
+
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleCarChange = (index) => {
@@ -38,13 +38,15 @@ const ExploreCars = () => {
         </div>
 
         {/* Car Name Buttons Overlay */}
-        <div className="absolute bottom-5 left-36 right-0 flex justify-center space-x-4">
+        <div className="absolute bottom-5 left-4 right-4 md:left-36 flex justify-center space-x-4">
           {images.map((image, index) => (
             <button
               key={index}
               onClick={() => handleCarChange(index)}
-              className={`px-4 py-2  text-white rounded-t-xl font-poppins transition duration-300 ${
-                activeIndex === index ? "border-b-4 pb-1" : ""
+              className={`px-4 py-2 text-white bg-black bg-opacity-50 rounded-lg font-poppins transition duration-300 ${
+                activeIndex === index
+                  ? "border-b-4 border-white pb-1"
+                  : "hover:bg-opacity-70"
               }`}
             >
               {image.name}
