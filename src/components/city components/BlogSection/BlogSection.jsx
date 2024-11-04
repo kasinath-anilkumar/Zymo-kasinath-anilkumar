@@ -25,8 +25,10 @@ const BlogSection = ({ cityName }) => {
             const searchTerm = cityName.toLowerCase();
             return (
               (blog.title && blog.title.toLowerCase().includes(searchTerm)) ||
-              (blog.metaDescription && blog.metaDescription.toLowerCase().includes(searchTerm)) ||
-              (blog.category && blog.category.toLowerCase().includes(searchTerm))
+              (blog.metaDescription &&
+                blog.metaDescription.toLowerCase().includes(searchTerm)) ||
+              (blog.category &&
+                blog.category.toLowerCase().includes(searchTerm))
             );
           });
 
@@ -76,9 +78,18 @@ const BlogSection = ({ cityName }) => {
               <p className="text-gray-600 mb-4 text-sm px-2 md:px-5">
                 {blog.metaDescription}
               </p>
-              <button className="bg-purple-700 text-white px-3 py-2 text-sm shadow-xl rounded-lg hover:bg-purple-800">
+              <a
+                href={`/blog/${blog.title
+                  .split("-")
+                  .join("_")
+                  .split(" ")
+                  .join("-")
+                  .split("?")
+                  .join("$")}`}
+                className="bg-purple-700 text-white px-3 py-2 text-sm shadow-xl rounded-lg hover:bg-purple-800"
+              >
                 View Details
-              </button>
+              </a>
             </div>
           ))}
         </div>
@@ -96,7 +107,9 @@ const BlogSection = ({ cityName }) => {
             Page {currentPage} of {totalPages}
           </span>
           <button
-            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
             disabled={currentPage === totalPages}
             className="px-4 py-2 mx-1 text-white bg-purple-700 rounded-lg hover:bg-purple-800"
           >

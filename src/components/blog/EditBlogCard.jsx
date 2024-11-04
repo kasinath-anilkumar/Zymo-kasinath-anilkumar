@@ -13,39 +13,39 @@ function EditBlogCard({ editblog }) {
     .split("?")
     .join("$");
 
-  const tags = [
-    "<h1>",
-    "<h2>",
-    "<h3>",
-    "<h4>",
-    "<h5>",
-    "<h6>",
-    "<span>",
+  // const tags = [
+  //   "<h1>",
+  //   "<h2>",
+  //   "<h3>",
+  //   "<h4>",
+  //   "<h5>",
+  //   "<h6>",
+  //   "<span>",
 
-    "<p>",
-    "</h1>",
-    "</h2>",
-    "</h3>",
-    "</h4>",
-    "</h5>",
-    "</h6>",
-    "</span>",
-    "<br />",
-  ];
-  let blogDesc = blog.description;
-  for (let i = 0; i < tags.length; i++) {
-    blogDesc = blogDesc.split(tags[i]).join(" ");
-  }
+  //   "<p>",
+  //   "</h1>",
+  //   "</h2>",
+  //   "</h3>",
+  //   "</h4>",
+  //   "</h5>",
+  //   "</h6>",
+  //   "</span>",
+  //   "<br />",
+  // ];
+  // let blogDesc = blog.description;
+  // for (let i = 0; i < tags.length; i++) {
+  //   blogDesc = blogDesc.split(tags[i]).join(" ");
+  // }
 
   return (
     <Link className="link" to={`/createblog/${slug}`}>
-      <MetaTags>
+      {/* <MetaTags> */}
         <meta
           id="meta-description"
           name="description"
           content={editblog.metaDescription || editblog.title}
         />
-      </MetaTags>
+      {/* </MetaTags> */}
 
       <div className="edit-blog-card-container">
         <img src={editblog.cover || Image} alt={editblog.altText || "cover"} />
@@ -56,7 +56,7 @@ function EditBlogCard({ editblog }) {
         )}
         <h3>{editblog.title}</h3>
 
-        <p>{blogDesc.substring(0, 350)}...</p>
+        {/* <p>{blogDesc.substring(0, 350)}...</p> */}
         <p>{editblog.metaDescription}</p>
       </div>
     </Link>

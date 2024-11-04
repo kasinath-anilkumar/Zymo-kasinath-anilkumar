@@ -11,7 +11,6 @@ const Delhi = () => {
     <>
       <Banner  bg={IndiaGate}/>
       <CompareAndChoice />
-      
       <Benefits />
       <Banner1 />
       <BlogSection cityName={"delhi"} />
