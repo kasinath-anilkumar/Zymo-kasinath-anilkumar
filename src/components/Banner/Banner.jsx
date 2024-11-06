@@ -13,7 +13,7 @@ const Banner = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex(prevIndex => (prevIndex + 1) % 3); 
-    }, 2000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
