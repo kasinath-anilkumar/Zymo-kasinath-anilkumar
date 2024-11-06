@@ -75,7 +75,7 @@ const Navbar = () => {
         {/* Location Display */}
         {locationSet && (
           <div
-            className="ml-6 cursor-pointer hidden lg:block border-blue-500 rounded-full bg-violet-400 py-2 text-lg px-2 md:px-5"
+            className="ml-6 cursor-pointer hidden lg:block border-blue-500 rounded-full bg-gradient-to-b from-[#927ef2] to-[#c588dd] py-2 text-lg px-2 md:px-5"
             onClick={() => setLocationShow(true)}
           >
             <img

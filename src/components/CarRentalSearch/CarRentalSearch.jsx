@@ -33,7 +33,7 @@ const CarRentalSearch = () => {
               key={tab}
               className={`w-36 md:py-3 p-2 rounded-lg shadow-xl ${
                 activeTab === tab
-                  ? "text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700"
+                  ? "text-white bg-gradient-to-b from-[#5542b1e5] to-[#a738d3]"
                   : "bg-purple-300 text-black"
               }`}
               onClick={() => setActiveTab(tab)}
@@ -55,7 +55,7 @@ const CarRentalSearch = () => {
             <label className="block mb-2">Location</label>
             <button
               onClick={() => setShowCities(!showCities)}
-              className="w-full flex justify-between items-center p-2 rounded-md text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700"
+              className="w-full flex justify-between items-center p-2 rounded-md text-white bg-gradient-to-b from-[#5542b1e5] to-[#a738d3]"
             >
               {capitalizeFirstLetter(location1) || "Select a location"}
               <span className="ml-2">
@@ -109,7 +109,7 @@ const CarRentalSearch = () => {
           </div> */}
 
           <div className="flex items-end">
-            <button className="w-full bg-[#a11fdb] text-white p-2 rounded-md">
+            <button className="w-full bg-gradient-to-b from-[#5542b1e5] to-[#a738d3] text-white p-2 rounded-md">
               Search
             </button>
           </div>
