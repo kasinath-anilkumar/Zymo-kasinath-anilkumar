@@ -4,7 +4,7 @@ const Content = () => {
   return (
     <>
       <div className="mb-12 p-12 text-white bg-gradient-to-r from-[#5542b1e5] to-[#a738d3] py-16 font-poppins mx-4 rounded-2xl ">
-        <h1 class="text-2xl md:text-4xl font-bold text-white py-2 mb-4">
+        <h1 class="text-xl md:text-4xl font-bold text-white py-2 mb-4">
           Self-Drive Car Rental in Bangalore with Zymo
         </h1>
 
@@ -20,7 +20,7 @@ const Content = () => {
         <h2 class="text-2xl font-semibold mb-3">
           Why Choose Zymo for Self-Drive Car Rental in Bangalore?
         </h2>
-        <ul class="list-disc list-inside space-y-2 mb-6">
+        <ul class="list-disc list-inside space-y-2 mb-6 ml-8">
           <li>
             <strong>Affordable Rates:</strong> Enjoy competitive pricing without
             any hidden charges. Rent a car that fits your budget with no

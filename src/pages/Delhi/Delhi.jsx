@@ -5,6 +5,7 @@ import BlogSection from "../../components/city components/BlogSection/BlogSectio
 import Banner from "../../components/city components/Banner/Banner";
 import IndiaGate from "../../assets/City-Logo/delhi.png";
 import Banner1 from "../../components/Banner/Banner1"
+import Content from "./Content";
 
 const Delhi = () => {
   return (
@@ -13,6 +14,7 @@ const Delhi = () => {
       <CompareAndChoice />
       <Benefits />
       <Banner1 />
+      <Content />
       <BlogSection cityName={"delhi"} />
     </>
   );
