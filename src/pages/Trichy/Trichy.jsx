@@ -5,7 +5,7 @@ import Benefits from "../../components/city components/Benefits/Benefits";
 import BlogSection from "../../components/city components/BlogSection/BlogSection";
 import Banner from "../../components/city components/Banner/Banner";
 import Banner1 from "../../components/Banner/Banner1"
-
+import Content from "./Content";
 
 const Trichy = () => {
   
@@ -15,6 +15,7 @@ const Trichy = () => {
       <CompareAndChoice />
       <Benefits />
       <Banner1 />
+      <Content />
       <BlogSection cityName={"trichy"} />
     </>
   );

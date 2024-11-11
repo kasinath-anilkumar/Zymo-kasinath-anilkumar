@@ -1,13 +1,4 @@
 import React from "react";
-// import classes from "./Service.module.css";
-// import { Link } from "react-router-dom";
-// import {
-//   BsFacebook,
-//   BsInstagram,
-//   BsLinkedin,
-//   BsTwitter,
-//   BsYoutube,
-// } from "react-icons/bs";
 
 function Service() {
   const cities = [
@@ -37,7 +28,7 @@ function Service() {
             {groupedCities.map((group, index) => (
               <ul key={index} className="flex flex-col items-start space-y-1">
                 {group.map((city, cityIndex) => (
-                  <li key={cityIndex}>Car Rental In {city}</li>
+                  <li key={cityIndex}>Car Rental In <a href={`self-drive-car-rentals/${city.toLowerCase()}`}>{city}</a></li>
                 ))}
               </ul>
             ))}
