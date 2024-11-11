@@ -1,0 +1,161 @@
+const Upcoming = [
+  {
+    id: 1,
+    name: "Mahindra Bolero 2024",
+    price: "₹ 8.00 Lakh",
+    img: "/explore-cars/Mahindra Bolero 2024.webp",
+    description:
+      "The Mahindra Bolero 2024 has 1 Diesel Engine on offer. The Diesel engine is 1493 cc. It is available with the Manual transmission. Depending upon the variant and fuel type the Bolero 2024 has a mileage of 16.7 kmpl. The Bolero 2024 is a 7 seater SUV and has a length of 4440mm, width of 1660mm and a wheelbase of 2680mm.",
+    enginePower: "75 bhp",
+    fuelType: "Diesel",
+    transmission: "Manual",
+    features: [
+      "ABS",
+      "Power Steering",
+      "Air Conditioning",
+      "Dual Front Airbags",
+    ],
+  },
+  {
+    id: 2,
+    name: "MG Gloster 2024",
+    price: "₹ 30.00 Lakh",
+    img: "/explore-cars/MG Gloster 2024.webp",
+    description:
+      "The MG Gloster 2024 has 1 Diesel Engine on offer. The Diesel engine is 1996 cc. It is available with the Automatic transmission. Depending upon the variant and fuel type the Gloster 2024 has a mileage of 12.35 kmpl. The Gloster 2024 is a 7 seater SUV and has a length of 4985mm, width of 1926mm and a wheelbase of 2950mm.",
+    enginePower: "218 bhp",
+    fuelType: "Diesel",
+    transmission: "Automatic",
+    features: [
+      "4WD",
+      "Cruise Control",
+      "Panoramic Sunroof",
+      "ADAS (Advanced Driver Assistance Systems)",
+    ],
+  },
+  {
+    id: 3,
+    name: "Hyundai Alcazar 2024",
+    price: "₹ 16.00 Lakh",
+    img: "/explore-cars/Hyundai Alcazar 2024.png",
+    description:
+      "The Hyundai Alcazar 2024 has 1 Diesel Engine and 1 Petrol Engine on offer. The Diesel engine is 1493 cc while the Petrol engine is 1999 cc. It is available with the Manual and Automatic transmission. Depending upon the variant and fuel type the Alcazar 2024 has a mileage of 14.5 to 20.4 kmpl. The Alcazar 2024 is a 7 seater SUV and has a length of 4500mm, width of 1790mm and a wheelbase of 2760mm.",
+    enginePower: "113-157 bhp",
+    fuelType: "Diesel/Petrol",
+    transmission: "Manual/Automatic",
+    features: [
+      "LED Headlamps",
+      "Wireless Charger",
+      "Ventilated Seats",
+      "6 Airbags",
+    ],
+  },
+  {
+    id: 4,
+    name: "Tata Safari 2024",
+    price: "₹ 15.00 Lakh",
+    img: "/explore-cars/Tata Safari 2024.webp",
+    description:
+      "The Tata Safari 2024 has 1 Diesel Engine on offer. The Diesel engine is 1956 cc. It is available with the Manual and Automatic transmission. Depending upon the variant and fuel type the Safari 2024 has a mileage of 16.14 kmpl. The Safari 2024 is a 7 seater SUV and has a length of 4661mm, width of 1894mm and a wheelbase of 2741mm.",
+    enginePower: "168 bhp",
+    fuelType: "Diesel",
+    transmission: "Manual/Automatic",
+    features: [
+      "Panoramic Sunroof",
+      "ABS with EBD",
+      "ISOFIX Child Seat Mounts",
+      "Hill Descent Control",
+    ],
+  },
+  {
+    id: 5,
+    name: "Hyundai Tucson 2024",
+    price: "₹ 25.00 Lakh",
+    img: "/explore-cars/Hyundai Tucson 2024.jpeg",
+    description:
+      "The Hyundai Tucson 2024 has 1 Diesel Engine and 1 Petrol Engine on offer. The Diesel engine is 1995 cc while the Petrol engine is 1999 cc. It is available with the Automatic transmission. Depending upon the variant and fuel type the Tucson 2024 has a mileage of 15.38 to 18.42 kmpl. The Tucson 2024 is a 5 seater SUV and has a length of 4480mm, width of 1850mm and a wheelbase of 2670mm.",
+    enginePower: "182 bhp",
+    fuelType: "Diesel/Petrol",
+    transmission: "Automatic",
+    features: [
+      "Smart Key",
+      "Automatic Climate Control",
+      "Electronic Parking Brake",
+      "Blind-Spot Monitoring",
+    ],
+  },
+  {
+    id: 6,
+    name: "BMW M3",
+    price: "₹ 1.40 Crore",
+    img: "/explore-cars/BMW M3.webp",
+    description:
+      "The BMW M3 has 1 Petrol Engine on offer. The Petrol engine is 2993 cc. It is available with the Automatic transmission. Depending upon the variant and fuel type the M3 has a mileage of 8.3 kmpl. The M3 is a 5 seater Sedan and has a length of 4794mm, width of 1901mm and a wheelbase of 2857mm.",
+    enginePower: "503 bhp",
+    fuelType: "Petrol",
+    transmission: "Automatic",
+    features: [
+      "Adaptive Suspension",
+      "M-Sport Differential",
+      "Heated Front Seats",
+      "Performance Brakes",
+    ],
+  },
+  {
+    id: 7,
+    name: "Mahindra XUV e8",
+    price: "₹ 15.00 Lakh",
+    img: "/explore-cars/Mahindra XUV e8.webp",
+    description:
+      "The Mahindra XUV e8 has 1 Diesel Engine on offer. The Diesel engine is 1997 cc. It is available with the Automatic transmission. Depending upon the variant and fuel type the XUV e8 has a mileage of 15.1 kmpl. The XUV e8 is a 7 seater SUV and has a length of 4585mm, width of 1890mm and a wheelbase of 2700mm.",
+    enginePower: "150 bhp",
+    fuelType: "Diesel",
+    transmission: "Automatic",
+    features: [
+      "Electric Sunroof",
+      "Cruise Control",
+      "Parking Sensors",
+      "Digital Instrument Cluster",
+    ],
+  },
+  {
+    id: 8,
+    name: "Jeep Compass 2024",
+    price: "₹ 25.00 Lakh",
+    img: "/explore-cars/Jeep Compass 2024.avif",
+    description:
+      "The Jeep Compass 2024 has 1 Diesel Engine and 1 Petrol Engine on offer. The Diesel engine is 1956 cc while the Petrol engine is 1368 cc. It is available with the Manual and Automatic transmission. Depending upon the variant and fuel type the Compass 2024 has a mileage of 14.3 to 17.1 kmpl. The Compass 2024 is a 5 seater SUV and has a length of 4395mm, width of 1818mm and a wheelbase of 2636mm.",
+    enginePower: "163-173 bhp",
+    fuelType: "Diesel/Petrol",
+    transmission: "Manual/Automatic",
+    features: [
+      "4x4 Drive",
+      "Uconnect System",
+      "Dual-Zone Climate Control",
+      "Keyless Entry",
+    ],
+  },
+  {
+    id: 9,
+    name: "Skoda Enyaq iV",
+    price: "₹ 35.00 Lakh",
+    img: "/explore-cars/Skoda Enyaq iV.jpeg",
+    description:
+      "The Skoda Enyaq iV is an electric SUV that combines stylish design with advanced technology. It offers multiple battery options, with a maximum range of up to 510 km on a full charge. The Enyaq iV supports both AC and DC fast charging, allowing for 0-80% charge in just 38 minutes using a 125 kW DC charger. The Enyaq iV is a 5-seater SUV and has a spacious and premium interior with a focus on sustainability and comfort.",
+    enginePower: "201 bhp (RWD), 261 bhp (AWD)",
+    fuelType: "Electric",
+    transmission: "Automatic",
+    features: [
+      "Digital Cockpit Display",
+      "10.25-inch Touchscreen Infotainment System",
+      "360-degree Parking Camera",
+      "Panoramic Sunroof",
+      "LED Matrix Headlights",
+      "ADAS (Advanced Driver Assistance Systems)",
+      "Wireless Smartphone Charging",
+      "Heated Seats",
+    ],
+  },
+];
+
+export default Upcoming;
