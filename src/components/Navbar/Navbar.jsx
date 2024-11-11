@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Logo from "/logo.png";
+import Logo from "../../assets/zymo-new-logo.png";
 import { useLocationContext } from "../../Context/Location";
 import l_icon from "/location-icon.png";
 import { Link } from "react-router-dom";
