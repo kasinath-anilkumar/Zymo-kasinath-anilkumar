@@ -4,6 +4,7 @@ import MostSearchCars from "./MostSearchCars/MostSearchCars.jsx"
 import LatestCars from "./LatestCars/LatestCars.jsx"
 import ElectricCars from "./ElectricCars/ElectricCars.jsx"
 import CarBrands from "./CarBrands/CarBrands.jsx"
+import UpcomingCars from "./UpcomingCars/UpcomingCars.jsx"
 
 const ExploreNewCars = () => {
   return (
@@ -13,6 +14,7 @@ const ExploreNewCars = () => {
       <LatestCars/>
       <ElectricCars/>
       <CarBrands/>
+      <UpcomingCars/>
     </div>
   )
 }
