@@ -20,7 +20,7 @@ function Service() {
   }
 
   return (
-    <footer className="rounded-lg mb-8 bg-gradient-to-r from-purple-500 via-purple-700 to-purple-900 text-white text-center w-full">
+    <footer className="rounded-xl p-2 mb-8 bg-gradient-to-r from-purple-500 via-purple-700 to-purple-900 text-white text-center w-full">
       <div className="px-8 py-12 mx-auto grid grid-rows-1">
         <div className="text-center">
           <h1 className="text-2xl font-bold pb-4">Service Available In Cities</h1>
