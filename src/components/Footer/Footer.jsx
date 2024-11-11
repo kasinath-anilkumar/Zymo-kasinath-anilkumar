@@ -8,7 +8,7 @@ import Service from './Service';
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black" >
+    <footer className="bg-white text-black mt-8" >
       <div className="px-8">
         <Service />
         <div className="flex flex-wrap justify-between"> {/* Main content container */}

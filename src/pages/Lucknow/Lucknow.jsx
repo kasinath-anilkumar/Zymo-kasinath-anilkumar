@@ -4,6 +4,8 @@ import CompareAndChoice from "../../components/city components/CompareAndChoice/
 import Benefits from "../../components/city components/Benefits/Benefits";
 import BlogSection from "../../components/city components/BlogSection/BlogSection";
 import Banner from "../../components/city components/Banner/Banner";
+import Content from "./Content";
+import Banner1 from "../../components/Banner/Banner1";
 
 const Lucknow = () => {
   return (
@@ -11,6 +13,8 @@ const Lucknow = () => {
       <Banner bg={lucknow}/>
       <CompareAndChoice />
       <Benefits />
+      <Banner1 />
+      <Content />
       <BlogSection cityName={"lucknow"} />
     </>
   )
