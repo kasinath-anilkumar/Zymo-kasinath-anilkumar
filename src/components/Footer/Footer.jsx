@@ -4,11 +4,13 @@ import About from './About';
 import Features from './Features';
 import InstallApp from './InstallApp';
 import { colors } from '@mui/material';
+import Service from './Service';
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black mt-10 " >
-      <div className="p-8">
+    <footer className="bg-white text-black" >
+      <div className="px-8">
+        <Service />
         <div className="flex flex-wrap justify-between"> {/* Main content container */}
           <CompanyInfo /> {/* Company information component */}
           <About /> {/* About component */}
