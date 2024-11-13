@@ -69,20 +69,19 @@ const CarRentalSearch = () => {
 
             {/* Date Select Input */}
             <div className="mb-5 w-full md:w-72">
-  <label
-    htmlFor="subscription-date"
-    className="block text-gray-800 font-semibold mb-2 text-sm md:text-base"
-  >
-    Select Subscription Start Date:
-  </label>
-  <input
-    type="date"
-    id="subscription-date"
-    className="w-full border text-white bg-purple-600 border-gray-300 rounded-lg p-2 focus:outline-none focus:border-violet-500"
-    min={new Date().toISOString().split("T")[0]} 
-  />
-</div>
-
+              <label
+                htmlFor="subscription-date"
+                className="block text-gray-800 font-semibold mb-2 text-sm md:text-base"
+              >
+                Select Subscription Start Date:
+              </label>
+              <input
+                type="date"
+                id="subscription-date"
+                className="w-full border text-white bg-purple-600 border-gray-300 rounded-lg p-2 focus:outline-none focus:border-violet-500"
+                min={new Date().toISOString().split("T")[0]}
+              />
+            </div>
 
             <button className="w-full md:w-36 py-2 md:py-3 rounded-xl shadow-2xl text-white bg-gradient-to-b from-[#5542b1e5] to-[#a738d3] transition-transform duration-200 hover:scale-105">
               Subscribe Now
