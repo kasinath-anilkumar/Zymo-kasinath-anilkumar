@@ -28,7 +28,7 @@ function Service() {
             {groupedCities.map((group, index) => (
               <ul key={index} className="flex flex-col items-start space-y-1">
                 {group.map((city, cityIndex) => (
-                  <li key={cityIndex}>Car Rental In <a href={`/self-drive-car-rentals/${city.toLowerCase()}`}>{city}</a></li>
+                  <li key={cityIndex}><a href={`/self-drive-car-rentals/${city.toLowerCase()}`}>Car Rental In {city}</a></li>
                 ))}
               </ul>
             ))}
