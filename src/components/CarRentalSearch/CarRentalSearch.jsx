@@ -25,30 +25,68 @@ const CarRentalSearch = () => {
   };
 
   return (
-    <div className="mt-3 sm:mt-8 md:mt-14 container mx-auto rounded-lg py-10">
-      <div className="bg-violet-200 p-5 rounded-xl shadow-xl">
-        <div className="flex gap-2 md:gap-5 mb-5">
-          {["rent", "subscribe", "buy"].map((tab) => (
-            <button
-              key={tab}
-              className={`w-36 md:py-3 p-2 rounded-lg shadow-xl ${
-                activeTab === tab
-                  ? "text-white bg-gradient-to-b from-[#5542b1e5] to-[#a738d3]"
-                  : "bg-purple-300 text-black"
-              }`}
-              onClick={() => setActiveTab(tab)}
-            >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              {/* {tab === "buy" ? (
-                <Link to="/explore-new-cars">
+    <div className="mt-3 sm:mt-8 md:mt-14 font-poppins container mx-auto rounded-lg py-10">
+      <div className="bg-violet-200 p-5  rounded-xl shadow-xl">
+        <div className="flex gap-2 md:gap-5 mb-5 flex-wrap justify-center md:justify-start">
+          {["rent", "subscribe", "buy"].map((tab) =>
+            tab === "buy" ? (
+              <Link key={tab} to="/explore-new-cars">
+                <button
+                  className={`w-28 md:w-36 py-2 md:py-3 rounded-lg shadow-xl transition-transform duration-200 hover:scale-105 mx-1 md:mx-2 ${
+                    activeTab === tab
+                      ? "text-white bg-gradient-to-b from-[#5542b1e5] to-[#a738d3]"
+                      : "bg-purple-300 text-black"
+                  }`}
+                  onClick={() => setActiveTab(tab)}
+                >
                   {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </Link>
-              ) : (
-                tab.charAt(0).toUpperCase() + tab.slice(1)
-              )} */}
-            </button>
-          ))}
+                </button>
+              </Link>
+            ) : (
+              <button
+                key={tab}
+                className={`w-28 md:w-36 py-2 md:py-3 rounded-lg shadow-xl transition-transform duration-200 hover:scale-105 mx-1 md:mx-2 ${
+                  activeTab === tab
+                    ? "text-white bg-gradient-to-b from-[#5542b1e5] to-[#a738d3]"
+                    : "bg-purple-300 text-black"
+                }`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </button>
+            )
+          )}
         </div>
+
+        {activeTab === "subscribe" && (
+          <div className="bg-purple-400 p-4 md:p-6 rounded-xl shadow-xl mb-5 font-poppins">
+            <h2 className="text-xl md:text-2xl font-bold mb-3">
+              Subscribe to our services
+            </h2>
+            <p className="text-gray-700 text-sm md:text-base mb-5">
+              Get access to our exclusive services and enjoy the best deals
+            </p>
+
+            {/* Date Select Input */}
+            <div className="mb-5 w-full md:w-72">
+              <label
+                htmlFor="subscription-date"
+                className="block text-gray-800 font-semibold mb-2 text-sm md:text-base"
+              >
+                Select Subscription Start Date:
+              </label>
+              <input
+                type="date"
+                id="subscription-date"
+                className="w-full border text-white bg-purple-600 border-gray-300 rounded-lg p-2 focus:outline-none focus:border-violet-500"
+              />
+            </div>
+
+            <button className="w-full md:w-36 py-2 md:py-3 rounded-xl shadow-2xl text-white bg-gradient-to-b from-[#5542b1e5] to-[#a738d3] transition-transform duration-200 hover:scale-105">
+              Subscribe Now
+            </button>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div>

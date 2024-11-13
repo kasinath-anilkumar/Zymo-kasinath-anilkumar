@@ -20,7 +20,7 @@ const NotFound = () => {
         Sorry, the page you are looking for does not exist or has been moved.
       </p>
       <Link
-        to={`http://localhost:3000/self-drive-car-rentals/${location}`}
+        to={`/`}
         className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition duration-300"
       >
         Back to Home
