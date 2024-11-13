@@ -59,19 +59,12 @@ const CarRentalSearch = () => {
         </div>
 
         {activeTab === "subscribe" && (
-          <div className="bg-purple-400 p-4 md:p-6 rounded-xl shadow-xl mb-5 font-poppins">
-            <h2 className="text-xl md:text-2xl font-bold mb-3">
-              Subscribe to our services
-            </h2>
-            <p className="text-gray-700 text-sm md:text-base mb-5">
-              Get access to our exclusive services and enjoy the best deals
-            </p>
-
+          <div className=" rounded-xl mb-5 font-poppins">
             {/* Date Select Input */}
-            <div className="mb-5 w-full md:w-72">
+            <div className=" w-full md:w-72">
               <label
                 htmlFor="subscription-date"
-                className="block text-gray-800 font-semibold mb-2 text-sm md:text-base"
+                className="block text-gray-800 mb-2 text-sm md:text-base"
               >
                 Select Subscription Start Date:
               </label>
@@ -82,10 +75,6 @@ const CarRentalSearch = () => {
                 min={new Date().toISOString().split("T")[0]}
               />
             </div>
-
-            <button className="w-full md:w-36 py-2 md:py-3 rounded-xl shadow-2xl text-white bg-gradient-to-b from-[#5542b1e5] to-[#a738d3] transition-transform duration-200 hover:scale-105">
-              Subscribe Now
-            </button>
           </div>
         )}
 

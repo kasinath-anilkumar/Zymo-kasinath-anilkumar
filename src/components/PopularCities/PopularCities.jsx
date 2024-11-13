@@ -166,7 +166,7 @@ const PopularCities = ({ onCitySelect }) => {
   };
 
   return (
-    <div className="flex justify-center items-center sm:p-2 md:p-5 font-poppins bg-gray-100">
+    <div className="flex justify-center items-center sm:p-2 md:p-5 font-poppins bg-violet-200">
       <div className="w-full max-w-5xl bg-white p-2 rounded-lg shadow-lg">
         <h1 className=" text-base md:text-2xl font-bold text-center mb-1">
           Please select Location
