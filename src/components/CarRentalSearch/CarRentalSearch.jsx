@@ -79,6 +79,7 @@ const CarRentalSearch = () => {
                 type="date"
                 id="subscription-date"
                 className="w-full border text-white bg-purple-600 border-gray-300 rounded-lg p-2 focus:outline-none focus:border-violet-500"
+                min={new Date().toISOString().split("T")[0]}
               />
             </div>
 
