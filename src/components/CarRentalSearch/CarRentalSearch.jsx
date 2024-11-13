@@ -29,24 +29,27 @@ const CarRentalSearch = () => {
       <div className="bg-violet-200 p-5 rounded-xl shadow-xl">
         <div className="flex gap-2 md:gap-5 mb-5">
           {["rent", "subscribe", "buy"].map((tab) => (
-            <button
+            <Link
               key={tab}
-              className={`w-36 md:py-3 p-2 rounded-lg shadow-xl ${
-                activeTab === tab
-                  ? "text-white bg-gradient-to-b from-[#5542b1e5] to-[#a738d3]"
-                  : "bg-purple-300 text-black"
-              }`}
-              onClick={() => setActiveTab(tab)}
+              to={
+                tab === "rent"
+                  ? "/explore-rent-cars"
+                  : tab === "subscribe"
+                  ? "/explore-subscribe-cars"
+                  : "/explore-new-cars"
+              }
             >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              {/* {tab === "buy" ? (
-                <Link to="/explore-new-cars">
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </Link>
-              ) : (
-                tab.charAt(0).toUpperCase() + tab.slice(1)
-              )} */}
-            </button>
+              <button
+                className={`w-36 md:py-3 p-2 rounded-lg shadow-xl ${
+                  activeTab === tab
+                    ? "text-white bg-gradient-to-b from-[#5542b1e5] to-[#a738d3]"
+                    : "bg-purple-300 text-black"
+                }`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </button>
+            </Link>
           ))}
         </div>
 

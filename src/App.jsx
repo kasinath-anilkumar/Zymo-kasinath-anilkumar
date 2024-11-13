@@ -18,6 +18,7 @@ import Banner1 from "./components/Banner/Banner1"
 
 // Lazy-loaded components
 const Banner = lazy(() => import("./components/Banner/Banner"));
+const Service = lazy(() => import("./components/Service/Service"));
 const CarRentalSearch = lazy(() => import("./components/CarRentalSearch/CarRentalSearch"));
 const Zymo = lazy(() => import("./components/Zymo/Zymo"));
 const Benefits = lazy(() => import("./components/Benefits/Benefits"));
@@ -98,6 +99,8 @@ const App = () => {
             <Route path="/self-drive-car-rentals/kolkata" element={<Kolkata />} />
             <Route path="/career" element={<Career />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/explore-rent-cars" element={<NotFound />} />
+            <Route path="/explore-subscribe-cars" element={<NotFound />} />
             <Route path="/explore-new-cars" element={<ExploreNewCars />} />
             <Route path="/blogs" element={<BlogsMainPage />} />
             <Route path="/blog/:id" element={<BlogDetailPage />} />
@@ -170,6 +173,9 @@ const App = () => {
           <WhatsAppIcon />
           <Suspense fallback={<LoadingPlaceholder height="200px" />}>
             <Faq />
+          </Suspense>
+          <Suspense fallback={<LoadingPlaceholder height="300px" />}>
+            <Service />
           </Suspense>
         </>
       )}
