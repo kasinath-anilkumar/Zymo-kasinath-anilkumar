@@ -3,6 +3,9 @@ import React from "react";
 const Subscribe = () => {
   return (
     <div>
+
+      <h1>hello world</h1>
+
       <div className="rounded-xl m-5 font-poppins">
         <div className="w-full md:w-72">
           <label
@@ -24,6 +27,7 @@ const Subscribe = () => {
         style={{ width: "67%", margin: "auto" }}
         alt="car"
       />
+
     </div>
   );
 };

@@ -56,41 +56,40 @@ const FindCars = () => {
         {/* Search Type Selection */}
         <div className="mb-4 bg-white">
           <div className="flex gap-8 justify-center">
-            <label className="flex items-center gap-1">
+            <div className="flex flex-row items-center">
               <input
-                type="radio"
-                name="searchType"
-                value="By Budget"
-                checked={searchType === "By Budget"}
-                onChange={(e) => setSearchType(e.target.value)}
-                className={`cursor-pointer appearance-none w-4 h-4 border-2 border-gray-300 rounded-full checked:bg-violet-600 checked:border-violet-600 checked:text-violet-400 bg-white`}
+                type="checkbox"
+                className="checkbox checkbox-primary mt-2"
+                checked={searchType === "By Budget"} 
+                // defaultChecked
               />
-              <span
-                className={
+              <button
+                onClick={() => setSearchType("By Budget")}
+                className={`text-lg p-1 mt-1 font-semibold ${
                   searchType === "By Budget" ? "text-violet-600" : "text-black"
-                }
+                }`}
               >
                 By Budget
-              </span>
-            </label>
+              </button>
+            </div>
 
-            <label className="flex items-center gap-1">
-              <input
-                type="radio"
-                name="searchType"
-                value="By Brand"
-                checked={searchType === "By Brand"}
-                onChange={(e) => setSearchType(e.target.value)}
-                className={`cursor-pointer appearance-none w-4 h-4 border-2 border-gray-300 rounded-full checked:bg-violet-600 checked:border-violet-600 bg-white`}
-              />
-              <span
-                className={
+            <div className="flex flex-row items-center">
+              {searchType === "By Brand" && (
+                <input
+                  type="checkbox"
+                  checked={searchType === "By Brand"} 
+                  className="checkbox checkbox-primary mt-2"
+                />
+              )}
+              <button
+                onClick={() => setSearchType("By Brand")}
+                className={`text-lg mt-1 p-1 font-semibold ${
                   searchType === "By Brand" ? "text-violet-600" : "text-black"
-                }
+                }`}
               >
                 By Brand
-              </span>
-            </label>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -131,7 +130,7 @@ const FindCars = () => {
             {carType === "New Car" ? (
               <>
                 <option value="">{div2}</option>
-                
+
                 <option value="hatchback">Hatchback</option>
                 <option value="sedan">Sedan</option>
                 <option value="suv">SUV</option>
@@ -144,7 +143,6 @@ const FindCars = () => {
                 <option value="pune">pune</option>
                 <option value="kolkata">kolkata</option>
                 <option value="delhi">delhi</option>
-
               </>
             )}
           </select>

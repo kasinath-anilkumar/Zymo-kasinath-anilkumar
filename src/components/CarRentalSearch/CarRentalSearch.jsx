@@ -40,7 +40,7 @@ const CarRentalSearch = () => {
         <div className="flex gap-2 md:gap-5 mb-5 flex-wrap justify-center md:justify-start">
           {["rent", "subscribe", "buy"].map((tab) =>
             tab === "buy" ? (
-              <Link key={tab} to="/explore-new-cars">
+              <Link key={tab} to="/buy-car">
                 <button
                   className={`w-28 md:w-36 py-2 md:py-3 rounded-lg shadow-xl transition-transform duration-200 hover:scale-105 mx-1 md:mx-2 ${
                     activeTab === tab
