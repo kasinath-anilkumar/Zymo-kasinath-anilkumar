@@ -57,34 +57,34 @@ const FindCars = () => {
         <div className="mb-4 bg-white">
           <div className="flex gap-8 justify-center">
             <div className="flex flex-row items-center">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-primary mt-2"
-                checked={searchType === "By Budget"}
-                // defaultChecked
-              />
               <button
                 onClick={() => setSearchType("By Budget")}
-                className={`text-lg p-1 mt-1 font-semibold ${
+                className={`text-lg p-1 mt-1 font-semibold flex items-center gap-1 ${
                   searchType === "By Budget" ? "text-violet-600" : "text-black"
                 }`}
               >
+              <input
+                type="checkbox"
+                className="checkbox checkbox-primary"
+                checked={searchType === "By Budget"}
+                // defaultChecked
+              />
                 By Budget
               </button>
             </div>
 
             <div className="flex flex-row items-center">
-              <input
-                type="checkbox"
-                checked={searchType === "By Brand"}
-                className="checkbox checkbox-primary mt-2"
-              />
               <button
                 onClick={() => setSearchType("By Brand")}
-                className={`text-lg mt-1 p-1 font-semibold ${
+                className={`text-lg mt-1 p-1 font-semibold flex items-center gap-1 ${
                   searchType === "By Brand" ? "text-violet-600" : "text-black"
                 }`}
               >
+              <input
+                type="checkbox"
+                checked={searchType === "By Brand"}
+                className="checkbox checkbox-primary"
+              />
                 By Brand
               </button>
             </div>
