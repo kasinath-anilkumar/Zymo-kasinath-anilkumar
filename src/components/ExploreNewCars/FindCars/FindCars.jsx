@@ -152,7 +152,7 @@ const FindCars = () => {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="w-full bg-violet-800 text-white rounded-md p-2 font-bold hover:bg-orange-500 transition-colors"
+          className="w-full bg-violet-800 text-white rounded-md p-2 font-bold hover:bg-violet-500 transition-colors"
         >
           Search
         </motion.button>
