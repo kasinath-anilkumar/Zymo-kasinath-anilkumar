@@ -14,6 +14,7 @@ import BlogContext from "./Context/BlogContext";
 import LoadingPlaceholder from "./components/LoadingPlaceholder/LoadingPlaceholder";
 import ExploreNewCars from "./components/ExploreNewCars/ExploreNewCars";
 import Banner1 from "./components/Banner/Banner1"
+import Subcribe from "./components/Subscribe/Subscribe";
 
 
 // Lazy-loaded components
@@ -99,9 +100,8 @@ const App = () => {
             <Route path="/self-drive-car-rentals/kolkata" element={<Kolkata />} />
             <Route path="/career" element={<Career />} />
             <Route path="/about" element={<AboutUs />} />
-            <Route path="/explore-rent-cars" element={<NotFound />} />
-            <Route path="/explore-subscribe-cars" element={<NotFound />} />
-            <Route path="/explore-new-cars" element={<ExploreNewCars />} />
+            <Route path="/monthly-car-rental" element={<Subcribe />} />
+            <Route path="/buy-car" element={<ExploreNewCars />} />
             <Route path="/blogs" element={<BlogsMainPage />} />
             <Route path="/blog/:id" element={<BlogDetailPage />} />
             <Route path= "/createblog/:id" element={ <CreateBlogPage />} />
