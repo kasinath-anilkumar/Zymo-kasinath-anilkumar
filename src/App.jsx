@@ -14,7 +14,7 @@ import BlogContext from "./Context/BlogContext";
 import LoadingPlaceholder from "./components/LoadingPlaceholder/LoadingPlaceholder";
 import ExploreNewCars from "./components/ExploreNewCars/ExploreNewCars";
 import Banner1 from "./components/Banner/Banner1"
-
+import Subscribe from "./components/Subscribe/Subscribe";
 
 // Lazy-loaded components
 const Banner = lazy(() => import("./components/Banner/Banner"));
@@ -91,12 +91,6 @@ const App = () => {
         <Suspense fallback={<LoadingPlaceholder height="400px" />}>
           <Routes>
             <Route path="/" element={<Banner />} />
-            <Route path="/self-drive-car-rentals/delhi" element={<Delhi />} />
-            <Route path="/self-drive-car-rentals/chennai" element={<Chennai />} />
-            <Route path="/self-drive-car-rentals/hyderabad" element={<Hyderabad />} />
-            <Route path="/self-drive-car-rentals/mumbai" element={<Mumbai />} />
-            <Route path="/self-drive-car-rentals/pune" element={<Pune />} />
-            <Route path="/self-drive-car-rentals/kolkata" element={<Kolkata />} />
             <Route path="/career" element={<Career />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/explore-rent-cars" element={<NotFound />} />
@@ -110,6 +104,7 @@ const App = () => {
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/terms-of-service" element={<Terms />} />
             <Route path="/cancellation-policy" element={<CancellationPolicy />} />
+            <Route path="/monthly-car-rental/:city" element={<Subscribe />} />
 
             {ZymoAllCityList.concat(ZymoFeaturedCityList).map((city, index) => {
               const CityComponent = lazy(() =>

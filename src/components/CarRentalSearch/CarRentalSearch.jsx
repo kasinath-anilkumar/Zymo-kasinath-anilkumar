@@ -13,11 +13,21 @@ const CarRentalSearch = () => {
   const [activeTab, setActiveTab] = useState("rent");
   const navigate = useNavigate();
 
-  const handleLocationSelect = (city) => {
+  const handleLocationSelect = (city, type) => {
     setLocation1(city);
     setShowCities(false);
     setLocation(city);
-    navigate(`/self-drive-car-rentals/${city.toLowerCase()}`);
+    switch (type) {
+      case "subscribe":
+        navigate(`/monthly-car-rental/${city.toLowerCase()}`);
+        break;
+      case "rent":
+        navigate(`/self-drive-car-rentals/${city.toLowerCase()}`);
+        break;
+      default:
+        break;
+    }
+        
   };
 
   const capitalizeFirstLetter = (string) => {
@@ -57,26 +67,6 @@ const CarRentalSearch = () => {
             )
           )}
         </div>
-
-        {activeTab === "subscribe" && (
-          <div className=" rounded-xl mb-5 font-poppins">
-            {/* Date Select Input */}
-            <div className=" w-full md:w-72">
-              <label
-                htmlFor="subscription-date"
-                className="block text-gray-800 mb-2 text-sm md:text-base"
-              >
-                Select Subscription Start Date:
-              </label>
-              <input
-                type="date"
-                id="subscription-date"
-                className="w-full border text-white bg-purple-600 border-gray-300 rounded-lg p-2 focus:outline-none focus:border-violet-500"
-                min={new Date().toISOString().split("T")[0]}
-              />
-            </div>
-          </div>
-        )}
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div>
@@ -144,7 +134,7 @@ const CarRentalSearch = () => {
         </div>
       </div>
 
-      {showCities && <PopularCities onCitySelect={handleLocationSelect} />}
+      {showCities && <PopularCities type={activeTab} onCitySelect={handleLocationSelect} />}
     </div>
   );
 };

@@ -7,7 +7,7 @@ import {
   ZymoAllCityList,
 } from "../../assets/ZymoCityList";
 
-const PopularCities = ({ onCitySelect }) => {
+const PopularCities = ({type, onCitySelect }) => {
   const { setLocation } = useLocationContext();
   const [UserLocation, setUserLocation] = useState({
     latitude: null,
@@ -72,7 +72,7 @@ const PopularCities = ({ onCitySelect }) => {
   useEffect(() => {
     if (UserLocation.latitude && UserLocation.longitude) {
       const city = UserLocation.city?.toLowerCase();
-      if (city) onCitySelect(city);
+      if (city) onCitySelect(city, type);
     }
   }, [UserLocation, onCitySelect]);
 
@@ -90,7 +90,7 @@ const PopularCities = ({ onCitySelect }) => {
           );
 
           if (isCityInZymoList) {
-            onCitySelect(cityNameLower);
+            onCitySelect(cityNameLower, type);
             showToast(`Your Location is Updated to ${city}`, "success");
           } else {
             showToast(`Oops! "Cars are not available in "${city}".`, "warning");
@@ -176,7 +176,7 @@ const PopularCities = ({ onCitySelect }) => {
             <div
               key={city.name}
               className="text-center p-1 sm:p-2 border border-gray-300 rounded-lg cursor-pointer transition-transform transform hover:scale-105 hover:bg-gray-100 flex flex-col items-center"
-              onClick={() => onCitySelect(city.name.toLowerCase())}
+              onClick={() => onCitySelect(city.name.toLowerCase(), type)}
             >
               <img
                 src={city.image}
@@ -196,7 +196,7 @@ const PopularCities = ({ onCitySelect }) => {
             <div
               key={city.name}
               className="p-2 min-w-max border border-gray-300 rounded-lg cursor-pointer text-center transition-transform transform hover:scale-105 hover:bg-gray-100"
-              onClick={() => onCitySelect(city.name.toLowerCase())}
+              onClick={() => onCitySelect(city.name.toLowerCase(), type)}
             >
               <p className="text-sm font-medium">{city.name}</p>
             </div>
