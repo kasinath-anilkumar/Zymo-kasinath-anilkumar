@@ -7,27 +7,28 @@ import { Link } from "react-router-dom";
 const CarRentalSearch = () => {
   const { setLocation } = useLocationContext();
   const [location1, setLocation1] = useState("");
-  const [pickupDate, setPickupDate] = useState("2024-10-03T09:30");
-  const [returnDate, setReturnDate] = useState("2024-10-06T18:30");
+  const [pickupDate, setPickupDate] = useState("");
   const [showCities, setShowCities] = useState(false);
   const [activeTab, setActiveTab] = useState("rent");
   const navigate = useNavigate();
-
+  
+  const handleSubscriptionSearch = () => {
+    if (!location1 || !pickupDate) {
+      return alert("Select a location and date to proceed");
+    }
+    navigate(`/monthly-car-rental/${location1.toLowerCase()}?pickupDate=${pickupDate}`);
+  }
   const handleLocationSelect = (city, type) => {
     setLocation1(city);
     setShowCities(false);
     setLocation(city);
     switch (type) {
-      case "subscribe":
-        navigate(`/monthly-car-rental/${city.toLowerCase()}`);
-        break;
       case "rent":
         navigate(`/self-drive-car-rentals/${city.toLowerCase()}`);
         break;
       default:
         break;
     }
-        
   };
 
   const capitalizeFirstLetter = (string) => {
@@ -106,35 +107,41 @@ const CarRentalSearch = () => {
             </button>
           </div>
 
-          {/* <div>
-            <label className="block font-semibold mb-2">Pick-Up Date</label>
-            <input
-              type="datetime-local"
-              value={pickupDate}
-              onChange={(e) => setPickupDate(e.target.value)}
-              className="w-full p-2 bg-purple-200 rounded-md"
-            />
-          </div>
-
-          <div>
-            <label className="block font-semibold mb-2">Return Date</label>
-            <input
-              type="datetime-local"
-              value={returnDate}
-              onChange={(e) => setReturnDate(e.target.value)}
-              className="w-full p-2 bg-purple-200 rounded-md"
-            />
-          </div> */}
-
-          <div className="flex items-end">
-            <button className="w-full bg-gradient-to-b from-[#5542b1e5] to-[#a738d3] text-white p-2 rounded-md">
-              Search
-            </button>
-          </div>
+          {activeTab === "subscribe" && (
+            <>
+              <div className="rounded-xl font-poppins">
+                <div className="w-full">
+                  <label
+                    htmlFor="subscription-date"
+                    className="block text-gray-800 mb-2 text-sm md:text-base"
+                  >
+                    Select Subscription Start Date:
+                  </label>
+                  <input
+                    type="date"
+                    id="subscription-date"
+                    className="w-full border text-white bg-purple-600 border-gray-300 rounded-lg p-2 focus:outline-none focus:border-violet-500"
+                    onChange={() => setPickupDate(`${event.target.value}`)}
+                    required
+                  />
+                </div>
+              </div>
+              <div className="flex items-end">
+                <button
+                  className="w-full bg-gradient-to-b from-[#5542b1e5] to-[#a738d3] text-white p-2 rounded-md"
+                  onClick={handleSubscriptionSearch}
+                >
+                  Search
+                </button>
+              </div>
+            </>
+          )}
         </div>
       </div>
 
-      {showCities && <PopularCities type={activeTab} onCitySelect={handleLocationSelect} />}
+      {showCities && (
+        <PopularCities type={activeTab} onCitySelect={handleLocationSelect} />
+      )}
     </div>
   );
 };
