@@ -11,24 +11,23 @@ const CarRentalSearch = () => {
   const [showCities, setShowCities] = useState(false);
   const [activeTab, setActiveTab] = useState("rent");
   const navigate = useNavigate();
-  
+
   const handleSubscriptionSearch = () => {
     if (!location1 || !pickupDate) {
       return alert("Select a location and date to proceed");
     }
-    navigate(`/monthly-car-rental/${location1.toLowerCase()}?pickupDate=${pickupDate}`);
-  }
+    navigate(
+      `/monthly-car-rental?location=${location1.toLowerCase()}&date=${pickupDate}`
+    );
+  };
   const handleLocationSelect = (city, type) => {
     setLocation1(city);
     setShowCities(false);
     setLocation(city);
-    switch (type) {
-      case "rent":
-        navigate(`/self-drive-car-rentals/${city.toLowerCase()}`);
-        break;
-      default:
-        break;
-    }
+
+    type === "rent"
+      ? navigate(`/self-drive-car-rentals/${city.toLowerCase()}`)
+      : null;
   };
 
   const capitalizeFirstLetter = (string) => {
