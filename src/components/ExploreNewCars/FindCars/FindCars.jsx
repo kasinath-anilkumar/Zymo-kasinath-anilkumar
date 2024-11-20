@@ -11,10 +11,10 @@ const FindCars = () => {
 
   return (
     <motion.div
-      className="flex bg-white shadow-lg p-3 md:p-6 rounded-md max-w-sm w-full mx-auto"
-      initial={{ opacity: 0, y: 50 }} // Start with component faded out and slightly below
-      animate={{ opacity: 1, y: 0 }} // Fade in and slide to normal position
-      transition={{ duration: 0.6 }} // Smooth transition
+      className="flex bg-white shadow-lg p-4 md:p-6 rounded-lg max-w-sm w-full mx-auto"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
     >
       <div className="w-full font-poppins">
         <h2 className="text-2xl font-bold mb-4 text-center">
@@ -29,7 +29,7 @@ const FindCars = () => {
               setDiv1("Select budget");
               setDiv2("All vehicle types");
             }}
-            className={`px-4 py-2 rounded-lg shadow-xl transition-all ${
+            className={`px-4 py-2 rounded-lg shadow-md transition-all ${
               carType === "New Car"
                 ? "bg-gradient-to-r from-indigo-500 to-[#7c2a9d] text-white"
                 : "bg-gray-200 hover:bg-gray-300"
@@ -43,7 +43,7 @@ const FindCars = () => {
               setDiv1("Select Model");
               setDiv2("Select city");
             }}
-            className={`px-4 py-2 rounded-lg shadow-xl transition-all ${
+            className={`px-4 py-2 rounded-lg shadow-md transition-all ${
               carType === "Used Car"
                 ? "bg-gradient-to-r from-indigo-500 to-[#7c2a9d] text-white"
                 : "bg-gray-200 hover:bg-gray-300"
@@ -56,37 +56,28 @@ const FindCars = () => {
         {/* Search Type Selection */}
         <div className="mb-4 bg-white">
           <div className="flex gap-8 justify-center">
-            <div className="flex flex-row items-center">
-              <button
-                onClick={() => setSearchType("By Budget")}
-                className={`text-lg p-1 mt-1 font-semibold flex items-center gap-1 ${
-                  searchType === "By Budget" ? "text-violet-600" : "text-black"
-                }`}
-              >
-              <input
-                type="checkbox"
-                className="checkbox checkbox-primary"
-                checked={searchType === "By Budget"}
-                // defaultChecked
-              />
+            <div className="flex items-center">
+              <label className="text-lg font-semibold flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={searchType === "By Budget"}
+                  onChange={() => setSearchType("By Budget")}
+                  className="checkbox checkbox-primary"
+                />
                 By Budget
-              </button>
+              </label>
             </div>
 
-            <div className="flex flex-row items-center">
-              <button
-                onClick={() => setSearchType("By Brand")}
-                className={`text-lg mt-1 p-1 font-semibold flex items-center gap-1 ${
-                  searchType === "By Brand" ? "text-violet-600" : "text-black"
-                }`}
-              >
-              <input
-                type="checkbox"
-                checked={searchType === "By Brand"}
-                className="checkbox checkbox-primary"
-              />
+            <div className="flex items-center">
+              <label className="text-lg font-semibold flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={searchType === "By Brand"}
+                  onChange={() => setSearchType("By Brand")}
+                  className="checkbox checkbox-primary"
+                />
                 By Brand
-              </button>
+              </label>
             </div>
           </div>
         </div>
@@ -96,7 +87,7 @@ const FindCars = () => {
           <select
             value={budget}
             onChange={(e) => setBudget(e.target.value)}
-            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-violet-500 bg-white"
+            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
           >
             {carType === "New Car" ? (
               <>
@@ -123,12 +114,11 @@ const FindCars = () => {
           <select
             value={vehicleType}
             onChange={(e) => setVehicleType(e.target.value)}
-            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-violet-500 bg-white"
+            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
           >
             {carType === "New Car" ? (
               <>
                 <option value="">{div2}</option>
-
                 <option value="hatchback">Hatchback</option>
                 <option value="sedan">Sedan</option>
                 <option value="suv">SUV</option>
@@ -137,10 +127,10 @@ const FindCars = () => {
             ) : (
               <>
                 <option value="">{div2}</option>
-                <option value="mumbai">mumbai</option>
-                <option value="pune">pune</option>
-                <option value="kolkata">kolkata</option>
-                <option value="delhi">delhi</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="pune">Pune</option>
+                <option value="kolkata">Kolkata</option>
+                <option value="delhi">Delhi</option>
               </>
             )}
           </select>
@@ -150,7 +140,7 @@ const FindCars = () => {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="w-full bg-violet-800 text-white rounded-md p-2 font-bold hover:bg-violet-500 transition-colors"
+          className="w-full bg-indigo-600 text-white rounded-md p-2 font-bold hover:bg-indigo-500 transition-colors"
         >
           Search
         </motion.button>

@@ -1,0 +1,458 @@
+{
+  "cars": [
+    {
+      "id": "1",
+      "make": "Tata",
+      "model": "Nexon",
+      "variant": "XZ+ (O)",
+      "year": 2024,
+      "bodyType": "SUV",
+      "seatingCapacity": 5,
+      "fuelType": "Diesel",
+      "transmission": "Automatic",
+      "price": {
+        "exShowroom": {
+          "currency": "INR",
+          "value": 1200000
+        },
+        "onRoad": {
+          "currency": "INR",
+          "value": 1400000
+        }
+      },
+      "keySpecifications": {
+        "engineRange": "1199 cc - 1497 cc",
+        "ARAI_Mileage": "24.08 kmpl",
+        "fuelType": "Diesel",
+        "engineDisplacement": "1497 cc",
+        "noOfCylinders": 4,
+        "powerRange": "99 - 118.27 bhp",
+        "torqueRange": "170 Nm - 260 Nm",
+        "maxPower": "113.31 bhp @ 3750 rpm",
+        "maxTorque": "260 Nm @ 1500-2750 rpm",
+        "seatingCapacity": 5,
+        "transmissionType": "Automatic",
+        "bootSpace": "382 liters",
+        "fuelTankCapacity": "44 liters",
+        "groundClearanceUnladen": "208 mm",
+        "driveType": "FWD",
+        "globalNCAPRating": "5 Star"
+      },
+      "keyFeatures": [
+        "Power Steering",
+        "Power Windows Front",
+        "Anti-lock Braking System (ABS)",
+        "Air Conditioner",
+        "Driver Airbag",
+        "Passenger Airbag",
+        "Automatic Climate Control",
+        "Alloy Wheels",
+        "Multi-function Steering Wheel",
+        "Parking Sensors",
+        "Sunroof",
+        "Rear AC Vents",
+        "Cooled Glovebox",
+        "Height Adjustable Driver Seat",
+        "360 Degree Camera",
+        "Ventilated Seats",
+        "Air Purifier",
+        "Drive Modes",
+        "Cruise Control"
+      ],
+      "engineTransmission": {
+        "engineType": "1.5L Turbocharged Diesel",
+        "engineRange": "1199 cc - 1497 cc",
+        "displacement": "1497 cc",
+        "power": "113.31 bhp",
+        "powerRange": "99 - 118.27 bhp",
+        "torque": "260 Nm",
+        "torqueRange": "170 Nm - 260 Nm",
+        "cylinders": 4,
+        "transmissionType": "Automatic",
+        "gearBox": "6-speed",
+        "driveType": "FWD"
+      },
+      "fuelPerformance": {
+        "fuelTankCapacity": "44 liters",
+        "mileageCity": "20 km/l",
+        "mileageHighway": "24 km/l",
+        "topSpeed": "190 km/h",
+        "acceleration": "0-100 km/h in 11 seconds"
+      },
+      "dimensionsCapacity": {
+        "length": "3995 mm",
+        "width": "1800 mm",
+        "height": "1600 mm",
+        "wheelbase": "2498 mm",
+        "groundClearance": "208 mm",
+        "bootSpace": "382 liters"
+      },
+      "comfortConvenience": {
+        "climateControl": "Automatic Climate Control",
+        "rearACVents": true,
+        "powerSteering": true,
+        "keylessEntry": true,
+        "cruiseControl": true,
+        "adjustableSteering": "Tilt & Telescopic",
+        "cooledGlovebox": true,
+        "heightAdjustableDriverSeat": true,
+        "driveModes": [
+          "Eco",
+          "City",
+          "Sport"
+        ],
+        "ventilatedSeats": true,
+        "airPurifier": true
+      },
+      "interior": {
+        "seatingMaterial": "Premium Fabric",
+        "adjustableSeats": true,
+        "rearSeatSplit": "60:40",
+        "ambientLighting": true
+      },
+      "exterior": {
+        "headlamps": "LED Projector",
+        "tailLamps": "LED",
+        "fogLamps": "Front & Rear",
+        "alloyWheels": true,
+        "roofRails": true,
+        "sunroof": true
+      },
+      "safety": {
+        "airbags": 6,
+        "ABS": true,
+        "EBD": true,
+        "ESP": true,
+        "tractionControl": true,
+        "hillAssist": true,
+        "parkingSensors": "Rear",
+        "360DegreeCamera": true,
+        "globalNCAPRating": "5 Star"
+      },
+      "entertainmentCommunication": {
+        "touchscreenSize": "10.25-inch",
+        "speakers": 8,
+        "androidAuto": true,
+        "appleCarPlay": true,
+        "bluetoothConnectivity": true
+      },
+      "ADASFeatures": {
+        "adaptiveCruiseControl": true,
+        "laneKeepAssist": true,
+        "collisionWarning": true,
+        "emergencyBraking": true
+      },
+      "advancedInternetFeatures": {
+        "voiceCommands": true,
+        "connectedCarFeatures": [
+          "Geo-fencing",
+          "Remote Start/Stop",
+          "Vehicle Tracking"
+        ],
+        "OTAUpdates": true
+      },
+      "youMayAlsoLike": [
+        {
+          "id": "2",
+          "make": "Hyundai",
+          "model": "Venue",
+          "price": {
+            "exShowroom": {
+              "currency": "INR",
+              "value": 1150000
+            }
+          },
+          "image": "https://example.com/images/hyundai-venue.jpg"
+        },
+        {
+          "id": "3",
+          "make": "Kia",
+          "model": "Seltos",
+          "price": {
+            "exShowroom": {
+              "currency": "INR",
+              "value": 1450000
+            }
+          },
+          "image": "https://example.com/images/kia-seltos.jpg"
+        },
+        {
+          "id": "4",
+          "make": "Mahindra",
+          "model": "XUV300",
+          "price": {
+            "exShowroom": {
+              "currency": "INR",
+              "value": 1300000
+            }
+          },
+          "image": "https://example.com/images/mahindra-xuv300.jpg"
+        }
+      ],
+      "compare": [
+        {
+          "id": "2",
+          "make": "Hyundai",
+          "model": "Venue",
+          "variant": "SX (O)",
+          "price": {
+            "exShowroom": {
+              "currency": "INR",
+              "value": 1150000
+            },
+            "onRoad": {
+              "currency": "INR",
+              "value": 1350000
+            }
+          },
+          "engine": {
+            "displacement": "1197 cc",
+            "power": "113 bhp @ 6000 rpm",
+            "torque": "144 Nm @ 4500 rpm",
+            "fuelType": "Petrol"
+          },
+          "bootSpace": "350 liters",
+          "groundClearance": "195 mm",
+          "safetyFeatures": {
+            "airbags": 6,
+            "NCAPRating": "4 Star"
+          }
+        },
+        {
+          "id": "3",
+          "make": "Kia",
+          "model": "Seltos",
+          "variant": "HTX",
+          "price": {
+            "exShowroom": {
+              "currency": "INR",
+              "value": 1450000
+            },
+            "onRoad": {
+              "currency": "INR",
+              "value": 1650000
+            }
+          },
+          "engine": {
+            "displacement": "1497 cc",
+            "power": "114 bhp @ 6000 rpm",
+            "torque": "144 Nm @ 4500 rpm",
+            "fuelType": "Petrol"
+          },
+          "bootSpace": "433 liters",
+          "groundClearance": "190 mm",
+          "safetyFeatures": {
+            "airbags": 6,
+            "NCAPRating": "5 Star"
+          }
+        },
+        {
+          "id": "4",
+          "make": "Mahindra",
+          "model": "XUV300",
+          "variant": "W8 (O)",
+          "price": {
+            "exShowroom": {
+              "currency": "INR",
+              "value": 1300000
+            },
+            "onRoad": {
+              "currency": "INR",
+              "value": 1500000
+            }
+          },
+          "engine": {
+            "displacement": "1497 cc",
+            "power": "115 bhp @ 3750 rpm",
+            "torque": "300 Nm @ 1500-2500 rpm",
+            "fuelType": "Diesel"
+          },
+          "bootSpace": "259 liters",
+          "groundClearance": "180 mm",
+          "safetyFeatures": {
+            "airbags": 7,
+            "NCAPRating": "5 Star"
+          }
+        }
+      ],
+      "colors": [
+        "Fearless Purple",
+        "Creative Ocean Blue",
+        "Daytona Grey",
+        "Pristine White",
+        "Flame Red",
+        "Calgary White",
+        "Atlas Black"
+      ],
+      "prosAndCons": {
+        "pros": [
+          "5-star Global NCAP rating",
+          "Powerful diesel and petrol engines",
+          "Advanced connected vehicle features",
+          "Ample boot space and high ground clearance",
+          "Modern interior and exterior design"
+        ],
+        "cons": [
+          "Slightly noisy engine at higher speeds",
+          "Rear seat comfort can improve",
+          "Higher variants are costly"
+        ]
+      },
+      "faq": [
+        {
+          "question": "What is the warranty on the Tata Nexon?",
+          "answer": "It offers 3 years or 1,00,000 km warranty, whichever comes first."
+        },
+        {
+          "question": "Does it support wireless charging?",
+          "answer": "Yes, wireless charging is available in higher variants."
+        }
+      ],
+      "reviews": [
+        {
+          "user": "Rahul Mehta",
+          "rating": 4.7,
+          "comment": "Amazing build quality and features! Love the connected car tech."
+        },
+        {
+          "user": "Sneha Kapoor",
+          "rating": 4.3,
+          "comment": "Great SUV, but rear seat comfort could be better for long drives."
+        }
+      ],
+      "warranty_maintenance": {
+        "warranty_period": "3 years / 1,00,000 km",
+        "maintenance_cost": "Estimated yearly maintenance cost: $500",
+        "service_network": "200+ authorized service centers"
+      },
+      "technology_infotainment": {
+        "infotainment_system_version": "HARMAN 10.25-inch display",
+        "navigation_features": "Integrated navigation with real-time traffic updates",
+        "wireless_charging": true,
+        "audio_system_type": {
+          "brand": "JBL",
+          "configuration": "8-speaker setup, subwoofer"
+        },
+        "app_integration": "Tata iRA for seamless mobile integration"
+      },
+      "comfort_convenience": {
+        "driver_assistance_features": [
+          "Lane change assist",
+          "Automatic parking",
+          "Parking sensors"
+        ],
+        "seat_features": [
+          "Leather seat material",
+          "Power-adjustable seats",
+          "Lumbar support",
+          "Memory function"
+        ],
+        "ambient_lighting": "Multiple color options, mood lighting",
+        "heated_cooled_seats": true
+      },
+      "customization_options": {
+        "personalization": [
+          "Color schemes: Black, White, Red",
+          "Seat covers: Premium fabric, Leather",
+          "Alloy wheels: 17-inch, 18-inch"
+        ],
+        "additional_accessories": [
+          "Roof rails",
+          "Spoilers",
+          "Car mats"
+        ]
+      },
+      "performance_enhancements": {
+        "torque_to_weight_ratio": "120 Nm/kg",
+        "suspension_type": "MacPherson Strut",
+        "drive_modes": [
+          "Eco mode: Prioritizes fuel efficiency",
+          "Sport mode: Enhances performance"
+        ]
+      },
+      "fuel_economy_efficiency": {
+        "fuel_efficiency": {
+          "city": "12 km/l",
+          "highway": "16 km/l"
+        },
+        "emissions": "150 g/km CO2",
+        "fuel_type_availability": [
+          "Petrol",
+          "Diesel",
+          "Hybrid"
+        ]
+      },
+      "insurance": {
+        "insurance_cost": "$800 per year"
+      },
+      "ownership_resale_value": {
+        "depreciation_rate": "15% in 3 years",
+        "resale_value": "80% after 3 years",
+        "loan_emi_details": {
+          "monthly_emi": "$350",
+          "interest_rate": "7.5%"
+        }
+      },
+      "colors_variants": {
+        "exclusive_edition_variants": [
+          "Sport Edition",
+          "Luxury Edition"
+        ],
+        "dual_tone_options": [
+          "Black and Red",
+          "White and Black"
+        ]
+      },
+      "safety_features": {
+        "safety_ratings": [
+          "Euro NCAP: 5 stars",
+          "IIHS: Top Safety Pick"
+        ],
+        "advanced_safety": [
+          "Pedestrian protection",
+          "Collision mitigation system"
+        ],
+        "crash_test_reports": "Link to crash test reports"
+      },
+      "environmental_impact": {
+        "carbon_footprint": "125 g/km CO2",
+        "eco_friendly_materials": [
+          "Recyclable plastic parts",
+          "Eco-friendly seat fabrics"
+        ]
+      },
+      "real_time_data": {
+        "real_time_alerts": [
+          "Low fuel warning",
+          "Maintenance reminders"
+        ],
+        "driver_behavior_monitoring": [
+          "Harsh braking",
+          "Rapid acceleration"
+        ]
+      },
+      "insurance_legal": {
+        "legal_documents": [
+          "Tax certificate",
+          "Registration document",
+          "Insurance policy"
+        ],
+        "terms_conditions": "Warranty covers for 3 years, includes service terms"
+      },
+      "user_feedback": {
+        "ratings_reviews": {
+          "rating": "4.5/5",
+          "reviews": [
+            "Comfortable ride with great features.",
+            "Good fuel efficiency."
+          ]
+        },
+        "user_satisfaction_score": "85%"
+      },
+      "technology_upgrades": {
+        "ota_updates": true,
+        "artificial_intelligence": "Voice commands for navigation and climate control"
+      }
+    }
+  ]
+}

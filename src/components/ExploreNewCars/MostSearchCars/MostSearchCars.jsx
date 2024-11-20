@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { Suv, Hatchback, Sedan, Luxury, Electric, Muv } from "./Cars.js";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { IoIosArrowDropright } from "react-icons/io";
 
-// Custom Next Arrow Component
 const NextArrow = ({ onClick, isVisible }) => {
   return (
     isVisible && (
@@ -32,7 +31,6 @@ const NextArrow = ({ onClick, isVisible }) => {
   );
 };
 
-// Custom Previous Arrow Component
 const PrevArrow = ({ onClick, isVisible }) => {
   return (
     isVisible && (
@@ -63,8 +61,32 @@ const MostSearchCars = () => {
   const [cars, setCars] = useState(Suv);
   const [current, setCurrent] = useState("suv");
   const [slideIndex, setSlideIndex] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
+  const categories = [
+    { label: "Suv", key: "suv", component: Suv },
+    { label: "Hatchback", key: "hatchback", component: Hatchback },
+    { label: "Sedan", key: "sedan", component: Sedan },
+    { label: "Luxury", key: "luxury", component: Luxury },
+    { label: "Electric", key: "electric", component: Electric },
+    { label: "Muv", key: "muv", component: Muv },
+  ];
+  const itemsPerPage = 2;
 
-  // Slider settings for react-slick
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initial check
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const paginatedCategories = categories.slice(
+    currentPage * itemsPerPage,
+    currentPage * itemsPerPage + itemsPerPage
+  );
+
   const sliderSettings = {
     dots: false,
     infinite: false,
@@ -104,32 +126,75 @@ const MostSearchCars = () => {
 
       {/* Car Category Tabs */}
       <div className="flex justify-center mb-8">
-        <ul className="flex gap-4">
-          {[
-            { label: "Suv", key: "suv", component: Suv },
-            { label: "Hatchback", key: "hatchback", component: Hatchback },
-            { label: "Sedan", key: "sedan", component: Sedan },
-            { label: "Luxury", key: "luxury", component: Luxury },
-            { label: "Electric", key: "electric", component: Electric },
-            { label: "Muv", key: "muv", component: Muv },
-          ].map((carCategory) => (
-            <li
-              key={carCategory.key}
-              onClick={() => {
-                setCars(carCategory.component);
-                setCurrent(carCategory.key);
-                setSlideIndex(0);
-              }}
-              className={`cursor-pointer px-4 shadow-xl py-2 rounded-md font-semibold ${
-                current === carCategory.key
-                  ? "bg-gradient-to-r from-indigo-500 to-[#7c2a9d] text-white"
-                  : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-              }`}
-            >
-              {carCategory.label}
-            </li>
-          ))}
-        </ul>
+        {!isSmallScreen ? (
+          <ul className="flex gap-4">
+            {categories.map((carCategory) => (
+              <li
+                key={carCategory.key}
+                onClick={() => {
+                  setCars(carCategory.component);
+                  setCurrent(carCategory.key);
+                  setSlideIndex(0);
+                }}
+                className={`cursor-pointer px-4 shadow-xl py-2 rounded-md font-semibold ${
+                  current === carCategory.key
+                    ? "bg-gradient-to-r from-indigo-500 to-[#7c2a9d] text-white"
+                    : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                }`}
+              >
+                {carCategory.label}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div>
+            <ul className="flex gap-4 justify-center">
+              {paginatedCategories.map((carCategory) => (
+                <li
+                  key={carCategory.key}
+                  onClick={() => {
+                    setCars(carCategory.component);
+                    setCurrent(carCategory.key);
+                    setSlideIndex(0);
+                  }}
+                  className={`cursor-pointer px-4 shadow-xl py-2 rounded-md font-semibold ${
+                    current === carCategory.key
+                      ? "bg-gradient-to-r from-indigo-500 to-[#7c2a9d] text-white"
+                      : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                  }`}
+                >
+                  {carCategory.label}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-4 flex justify-center gap-4">
+              <button
+                className={`px-4 py-2 rounded-md ${
+                  currentPage > 0
+                    ? "bg-indigo-500 text-white"
+                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                }`}
+                onClick={() => setCurrentPage(currentPage - 1)}
+                disabled={currentPage === 0}
+              >
+                Previous
+              </button>
+              <button
+                className={`px-4 py-2 rounded-md ${
+                  currentPage < Math.ceil(categories.length / itemsPerPage) - 1
+                    ? "bg-indigo-500 text-white"
+                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                }`}
+                onClick={() => setCurrentPage(currentPage + 1)}
+                disabled={
+                  currentPage === Math.ceil(categories.length / itemsPerPage) - 1
+                }
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="relative">
