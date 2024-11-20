@@ -105,7 +105,7 @@ const App = () => {
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/terms-of-service" element={<Terms />} />
             <Route path="/cancellation-policy" element={<CancellationPolicy />} />
-            <Route path="/monthly-car-rental/:city" element={<Subcribe/>} />
+            <Route path="/monthly-car-rental" element={<Subcribe/>} />
 
             {ZymoAllCityList.concat(ZymoFeaturedCityList).map((city, index) => {
               const CityComponent = lazy(() =>
