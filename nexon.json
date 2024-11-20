@@ -1,0 +1,945 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "model": "Nexon",
+    "image": [
+      "https://stimg.cardekho.com/images/carexteriorimages/930x620/Tata/Nexon/11104/1697698470038/front-left-side-47.jpg",
+      "https://stimg.cardekho.com/images/carexteriorimages/930x620/Tata/Nexon/11103/1694678851386/rear-left-view-121.jpg",
+      "https://stimg.cardekho.com/images/carexteriorimages/930x620/Tata/Nexon/11103/1694678851386/front-view-118.jpg",
+      "https://stimg.cardekho.com/images/carexteriorimages/930x620/Tata/Nexon/11103/1694678851386/rear-view-119.jpg",
+      "https://stimg.cardekho.com/images/carexteriorimages/930x620/Tata/Nexon/11103/1694678851386/top-view-117.jpg",
+      "https://stimg.cardekho.com/images/carexteriorimages/930x620/Tata/Nexon/11103/1694678851386/grille-97.jpg"
+    ],
+    "offers": {
+      "priceCurrency": "INR",
+      "price": "799990",
+      "availability": "https://schema.org/InStock"
+    },
+    "brand": "Tata",
+    "sku": 3422,
+    "manufacturer": {
+      "@type": "organization",
+      "name": "Tata"
+    },
+    "url": "https://www.cardekho.com/tata/nexon",
+    "name": "Tata Nexon",
+    "vehicleIdentificationNumber": "CD-Car-0000003422",
+    "vehicleModelDate": "2024",
+    "itemCondition": "https://schema.org/NewCondition",
+    "bodyType": "Suv",
+    "numberOfDoors": "5",
+    "vehicleTransmission": [
+      "Manual",
+      "Automatic"
+    ],
+    "fueltype": [
+      {
+        "@type": "QualitativeValue",
+        "name": "CNG"
+      },
+      {
+        "@type": "QualitativeValue",
+        "name": "Petrol"
+      },
+      {
+        "@type": "QualitativeValue",
+        "name": "Diesel"
+      }
+    ],
+    "Description": "The Tata Nexon has been among the highest-selling SUVs in India for the last three years and among the most popular choices in the sub-4m SUV segment. With modern looks, revamped interiors and lots of tech, the Nexon offers a blend of style, comfort, safety, and features that will appeal to those looking for a premium experience in their small family SUV.\r\n",
+    "mpn": "CD-Car-3422",
+    "numberOfForwardGears": "6-",
+    "fuelCapacity": {
+      "@type": "QuantitativeValue",
+      "unitCode": "Ltr",
+      "value": "60.0"
+    },
+    "numberOfAirbags": "6",
+    "fuelEfficiency": [
+      {
+        "@type": "QuantitativeValue",
+        "name": "24.08 kmpl"
+      },
+      {
+        "@type": "QuantitativeValue",
+        "name": "17.01 kmpl"
+      }
+    ],
+    "vehicleEngine": [
+      {
+        "fuelType": "Diesel",
+        "@type": "EngineSpecification",
+        "engineDisplacement": {
+          "@type": "QuantitativeValue",
+          "unitCode": "CC",
+          "value": "1497"
+        },
+        "torque": {
+          "@type": "QuantitativeValue",
+          "unitCode": "nm@rpm",
+          "value": "260Nm@1500-2750rpm"
+        },
+        "engineType": "1.5L Turbocharged Revotorq",
+        "enginePower": {
+          "@type": "QuantitativeValue",
+          "unitCode": "bhp@rpm",
+          "value": "113.31bhp@3750rpm"
+        }
+      },
+      {
+        "fuelType": "CNG",
+        "@type": "EngineSpecification",
+        "engineDisplacement": {
+          "@type": "QuantitativeValue",
+          "unitCode": "CC",
+          "value": "1199"
+        },
+        "torque": {
+          "@type": "QuantitativeValue",
+          "unitCode": "nm@rpm",
+          "value": "170Nm@2000-3000rpm"
+        },
+        "engineType": "1.2L Turbocharged Revotron",
+        "enginePower": {
+          "@type": "QuantitativeValue",
+          "unitCode": "bhp@rpm",
+          "value": "99bhp@5000rpm"
+        }
+      }
+    ],
+    "vehicleSeatingCapacity": "5",
+    "Color": [
+      "Creative Ocean",
+      "Pristine White Dual Tone",
+      "Flame Red",
+      "Calgary White",
+      "Pure Grey",
+      "Fearless Purple Dual Tone",
+      "Flame Red Dual Tone",
+      "Daytona Grey Dual Tone",
+      "Daytona Grey",
+      "Atlas Black"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "reviewCount": "592",
+      "ratingValue": "4.6",
+      "worstRating": "1",
+      "bestRating": "5"
+    },
+    "review": [
+      {
+        "datePublished": "Nov 15, 2024",
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Suvarna Ur"
+        },
+        "name": "Very Nice Car",
+        "reviewBody": "Very nice car. It is so comfortable. My entire family liked. It looks are so good . Tata every car is best. It is best car under 10 lakh with 5 star safety rating",
+        "publisher": {
+          "@type": "Organization",
+          "name": "CarDekho",
+          "logo": {
+            "@type": "ImageObject",
+            "Height": "240px",
+            "Width": "60px",
+            "url": "https://stimg.cardekho.com/pwa/img/CarDekho-Logo.jpg"
+          }
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4.6"
+        }
+      },
+      {
+        "datePublished": "Nov 15, 2024",
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Abhishek Banote"
+        },
+        "name": "This Is A Nice Car",
+        "reviewBody": "This is a nice car it's comparr very best for other segments Tata nexon is a value for money Tata features are very very beautiful for me Tata speeches are based from other segments",
+        "publisher": {
+          "@type": "Organization",
+          "name": "CarDekho",
+          "logo": {
+            "@type": "ImageObject",
+            "Height": "240px",
+            "Width": "60px",
+            "url": "https://stimg.cardekho.com/pwa/img/CarDekho-Logo.jpg"
+          }
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4.6"
+        }
+      },
+      {
+        "datePublished": "Nov 14, 2024",
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Azaj Shaikh"
+        },
+        "name": "Best Car A Indian Can Ave",
+        "reviewBody": "The nexon is fab suv with cng TATA has made a best combination. This is giving a best overall package what an Indian wants. The features and performance all are best in class.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "CarDekho",
+          "logo": {
+            "@type": "ImageObject",
+            "Height": "240px",
+            "Width": "60px",
+            "url": "https://stimg.cardekho.com/pwa/img/CarDekho-Logo.jpg"
+          }
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4.6"
+        }
+      },
+      {
+        "datePublished": "Nov 12, 2024",
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Sanam"
+        },
+        "name": "Tata Motors Best Mileage Car",
+        "reviewBody": "Tata motors are amazing looking car my best experience tata motors tata motors best sefty and mileage",
+        "publisher": {
+          "@type": "Organization",
+          "name": "CarDekho",
+          "logo": {
+            "@type": "ImageObject",
+            "Height": "240px",
+            "Width": "60px",
+            "url": "https://stimg.cardekho.com/pwa/img/CarDekho-Logo.jpg"
+          }
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4.6"
+        }
+      },
+      {
+        "datePublished": "Nov 11, 2024",
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Kaitepalli Narasimha Swamy"
+        },
+        "name": "Tata Nexon",
+        "reviewBody": "Best car under 15 lakhs build quality and performance is next level I have using this car from last 8 months good for family safety and suv body",
+        "publisher": {
+          "@type": "Organization",
+          "name": "CarDekho",
+          "logo": {
+            "@type": "ImageObject",
+            "Height": "240px",
+            "Width": "60px",
+            "url": "https://stimg.cardekho.com/pwa/img/CarDekho-Logo.jpg"
+          }
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4.6"
+        }
+      },
+      {
+        "positiveNotes": {
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "name": "Loaded with features: sunroof, front seat ventilation, dual displays",
+              "position": 1
+            },
+            {
+              "@type": "ListItem",
+              "name": "Comfortable ride quality: tackles bad roads with ease",
+              "position": 2
+            },
+            {
+              "@type": "ListItem",
+              "name": "Choice of petrol and diesel engines. New 7-speed DCT available with petrol",
+              "position": 3
+            },
+            {
+              "@type": "ListItem",
+              "name": "Updated interior features better design and quality",
+              "position": 4
+            }
+          ],
+          "@type": "ItemList"
+        },
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "CarDekho Experts"
+        },
+        "negativeNotes": {
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "name": "Ergonomic issues still persist",
+              "position": 1
+            },
+            {
+              "@type": "ListItem",
+              "name": "Iffy fit and finish around certain interior panels",
+              "position": 2
+            },
+            {
+              "@type": "ListItem",
+              "name": "Tech package glitches time to time",
+              "position": 3
+            }
+          ],
+          "@type": "ItemList"
+        }
+      }
+    ],
+    "driveWheelConfiguration": [
+      "https://schema.org/FrontWheelDriveConfiguration"
+    ]
+  },
+  {
+    "itemListElement": [
+      {
+        "Item": "https://www.cardekho.com/",
+        "@type": "ListItem",
+        "name": "Home",
+        "position": "1"
+      },
+      {
+        "Item": "https://www.cardekho.com/cars/Tata",
+        "@type": "ListItem",
+        "name": "Tata Cars",
+        "position": "2"
+      },
+      {
+        "@type": "ListItem",
+        "name": "Nexon",
+        "position": "3"
+      }
+    ],
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org"
+  },
+  {
+    "@graph": [
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Price",
+        "@id": "https://www.cardekho.com/tata/nexon/price-in-mumbai",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/tata/nexon/price-in-mumbai"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Images",
+        "@id": "https://www.cardekho.com/tata/nexon/pictures",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/tata/nexon/pictures"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Specs",
+        "@id": "https://www.cardekho.com/tata/nexon/specs",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/tata/nexon/specs"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "User Reviews",
+        "@id": "https://www.cardekho.com/tata/nexon/user-reviews",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/tata/nexon/user-reviews"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "360 View",
+        "@id": "https://www.cardekho.com/tata-nexon-360-view.htm",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/tata-nexon-360-view.htm"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Variants",
+        "@id": "https://www.cardekho.com/tata/nexon/variants.htm",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/tata/nexon/variants.htm"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Videos",
+        "@id": "https://www.cardekho.com/tata/nexon/videos",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/tata/nexon/videos"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": " Mileage",
+        "@id": "https://www.cardekho.com/tata/nexon/mileage",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/tata/nexon/mileage"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": " Colours",
+        "@id": "https://www.cardekho.com/tata/nexon/colors",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/tata/nexon/colors"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": " Spare Parts",
+        "@id": "https://www.cardekho.com/tata/nexon/spare-parts-price",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/tata/nexon/spare-parts-price"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": " FAQs",
+        "@id": "https://www.cardekho.com/car-faqs/tata-nexon.html",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/car-faqs/tata-nexon.html"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": " Dealers",
+        "@id": "https://www.cardekho.com/Tata/Mumbai/cardealers",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/Tata/Mumbai/cardealers"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": " Service Center",
+        "@id": "https://www.cardekho.com/Tata/Mumbai/car-service-center.htm",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/Tata/Mumbai/car-service-center.htm"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": " Brochure",
+        "@id": "https://www.cardekho.com/tata/nexon/brochures",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/tata/nexon/brochures"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": " Second Hand Nexon",
+        "@id": "https://www.cardekho.com/used-tata-nexon+cars+in+mumbai",
+        "@context": "https://schema.org",
+        "url": "https://www.cardekho.com/used-tata-nexon+cars+in+mumbai"
+      }
+    ],
+    "@context": "https://schema.org"
+  },
+  {
+    "mainEntity": {
+      "dateCreated": "2024-10-30T00:00:00+05:30",
+      "answerCount": 2,
+      "@type": "Question",
+      "author": {
+        "@type": "Person",
+        "name": "Bhadani Fashion"
+      },
+      "name": "Kitna cc ka hai ye model",
+      "text": "Kitna cc ka hai ye model",
+      "suggestedAnswer": [
+        {
+          "dateCreated": "2024-11-07T00:00:00+05:30",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "CarDekho_Experts"
+          },
+          "text": "Tata Nexon 1199 cc - 1497 cc tak hai.",
+          "url": "https://www.cardekho.com/car-faqs/tata/nexon/kitna-cc-ka-hai-ye-model-2706910.htm",
+          "upvoteCount": "0"
+        },
+        {
+          "dateCreated": "2024-11-12T00:00:00+05:30",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "data prakhar"
+          },
+          "text": "125cc",
+          "url": "https://www.cardekho.com/car-faqs/tata/nexon/kitna-cc-ka-hai-ye-model-2706910.htm",
+          "upvoteCount": "0"
+        }
+      ]
+    },
+    "@type": "QAPage",
+    "@context": "https://schema.org"
+  },
+  {
+    "mainEntity": {
+      "dateCreated": "2024-06-24T00:00:00+05:30",
+      "answerCount": 1,
+      "@type": "Question",
+      "author": {
+        "@type": "Person",
+        "name": "Anmol Sharma"
+      },
+      "name": "What is the body type of Tata Nexon?",
+      "text": "What is the body type of Tata Nexon?",
+      "suggestedAnswer": [
+        {
+          "dateCreated": "2024-06-26T00:00:00+05:30",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "CarDekho_Experts"
+          },
+          "text": "The Tata Nexon comes under the category of Sport Utility Vehicle (SUV) body type.",
+          "url": "https://www.cardekho.com/car-faqs/tata/nexon/what-is-the-body-type-of-tata-nexon-2695182.htm",
+          "upvoteCount": "8"
+        }
+      ]
+    },
+    "@type": "QAPage",
+    "@context": "https://schema.org"
+  },
+  {
+    "mainEntity": {
+      "dateCreated": "2024-06-08T00:00:00+05:30",
+      "answerCount": 1,
+      "@type": "Question",
+      "author": {
+        "@type": "Person",
+        "name": "Devyani Sharma"
+      },
+      "name": "What is the maximum torque of Tata Nexon?",
+      "text": "What is the maximum torque of Tata Nexon?",
+      "suggestedAnswer": [
+        {
+          "dateCreated": "2024-06-17T00:00:00+05:30",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "CarDekho_Experts"
+          },
+          "text": "The Tata Nexon has maximum torque of 260Nm@1500-2750rpm.",
+          "url": "https://www.cardekho.com/car-faqs/tata/nexon/what-is-the-maximum-torque-of-tata-nexon-2693046.htm",
+          "upvoteCount": "0"
+        }
+      ]
+    },
+    "@type": "QAPage",
+    "@context": "https://schema.org"
+  },
+  {
+    "mainEntity": {
+      "dateCreated": "2024-06-05T00:00:00+05:30",
+      "answerCount": 1,
+      "@type": "Question",
+      "author": {
+        "@type": "Person",
+        "name": "Anmol Sharma"
+      },
+      "name": "What are the available colour options in Tata Nexon?",
+      "text": "What are the available colour options in Tata Nexon?",
+      "suggestedAnswer": [
+        {
+          "dateCreated": "2024-06-14T00:00:00+05:30",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "CarDekho_Experts"
+          },
+          "text": "Tata Nexon is available in 10 different colours - Creative Ocean, Pristine White Dual Tone, Flame Red, Calgary White, Pure Grey, Fearless Purple Dual Tone, Flame Red Dual Tone, Daytona Grey Dual Tone, Daytona Grey and Atlas Black.",
+          "url": "https://www.cardekho.com/car-faqs/tata/nexon/what-are-the-available-colour-options-in-tata-nexon-2692409.htm",
+          "upvoteCount": "0"
+        }
+      ]
+    },
+    "@type": "QAPage",
+    "@context": "https://schema.org"
+  },
+  {
+    "mainEntity": {
+      "dateCreated": "2024-04-28T00:00:00+05:30",
+      "answerCount": 2,
+      "@type": "Question",
+      "author": {
+        "@type": "Person",
+        "name": "Anmol Sharma"
+      },
+      "name": "What are the available features in Tata Nexon?",
+      "text": "What are the available features in Tata Nexon?",
+      "suggestedAnswer": [
+        {
+          "dateCreated": "2024-05-09T00:00:00+05:30",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "CarDekho_Experts"
+          },
+          "text": "Key features of Tata Nexon include a 10.25-inch touchscreen infotainment, 10.25-inch fully digital driver’s display, auto AC, wireless phone charging, ventilated and height-adjustable front seats, cruise control, and paddle shifters. It also gets a 9-speaker JBL sound system with a subwoofer and Harman-enhanced AudioworX.",
+          "url": "https://www.cardekho.com/car-faqs/tata/nexon/what-are-the-available-features-in-tata-nexon-2687643.htm",
+          "upvoteCount": "0"
+        },
+        {
+          "dateCreated": "2024-05-28T00:00:00+05:30",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "Mahesh "
+          },
+          "text": "Base model features ",
+          "url": "https://www.cardekho.com/car-faqs/tata/nexon/what-are-the-available-features-in-tata-nexon-2687643.htm",
+          "upvoteCount": "0"
+        }
+      ]
+    },
+    "@type": "QAPage",
+    "@context": "https://schema.org"
+  },
+  {
+    "mainEntity": [
+      {
+        "answerCount": 1,
+        "dateCreated": "2020-04-25",
+        "@type": "Question",
+        "author": {
+          "@type": "Person",
+          "name": "CarDekho Experts"
+        },
+        "name": "What is the exact on-road price of Tata Nexon?",
+        "text": "What is the exact on-road price of Tata Nexon?",
+        "acceptedAnswer": {
+          "dateCreated": "2020-04-25",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "CarDekho Experts"
+          },
+          "text": "The on-road price of Nexon in Delhi starts at ₹ 9,30,184. The on-road price is inclusive of RTO charges and insurance."
+        }
+      },
+      {
+        "answerCount": 1,
+        "dateCreated": "2020-05-22",
+        "@type": "Question",
+        "author": {
+          "@type": "Person",
+          "name": "CarDekho Experts"
+        },
+        "name": "Which car is better Nexon or Punch?",
+        "text": "Which car is better Nexon or Punch?",
+        "acceptedAnswer": {
+          "dateCreated": "2020-05-22",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "CarDekho Experts"
+          },
+          "text": "Nexon price starts at ₹ 8 Lakh ex-showroom and Punch price starts ₹ 6.13 Lakh ex-showroom."
+        }
+      },
+      {
+        "answerCount": 1,
+        "dateCreated": "2020-05-29",
+        "@type": "Question",
+        "author": {
+          "@type": "Person",
+          "name": "CarDekho Experts"
+        },
+        "name": "What will the EMI or down payment for Tata Nexon?",
+        "text": "What will the EMI or down payment for Tata Nexon?",
+        "acceptedAnswer": {
+          "dateCreated": "2020-05-29",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "CarDekho Experts"
+          },
+          "text": "Tata Nexon EMI starts at ₹ 17,705 per month for a tenure of 60 months @ 9.8% for a loan amount of ₹ 8.37 Lakh & down payment will be ₹ 93,000."
+        }
+      },
+      {
+        "answerCount": 1,
+        "dateCreated": "2020-06-24",
+        "@type": "Question",
+        "author": {
+          "@type": "Person",
+          "name": "CarDekho Experts"
+        },
+        "name": "Is Tata Nexon a 4x4?",
+        "text": "Is Tata Nexon a 4x4?",
+        "acceptedAnswer": {
+          "dateCreated": "2020-06-24",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "CarDekho Experts"
+          },
+          "text": "Tata Nexon does not offer 4 wheel drive transmission in Indian Market."
+        }
+      },
+      {
+        "answerCount": 1,
+        "dateCreated": "2020-06-17",
+        "@type": "Question",
+        "author": {
+          "@type": "Person",
+          "name": "CarDekho Experts"
+        },
+        "name": "Is Tata Nexon a 5 or 7 seater SUV?",
+        "text": "Is Tata Nexon a 5 or 7 seater SUV?",
+        "acceptedAnswer": {
+          "dateCreated": "2020-06-17",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "CarDekho Experts"
+          },
+          "text": "Tata Nexon is a 5 seater car, which starts from ₹ 8.99 Lakh."
+        }
+      },
+      {
+        "answerCount": 1,
+        "dateCreated": "2022-01-24",
+        "@type": "Question",
+        "author": {
+          "@type": "Person",
+          "name": "CarDekho Experts"
+        },
+        "name": "What is the mileage of Tata Nexon?",
+        "text": "What is the mileage of Tata Nexon?",
+        "acceptedAnswer": {
+          "dateCreated": "2022-01-24",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "CarDekho Experts"
+          },
+          "text": "The ARAI mileage of Tata Nexon is between 17.01 - 24.08 kmpl."
+        }
+      },
+      {
+        "answerCount": 1,
+        "dateCreated": "2021-12-24",
+        "@type": "Question",
+        "author": {
+          "@type": "Person",
+          "name": "CarDekho Experts"
+        },
+        "name": "What are the colour options available for Tata Nexon?",
+        "text": "What are the colour options available for Tata Nexon?",
+        "acceptedAnswer": {
+          "dateCreated": "2021-12-24",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "CarDekho Experts"
+          },
+          "text": "There are 10 colors available for Nexon - Creative Ocean, Pristine White Dual Tone, Flame Red, Calgary White, Pure Grey, Fearless Purple Dual Tone, Flame Red Dual Tone, Daytona Grey Dual Tone, Daytona Grey and Atlas Black."
+        }
+      },
+      {
+        "answerCount": 1,
+        "dateCreated": "2022-01-24",
+        "@type": "Question",
+        "author": {
+          "@type": "Person",
+          "name": "CarDekho Experts"
+        },
+        "name": "Is Tata Nexon is a 7 Seater Car?",
+        "text": "Is Tata Nexon is a 7 Seater Car?",
+        "acceptedAnswer": {
+          "dateCreated": "2022-01-24",
+          "@type": "Answer",
+          "author": {
+            "@type": "Person",
+            "name": "CarDekho Experts"
+          },
+          "text": "No, the Tata Nexon isn't a 7 seater car. It is a 5 seater car."
+        }
+      }
+    ],
+    "@type": "FAQpage",
+    "@context": "https://schema.org"
+  }
+]</script>   <script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Tata Nexon Price - Features, Images, Colours & Reviews",
+    "description": "Tata Nexon price starts at ₹ 8 Lakh in India. Checkout Tata Nexon images, reviews, colours, variants and on-road price at CarDekho.",
+    "url": "https://www.cardekho.com/tata/nexon",
+    "relatedLink": [
+      "https://www.cardekho.com/renault/kiger",
+      "https://www.cardekho.com/tata/punch",
+      "https://www.cardekho.com/tata/curvv",
+      "https://www.cardekho.com/maruti/brezza",
+      "https://www.cardekho.com/skoda/kylaq"
+    ],
+    "significantLink": [
+      "https://www.cardekho.com/tata/nexon/price-in-mumbai",
+      "https://www.cardekho.com/tata/nexon/pictures",
+      "https://www.cardekho.com/tata/nexon/specs",
+      "https://www.cardekho.com/tata/nexon/user-reviews",
+      "https://www.cardekho.com/tata-nexon-360-view.htm",
+      "https://www.cardekho.com/tata/nexon/variants.htm",
+      "https://www.cardekho.com/tata/nexon/videos",
+      "https://www.cardekho.com/tata/nexon/mileage",
+      "https://www.cardekho.com/tata/nexon/colors",
+      "https://www.cardekho.com/tata/nexon/news",
+      "https://www.cardekho.com/tata/nexon/spare-parts-price",
+      "https://www.cardekho.com#expertReview",
+      "https://www.cardekho.com/car-faqs/tata-nexon.html",
+      "https://www.cardekho.com/Tata/Mumbai/cardealers",
+      "https://www.cardekho.com/Tata/Mumbai/car-service-center.htm",
+      "https://www.cardekho.com/tata/nexon/brochures",
+      "https://www.cardekho.com/tata-nexon/car-loan-emi-calculator.htm",
+      "https://www.cardekho.com/used-tata-nexon+cars+in+mumbai"
+    ]
+  }
+]</script>  <script>var scriptExists = function (url) {return document.querySelectorAll(`script[src="${url}"
+  ]`).length > 0;
+}; var getScript = function(src, func) {if(!scriptExists(src)){var script = document.createElement('script');script.async = "async";script.src = src;if (func) {script.onload = func;
+    }document.getElementsByTagName("head")[
+      0
+    ].appendChild( script );
+  }
+};const options = {includeContinuous: true
+};var yieldToMainUiBackground = function(fn, priority = 'user-visible') {if (typeof navigator.scheduling !== 'undefined' && navigator.scheduling.isInputPending(options)) {setTimeout(() => {yieldToMainUiBackground(fn, priority);
+    },
+    0);return;
+  }return new Promise((resolve) => {if ('scheduler' in window) {if ('yield' in window.scheduler) {return window.scheduler.yield().then(() => {fn();resolve(true);
+        });
+      };if ('postTask' in window.scheduler) {return window.scheduler.postTask(() => {fn();resolve(true);
+        },
+        { priority: priority
+        });
+      };
+    };if (typeof window.requestIdleCallback === 'function') {return window.requestIdleCallback(() => {fn();resolve(true);
+      });
+    };fn();resolve(false);
+  });
+};var idleCb = function(fn) {yieldToMainUiBackground(fn, 'background');
+};function createScriptTag(src, isModule) {return new Promise((resolve,reject) => {var script = document.createElement('script');script.src = src;script.async = false;if (isModule) {script.type = 'module';
+    }script.onload = resolve;script.error = reject;document.head.appendChild(script);
+  });
+};async function buildScriptTag() {try {yieldToMainUiBackground(() => createScriptTag("https://staticcont.cardekho.com/pwa/js/bundle/bundle.772d2a6327a2fc25b327.js",
+    "false").then(() => {yieldToMainUiBackground(() => createScriptTag("https://staticcont.cardekho.com/pwa/js/bundle/Overview.c0d7267cc57f4a60aed9.js",
+      "false").then(() => {yieldToMainUiBackground(() => createScriptTag("https://staticcont.cardekho.com/pwa/js/bundle/bundle.459476ebe37cc1819682.js",
+        "false").then(() => {yieldToMainUiBackground(() => createScriptTag("https://staticcont.cardekho.com/pwa/js/bundle/bundle.0982eedca8af845df89e.js",
+          "false").then(() => {}));
+        }));
+      }));
+    }));
+  } catch (error) {console.error("Failed to load script:", error);
+  };
+};var preloadChunks = function(sections) {idleCb(function () {for(let i in sections){switch(sections[i
+      ]){case 'LeadForm' :getScript("https://staticcont.cardekho.com/pwa/js/bundle/LeadForm.b87c568e03f26ed7f942.js");getScript("https://staticcont.cardekho.com/pwa/js/bundle/cities.0b748202b5dd25164259.js");break;case 'MyAccount' :getScript("https://staticcont.cardekho.com/pwa/js/bundle/MyAccountPop.68aea186b01cdd347992.js");break;case 'ServiceForm' :getScript("https://staticcont.cardekho.com/pwa/js/bundle/ServiceForm.7864fd67f294b9758a08.js");break;
+      };
+    };
+  });
+};if(typeof URL !== "function" || typeof Object.assign !== 'function'){idleCb(function() {getScript("https://staticcont.cardekho.com/pwa/js/lib/ie-polyfill.js");
+  });
+};if (typeof window.IntersectionObserver == 'undefined') {getScript("https://staticcont.cardekho.com/pwa/js/lib/IntersectionObserver-polyfill.js");
+};function attachLinkTag(href) {const linkElement = document.createElement('link');linkElement.rel = 'prefetch';linkElement.href = href;linkElement.as = 'style';linkElement.id = 'main-css';document.head.appendChild(linkElement);
+};if ('PerformanceObserver' in window) {const observer = new PerformanceObserver((list) => {const entries = list.getEntries();const lastEntry = entries[entries.length - 1
+    ];  attachLinkTag("https://staticcont.cardekho.com/pwa/css/mobile-146a1a1f.css");
+  });observer.observe({ type: 'largest-contentful-paint', buffered: true
+  });document.addEventListener('visibilitychange', () => {if (document.visibilityState === 'hidden') {observer.takeRecords();observer.disconnect();
+    };
+  });
+}else{  attachLinkTag("https://staticcont.cardekho.com/pwa/css/mobile-146a1a1f.css");
+}</script>    <script>var notificationPermission = "";try{if(Notification != undefined){ notificationPermission = Notification.permission;
+  }
+}catch(e){};dataLayer = [
+  {
+    "page_type": "modelpage.overviewtab",
+    "oem_name": "tata",
+    "model_name": "tata nexon",
+    "variant_name": "",
+    "car_segment": "suv cars",
+    "price_segment": "1549990",
+    "engine_cc": "",
+    "fuel_type": "cng, diesel, petrol",
+    "transmission_type": "manual,automatic_bs vi 2.0",
+    "owner_type": "",
+    "model_year": "",
+    "km_driven": "",
+    "used_carid": "",
+    "author_name": "",
+    "news_id": "",
+    "compare_car_details": "",
+    "source": "wap",
+    "Lead_Type": "dcb:no_finance:yes_upcoming:no",
+    "Vehicle_type": "newcar",
+    "city": "mumbai",
+    "state": "maharashtra",
+    "zone": 2,
+    "page_url": "",
+    "page_title": "",
+    "price_range_segment": "",
+    "model": "tata nexon",
+    "price": "5lakh-10lakh, 10lakh-15lakh, 15lakh-20lakh",
+    "brand": "tata",
+    "lead_demand": "false",
+    "location": "",
+    "pageTemplates": "model overviewtab",
+    "oemName": "tata",
+    "modelName": "tata nexon",
+    "variantName": "",
+    "vehicleSegment": "suv cars",
+    "vehiclePrice": "5lakh-10lakh, 10lakh-15lakh, 15lakh-20lakh",
+    "engineCapacity": "1000 cc-2000 cc",
+    "fuelType": "cng, diesel, petrol",
+    "leadForms": "dcb:no_finance:yes_offer:no",
+    "isUserOnline": "yes",
+    "cityRegion": "mumbai",
+    "modelType": "current",
+    "transmissionType": "manual,automatic_bs vi 2.0",
+    "compareVariants": "",
+    "leadLocation": "",
+    "leadType": "dcb:no_finance:yes_upcoming:no",
+    "connectoId": "de7ff9d0-6c8a-9fed-28ea-be7e1c5796af",
+    "leadScore": "",
+    "leadScoreHighest": "",
+    "platform_new": "wap",
+    "template_Type_new": "model",
+    "template_name_new": "model overviewtab",
+    "model_type_new": "current",
+    "brand_new": "tata",
+    "brand_id_new": 14,
+    "model_new": "tata nexon",
+    "display_model_new": "tata nexon",
+    "model_id_new": 3422,
+    "body_type_new": "suv cars",
+    "price_segment_new": "5lakh-10lakh, 10lakh-15lakh, 15lakh-20lakh",
+    "max_price_segment_new": 1549990,
+    "min_price_segment_new": 799990,
+    "fuel_type_new": "cng, diesel, petrol",
+    "engine_capacity_new": "1000 cc-2000 cc",
+    "is_dcb_availible_new": "no",
+    "is_finance_availible_new": "yes",
+    "is_offer_availible_new": "no",
+    "transmission_type_new": "manual,automatic_BS VI 2.0",
+    "mileage_new": "15kmpl-and-above",
+    "max_mileage_new": 24,
+    "min_mileage_new": 17,
+    "region_name_new": "mumbai south",
+    "region_id_new": "11",
+    "page_template": "model > overview",
+    "templateType": "model",
+    "city_name_new": "mumbai",
+    "city_id_new": "201",
+    "seating_capacity_new": "5",
+    "compare_model_new": "tata punch,tata curvv,maruti brezza,skoda kylaq,hyundai venue",
+    "compare_model_id_new": "3163,3412,3289,3505,3297",
+    "vehicle_type_new": "newcar",
+    "car_type_new": "new",
+    "features_new": "airbags, alloy wheels, antilock braking system, automatic climate control, cruise control, keyless entry, parking sensors, power steering, rear ac vents, sunroof"
+  }
+]

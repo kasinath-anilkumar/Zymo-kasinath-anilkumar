@@ -1,0 +1,842 @@
+{
+  "cars": [
+    {
+      "@type": "Car",
+      "name": "Tata Nexon",
+      "description": "The price of Tata Nexon, a 5 seater Compact SUV, ranges from Rs. 9.40  - 18.72 Lakh. It is available in 107 variants, with engine options ranging from 1199 to 1497 cc and a choice of 2 transmissions: Manual and Automatic. Nexon has an NCAP rating of 5 stars and comes with 6 airbags. Tata Nexon has a ground clearance of 208 mm  and is available in 16 colours. Users have reported a mileage of 17.01 to 24.08 kmpl for Nexon.",
+      "url": "https://www.carwale.com/tata-cars/nexon/",
+      "model": "Nexon",
+      "vehicleIdentificationNumber": "CW-Car-0000002333",
+      "vehicleModelDate": 2023,
+      "itemCondition": "http://schema.org/NewCondition",
+      "image": [
+        {
+          "@type": "ImageObject",
+          "url": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/141867/nexon-exterior-right-front-three-quarter-71.jpeg?isig=0&q=80&q=80",
+          "height": "1080",
+          "width": "1920"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/141867/nexon-facelift-exterior-right-front-three-quarter-69.jpeg?isig=0&q=80&q=80",
+          "height": "1080",
+          "width": "1920"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/141867/nexon-facelift-exterior-rear-view.jpeg?isig=0&q=80&q=80",
+          "height": "1080",
+          "width": "1920"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/141867/nexon-facelift-exterior-left-rear-three-quarter.jpeg?isig=0&q=80&q=80",
+          "height": "1080",
+          "width": "1920"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/141867/nexon-facelift-exterior-left-side-view.jpeg?isig=0&q=80&q=80",
+          "height": "1080",
+          "width": "1920"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/141867/nexon-facelift-exterior-left-front-three-quarter-4.jpeg?isig=0&q=80&q=80",
+          "height": "1080",
+          "width": "1920"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/141867/nexon-facelift-exterior-front-view.jpeg?isig=0&q=80&q=80",
+          "height": "1080",
+          "width": "1920"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/141867/nexon-facelift-interior-dashboard.jpeg?isig=0&q=80&q=80",
+          "height": "1080",
+          "width": "1920"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/141867/nexon-facelift-interior-front-row-seats.jpeg?isig=0&q=80&q=80",
+          "height": "1080",
+          "width": "1920"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/141867/nexon-facelift-interior-rear-seats.jpeg?isig=0&q=80&q=80",
+          "height": "1080",
+          "width": "1920"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/141867/nexon-facelift-interior-bootspace-rear-seat-folded.jpeg?isig=0&q=80&q=80",
+          "height": "1080",
+          "width": "1920"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingCount": 474,
+        "ratingValue": 4.6,
+        "worstRating": 1,
+        "bestRating": 5
+      },
+      "brand": "Tata",
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Tata"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "INR",
+        "price": 940313.0,
+        "availability": "http://schema.org/InStock"
+      },
+      "sku": "16-2333",
+      "mpn": "CW-Model-2333",
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "VALLAPU SAIKUMAR"
+          },
+          "datePublished": "2024-11-09T19:12:31+05:30",
+          "name": "Satisfied with the car",
+          "reviewBody": "1. Satisfied with the car\n2. Easy to drive with comfort \n3. It looks like a beast SUV with great performance \n4. servicing cost & maintenance is affordable \n5. pros:\n*Best budget SUV at an affordable price\n*Suspension is very good\n*It comes with 5 star safety\nCons:\n*Plastic interior near handrest \n*High engine sound into the cabin",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Hanumant Gadade "
+          },
+          "datePublished": "2024-11-07T05:35:03+05:30",
+          "name": "Outstanding Car ",
+          "reviewBody": "I am happy to buy Tata Nexon.\nThe driving experience is outstanding.\nNexon-looking muscular body.\nOverall it’s a very good car and a star safety car.\nGround clearance is outstanding.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Atul Kumbhar"
+          },
+          "datePublished": "2024-11-01T00:22:13+05:30",
+          "name": "Value for money",
+          "reviewBody": "Excellent experience in buying a car, driving a CNG car, performance as good as a petrol car, maintenance low and affordable. Can go for any model in CNG. Tata trusted brand in India.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Vikash upadhyay"
+          },
+          "datePublished": "2024-10-30T20:59:03+05:30",
+          "name": "Overall good car",
+          "reviewBody": "The buying experience is good Velocity Tata Gwalior I purchased from this dealer. I get the car within 11 days of booking. The driving experience is very good I bought a pure white color it looks very good and my every friend says it looks very good as compared to the brezza, xuv300, even venue its white color is very shining. The servicing issue is bad service centers don't listen to your problem tata should work on servicing. Overall maintenance is good and not very expensive\nPros: good looking, five-star safety rating, value for money in the segment, good performance\nCons: mileage is very low in cities 12 to 13 and highways 17 to 18\nBad service experience if you have any problem in your car they don't talk to politely and don't solve your problem even if you complain on the Tata helpline they won't make any difference, \n3 3-cylinder engine should come with a four-cylinder engine",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Manas Prasad Satam"
+          },
+          "datePublished": "2024-10-17T15:01:26+05:30",
+          "name": "Tata Nexon is the Best",
+          "reviewBody": "Tata Nexon stands out on the road with its bold and futuristic design. Tata Nexon facelift featured sharper aesthetics with revamped front and rear bumpers, sharper LED headlamps, and an aggressive front grille. Nexon’s widespread appeal is possible because of the impressive feature set, even in the lower trims. Be it a floating touchscreen infotainment system, Auto dimming IVRM, or Sequential LED DRLs, Tata Nexon boasts it all. Mindful features such as wireless charging, voice-assisted electric sunroof, and ventilated seats in the top models add to the qualities.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "name": "CarWale's Take on Tata Nexon",
+          "author": {
+            "@type": "Organization",
+            "name": "CarWale"
+          },
+          "positiveNotes": {
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "All-black cabin has been restyled and has lots of modern features."
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Six airbags are standard, it has a 5-star safety rating."
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Strong mid-range, high-speed stability, flexible gearbox."
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "The suspension setup offers an overall comfortable ride."
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Exterior design is attractive, sharp and modern."
+              }
+            ]
+          },
+          "negativeNotes": {
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Diesel motor can do with more refinement."
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "The fit and finish in some areas."
+              }
+            ]
+          }
+        }
+      ],
+      "color": [
+        "Fearless Purple",
+        "Creative Ocean",
+        "Pure Grey",
+        "Flame Red",
+        "Daytona Grey",
+        "Pristine White",
+        "Calgary White",
+        "Flame Red with White Roof",
+        "Daytona Grey with White Roof",
+        "Creative Ocean with White Roof",
+        "Pristine White with Black Roof ",
+        "Daytona Grey with Black Roof",
+        "Flame Red with Black Roof",
+        "Fearless Purple with Black Roof",
+        "Atlas Black",
+        "Calgary White with Black Roof"
+      ],
+      "bodyType": "CompactSuv",
+      "isSimilarTo": [
+        {
+          "@type": "Car",
+          "model": "XUV 3XO",
+          "name": "Mahindra XUV 3XO",
+          "url": "https://www.carwale.com/mahindra-cars/xuv-3xo/",
+          "image": "https://imgd.aeplcdn.com/310x174/n/cw/ec/156405/xuv-3xo-exterior-right-front-three-quarter-33.jpeg?isig=0&q=80",
+          "sku": "9-2595",
+          "brand": "Mahindra",
+          "vehicleModelDate": 2024,
+          "vehicleIdentificationNumber": "CW-Car-0000002595",
+          "itemCondition": "http://schema.org/NewCondition",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "INR",
+            "price": 916195.0,
+            "availability": "http://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Car",
+          "model": "Brezza",
+          "name": "Maruti Suzuki Brezza",
+          "url": "https://www.carwale.com/maruti-suzuki-cars/brezza/",
+          "image": "https://imgd.aeplcdn.com/310x174/n/cw/ec/107543/brezza-exterior-right-front-three-quarter-7.jpeg?isig=0&q=80",
+          "sku": "10-1739",
+          "brand": "Maruti Suzuki",
+          "vehicleModelDate": 2022,
+          "vehicleIdentificationNumber": "CW-Car-0000001739",
+          "itemCondition": "http://schema.org/NewCondition",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "INR",
+            "price": 972584.0,
+            "availability": "http://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Car",
+          "model": "Venue",
+          "name": "Hyundai Venue",
+          "url": "https://www.carwale.com/hyundai-cars/venue/",
+          "image": "https://imgd.aeplcdn.com/310x174/n/cw/ec/141113/venue-exterior-right-front-three-quarter-16.jpeg?isig=0&q=80",
+          "sku": "8-2309",
+          "brand": "Hyundai",
+          "vehicleModelDate": 2023,
+          "vehicleIdentificationNumber": "CW-Car-0000002309",
+          "itemCondition": "http://schema.org/NewCondition",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "INR",
+            "price": 929919.0,
+            "availability": "http://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Car",
+          "model": "Kylaq",
+          "name": "Skoda Kylaq",
+          "url": "https://www.carwale.com/skoda-cars/kylaq/",
+          "image": "https://imgd.aeplcdn.com/310x174/n/cw/ec/171777/kylaq-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80",
+          "sku": "15-2781",
+          "brand": "Skoda",
+          "vehicleModelDate": 2024,
+          "vehicleIdentificationNumber": "CW-Car-0000002781",
+          "itemCondition": "http://schema.org/NewCondition",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "INR",
+            "price": 921293.0,
+            "availability": "http://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Car",
+          "model": "Sonet",
+          "name": "Kia Sonet",
+          "url": "https://www.carwale.com/kia-cars/sonet/",
+          "image": "https://imgd.aeplcdn.com/310x174/n/cw/ec/174423/sonet-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80",
+          "sku": "70-2815",
+          "brand": "Kia",
+          "vehicleModelDate": 2024,
+          "vehicleIdentificationNumber": "CW-Car-0000002815",
+          "itemCondition": "http://schema.org/NewCondition",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "INR",
+            "price": 932874.0,
+            "availability": "http://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Car",
+          "model": "Punch",
+          "name": "Tata Punch",
+          "url": "https://www.carwale.com/tata-cars/punch/",
+          "image": "https://imgd.aeplcdn.com/310x174/n/cw/ec/39015/punch-exterior-right-front-three-quarter-55.jpeg?isig=0&q=80",
+          "sku": "16-1238",
+          "brand": "Tata",
+          "vehicleModelDate": 2021,
+          "vehicleIdentificationNumber": "CW-Car-0000001238",
+          "itemCondition": "http://schema.org/NewCondition",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "INR",
+            "price": 725346.0,
+            "availability": "http://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Car",
+          "model": "Urban Cruiser Taisor",
+          "name": "Toyota Urban Cruiser Taisor",
+          "url": "https://www.carwale.com/toyota-cars/taisor/",
+          "image": "https://imgd.aeplcdn.com/310x174/n/cw/ec/132427/taisor-exterior-right-front-three-quarter-2.png?isig=0&q=80",
+          "sku": "17-2105",
+          "brand": "Toyota",
+          "vehicleModelDate": 2024,
+          "vehicleIdentificationNumber": "CW-Car-0000002105",
+          "itemCondition": "http://schema.org/NewCondition",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "INR",
+            "price": 925919.0,
+            "availability": "http://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Car",
+          "model": "Fronx",
+          "name": "Maruti Suzuki Fronx",
+          "url": "https://www.carwale.com/maruti-suzuki-cars/fronx/",
+          "image": "https://imgd.aeplcdn.com/310x174/n/cw/ec/130591/fronx-exterior-right-front-three-quarter-110.jpeg?isig=0&q=80",
+          "sku": "10-2033",
+          "brand": "Maruti Suzuki",
+          "vehicleModelDate": 2023,
+          "vehicleIdentificationNumber": "CW-Car-0000002033",
+          "itemCondition": "http://schema.org/NewCondition",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "INR",
+            "price": 871180.0,
+            "availability": "http://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Car",
+          "model": "Nexon EV",
+          "name": "Tata Nexon EV",
+          "url": "https://www.carwale.com/tata-cars/nexon-ev/",
+          "image": "https://imgd.aeplcdn.com/310x174/n/cw/ec/149123/nexon-ev-exterior-right-front-three-quarter-78.jpeg?isig=0&q=80",
+          "sku": "16-2503",
+          "brand": "Tata",
+          "vehicleModelDate": 2023,
+          "vehicleIdentificationNumber": "CW-Car-0000002503",
+          "itemCondition": "http://schema.org/NewCondition",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "INR",
+            "price": 1323507.0,
+            "availability": "http://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Car",
+          "model": "Taigun",
+          "name": "Volkswagen Taigun",
+          "url": "https://www.carwale.com/volkswagen-cars/taigun/",
+          "image": "https://imgd.aeplcdn.com/310x174/n/cw/ec/144689/taigun-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80",
+          "sku": "20-2433",
+          "brand": "Volkswagen",
+          "vehicleModelDate": 2023,
+          "vehicleIdentificationNumber": "CW-Car-0000002433",
+          "itemCondition": "http://schema.org/NewCondition",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "INR",
+            "price": 1388735.0,
+            "availability": "http://schema.org/InStock"
+          }
+        }
+      ],
+      "vehicleEngine": [
+        {
+          "@type": "EngineSpecification",
+          "name": "1199"
+        },
+        {
+          "@type": "EngineSpecification",
+          "name": "1497"
+        }
+      ],
+      "driveWheelConfiguration": [
+        {
+          "@type": "DriveWheelConfigurationValue",
+          "name": "FWD"
+        }
+      ],
+      "fuelType": [
+        {
+          "@type": "QualitativeValue",
+          "name": "Petrol"
+        },
+        {
+          "@type": "QualitativeValue",
+          "name": "CNG"
+        },
+        {
+          "@type": "QualitativeValue",
+          "name": "Diesel"
+        }
+      ],
+      "vehicleTransmission": [
+        {
+          "@type": "QualitativeValue",
+          "name": "Manual"
+        },
+        {
+          "@type": "QualitativeValue",
+          "name": "Automatic (AMT)"
+        },
+        {
+          "@type": "QualitativeValue",
+          "name": "Automatic (DCT)"
+        }
+      ],
+      "meetsEmissionStandard": "BS6 Phase 2",
+      "numberOfAirbags": "6 Airbags (Driver, Front Passenger, 2 Curtain, Driver Side, Front Passenger Side)",
+      "seatingCapacity": "5",
+      "numberOfDoors": "5",
+      "numberOfForwardGears": "6",
+      "releaseDate": "09/14/2023 00:00:00",
+      "size": "3995LX1804WX1620H",
+      "fuelEfficiency": {
+        "@type": "QuantitativeValue",
+        "unitText": "km/L",
+        "value": "24.08"
+      },
+      "fuelConsumption ": {
+        "@type": "QuantitativeValue",
+        "unitText": "L/100 km",
+        "value": "4.15"
+      },
+      "steeringPosition": {
+        "@type": "SteeringPositionValue",
+        "name": "RightHandDriving"
+      },
+      "wheelbase": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": "2498"
+      },
+      "fuelCapacity": {
+        "@type": "QuantitativeValue",
+        "unitCode": "LTR",
+        "value": "44"
+      },
+      "height": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": "1620"
+      },
+      "width": {
+        "@type": "QuantitativeValue",
+        "unitCode": "MMT",
+        "value": "1804"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Tata Nexon CNG Review | Positives & Negatives | Real-World Mileage Tested",
+      "description": "The Tata Nexon CNG is finally here and we have tested its real-world mileage in CNG mode. The results are quite surprising if we are honest! ",
+      "thumbnailUrl": "https://img.youtube.com/vi/J0edQayMk78/maxresdefault.jpg",
+      "uploadDate": "2024-10-10",
+      "contentUrl": "https://www.carwale.com/videos/tata-nexon-cng-review-positives-negatives-real-world-mileage-tested-189725/",
+      "embedUrl": "https://youtu.be/J0edQayMk78"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Tata Nexon CNG, Red Dark Edition & Nexon EV with More Range Launched! All You Need To Know",
+      "description": "Tata has finally launched the Nexon CNG and turbo petrol SUV is now on sale in this new avatar. Besides this, the brand has also launched the Red Dark edition for the Nexon and the upgraded Nexon EV with more range and better tech.",
+      "thumbnailUrl": "https://img.youtube.com/vi/WKnvrDZBEsE/maxresdefault.jpg",
+      "uploadDate": "2024-9-25",
+      "contentUrl": "https://www.carwale.com/videos/tata-nexon-cng-red-dark-edition-nexon-ev-with-more-range-launched-all-you-need-to-know-188027/",
+      "embedUrl": "https://youtu.be/WKnvrDZBEsE"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Upcoming SUVs, EVs & Sedans Launching in India",
+      "description": "All-new Maruti Suzuki Dzire, 2024 Hyundai Alcazar facelift, Tata Nexon CNG and MG Windsor are some of the cars about to be launched in the second half of 2024. Here's Aditya bringing you the full list.",
+      "thumbnailUrl": "https://img.youtube.com/vi/r_3VriMQXoU/maxresdefault.jpg",
+      "uploadDate": "2024-8-27",
+      "contentUrl": "https://www.carwale.com/videos/upcoming-suvs-evs-sedans-launching-in-india-185679/",
+      "embedUrl": "https://youtu.be/r_3VriMQXoU"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Top 5 Affordable Electric Cars | Tata Curvv, Nexon, Tiago, MG Comet & Mahindra XUV 400",
+      "description": "There are quite a few electric cars from Tata, Mahindra and MG for under Rs 20 Lakh in India. In this video, we talk about our top picks that are not only affordable but also offer good real-world range.  ",
+      "thumbnailUrl": "https://img.youtube.com/vi/2VlgxD_Gtk0/maxresdefault.jpg",
+      "uploadDate": "2024-8-7",
+      "contentUrl": "https://www.carwale.com/videos/top-5-affordable-electric-cars-tata-curvv-nexon-tiago-mg-comet-mahindra-xuv-400-184009/",
+      "embedUrl": "https://youtu.be/2VlgxD_Gtk0"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Tata Nexon Mileage Test - Diesel MT variant City & Highway Run | CarWale",
+      "description": "Tata Nexon is a popular car for many reasons. But what matters the most when buying a car is its mileage.",
+      "thumbnailUrl": "https://img.youtube.com/vi/lIjQyuEoKlo/maxresdefault.jpg",
+      "uploadDate": "2024-7-5",
+      "contentUrl": "https://www.carwale.com/videos/tata-nexon-mileage-test---diesel-mt-variant-city-highway-run-carwale-181531/",
+      "embedUrl": "https://youtu.be/lIjQyuEoKlo"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "2024 Upcoming SUVs: Curvv, Nexon iCNG, Kodiaq, Basalt, and more | CarWale",
+      "description": "We are midway through 2024 and we have seen quite a few car launches. What else is in store for this year? Watch the full video as Venkat discusses all the ICE and EVs in store for 2024. ",
+      "thumbnailUrl": "https://img.youtube.com/vi/Pk3DZmmw2Pk/maxresdefault.jpg",
+      "uploadDate": "2024-7-5",
+      "contentUrl": "https://www.carwale.com/videos/2024-upcoming-suvs-curvv-nexon-icng-kodiaq-basalt-and-more-carwale-181527/",
+      "embedUrl": "https://youtu.be/Pk3DZmmw2Pk"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Mahindra XUV 3XO vs Tata Nexon | Mileage, Features & Interior Comparison",
+      "description": "The Mahindra XUV 3XO and the Tata Nexon are feature-loaded compact SUVs that not only look good but also perform exceptionally at their price points. In this video, we compare features, real-world mileage and interior of the XUV 3XO and the Nexon.",
+      "thumbnailUrl": "https://img.youtube.com/vi/NwHvsZ9lqYs/maxresdefault.jpg",
+      "uploadDate": "2024-6-4",
+      "contentUrl": "https://www.carwale.com/videos/mahindra-xuv-3xo-vs-tata-nexon-mileage-features-interior-comparison-178613/",
+      "embedUrl": "https://youtu.be/NwHvsZ9lqYs"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "5 Positives & 2 Negatives of Tata Nexon Turbo Petrol AT | Detailed Review | Mileage Test",
+      "description": "We have recently driven the Mahindra XUV 3XO turbo petrol automatic and now we are bringing you a detailed review of the Tata Nexon turbo petrol automatic. In this video, Venkat tells you about five positives and two negatives of the new Nexon.",
+      "thumbnailUrl": "https://img.youtube.com/vi/K4xa_HqzGog/maxresdefault.jpg",
+      "uploadDate": "2024-5-22",
+      "contentUrl": "https://www.carwale.com/videos/5-positives-2-negatives-of-tata-nexon-turbo-petrol-at-detailed-review-mileage-test-177491/",
+      "embedUrl": "https://youtu.be/K4xa_HqzGog"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Automotive News Round Up | Thar 5 Door, Curvv Diesel, Nexon CNG, Brezza Bio Gas, Creta N Line",
+      "description": "Here is every important update from the car industry in the last one week or so. In this video, Venkat talks about the upcoming Thar 5 door interior, Tata Curvv diesel, Nexon CNG, Maruti Brezza Bio Gas and the Hyundai Creta N Line. ",
+      "thumbnailUrl": "https://img.youtube.com/vi/6yGi9tiNhII/maxresdefault.jpg",
+      "uploadDate": "2024-2-14",
+      "contentUrl": "https://www.carwale.com/videos/automotive-news-round-up-thar-5-door-curvv-diesel-nexon-cng-brezza-bio-gas-creta-n-line-170899/",
+      "embedUrl": "https://youtu.be/6yGi9tiNhII"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Tata Nexon CNG | Turbo Petrol SUV with Low Running Costs | Bharat Mobility Expo 2024",
+      "description": "The Tata Nexon will soon be available as a CNG SUV. At the ongoing Bharat Mobility Expo, Tata has revealed the Nexon CNG which will be powered by a 1.2-litre turbo petrol engine. Here's Venkat telling you everything we know about it.",
+      "thumbnailUrl": "https://img.youtube.com/vi/oB4RJ4pyi4I/maxresdefault.jpg",
+      "uploadDate": "2024-2-14",
+      "contentUrl": "https://www.carwale.com/videos/tata-nexon-cng-turbo-petrol-suv-with-low-running-costs-bharat-mobility-expo-2024-170885/",
+      "embedUrl": "https://youtu.be/oB4RJ4pyi4I"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "New Nexon Price, Variants, Features Explained | CarWale",
+      "description": "New Nexon price starts at Rs 8.10 lakh and goes up to Rs 13 lakh, ex-showroom Delhi. New Nexon turbo-petrol DCA review here ",
+      "thumbnailUrl": "https://img.youtube.com/vi/Fx91uSNWfvg/maxresdefault.jpg",
+      "uploadDate": "2023-9-14",
+      "contentUrl": "https://www.carwale.com/videos/new-nexon-price-variants-features-explained-carwale-157547/",
+      "embedUrl": "https://youtu.be/Fx91uSNWfvg"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Tata Nexon Facelift vs Old - What’s New? | CarWale",
+      "description": "The Tata Nexon Facelift, in our opinion, looks like more than just a mid-life refresh. Martin Uhlarik, Tata Motors' Global Head of Design explains what's new and why.",
+      "thumbnailUrl": "https://img.youtube.com/vi/8CXT6h6vbAM/maxresdefault.jpg",
+      "uploadDate": "2023-9-6",
+      "contentUrl": "https://www.carwale.com/videos/tata-nexon-facelift-vs-old---whats-new-carwale-156925/",
+      "embedUrl": "https://youtu.be/8CXT6h6vbAM"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Tata Nexon Facelift - Every New Feature Revealed! | CarWale",
+      "description": "The Tata Nexon Facelift's interior looks all new. But does it feel any different than before? What about the new features added to the Nexon? Sagar explains",
+      "thumbnailUrl": "https://img.youtube.com/vi/wyynL0aSWGE/maxresdefault.jpg",
+      "uploadDate": "2023-9-6",
+      "contentUrl": "https://www.carwale.com/videos/tata-nexon-facelift---every-new-feature-revealed-carwale-156923/",
+      "embedUrl": "https://youtu.be/wyynL0aSWGE"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Tata Nexon Facelift Turbo Petrol + Dual-Clutch Automatic Review | 0-100kmph tested | CarWale",
+      "description": "The Tata Nexon Facelift is offered with a new dual-clutch transmission (DCA) with its petrol engine. Sagar finds out how much better this is compared to the earlier petrol + AMT combination.",
+      "thumbnailUrl": "https://img.youtube.com/vi/kSKGdvVo6j0/maxresdefault.jpg",
+      "uploadDate": "2023-9-6",
+      "contentUrl": "https://www.carwale.com/videos/tata-nexon-facelift-turbo-petrol-dual-clutch-automatic-review-0-100kmph-tested-carwale-156921/",
+      "embedUrl": "https://youtu.be/kSKGdvVo6j0"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "answerCount": 1,
+          "dateCreated": "2022-05-24",
+          "author": {
+            "@type": "Person",
+            "name": "Carwale Experts"
+          },
+          "name": "What is the on road price of Tata Nexon base model?",
+          "text": "What is the on road price of Tata Nexon base model?",
+          "acceptedAnswer": [
+            {
+              "@type": "Answer",
+              "dateCreated": "2022-05-24",
+              "author": {
+                "@type": "Person",
+                "name": "Carwale Experts"
+              },
+              "text": "The on road price of Tata Nexon base model is Rs.  9.40 Lakh which includes a registration cost of Rs. 94858, insurance premium of \n                Rs. 43465 and additional charges of Rs. 2000."
+            }
+          ]
+        },
+        {
+          "@type": "Question",
+          "answerCount": 1,
+          "dateCreated": "2022-05-24",
+          "author": {
+            "@type": "Person",
+            "name": "Carwale Experts"
+          },
+          "name": "What is the on road price of Tata Nexon top model?",
+          "text": "What is the on road price of Tata Nexon top model?",
+          "acceptedAnswer": [
+            {
+              "@type": "Answer",
+              "dateCreated": "2022-05-24",
+              "author": {
+                "@type": "Person",
+                "name": "Carwale Experts"
+              },
+              "text": "The on road price of Tata Nexon top model is Rs.  18.72 Lakh which includes a registration cost of Rs. 233578, insurance premium of \n                Rs. 71067 and additional charges of Rs. 2000."
+            }
+          ]
+        },
+        {
+          "@type": "Question",
+          "answerCount": 1,
+          "dateCreated": "2022-05-24",
+          "author": {
+            "@type": "Person",
+            "name": "Carwale Experts"
+          },
+          "name": "What is the real world versus claimed mileage of Tata Nexon?",
+          "text": "What is the real world versus claimed mileage of Tata Nexon?",
+          "acceptedAnswer": [
+            {
+              "@type": "Answer",
+              "dateCreated": "2022-05-24",
+              "author": {
+                "@type": "Person",
+                "name": "Carwale Experts"
+              },
+              "text": "The company claimed mileage of Tata Nexon is 24.08 kmpl. As per users, the mileage came to be 22.15 kmpl \n                in the real world."
+            }
+          ]
+        },
+        {
+          "@type": "Question",
+          "answerCount": 1,
+          "dateCreated": "2022-05-24",
+          "author": {
+            "@type": "Person",
+            "name": "Carwale Experts"
+          },
+          "name": "What is the seating capacity in Tata Nexon?",
+          "text": "What is the seating capacity in Tata Nexon?",
+          "acceptedAnswer": [
+            {
+              "@type": "Answer",
+              "dateCreated": "2022-05-24",
+              "author": {
+                "@type": "Person",
+                "name": "Carwale Experts"
+              },
+              "text": "Tata Nexon is a 5 seater car."
+            }
+          ]
+        },
+        {
+          "@type": "Question",
+          "answerCount": 1,
+          "dateCreated": "2022-05-24",
+          "author": {
+            "@type": "Person",
+            "name": "Carwale Experts"
+          },
+          "name": "What are the dimensions of Tata Nexon?",
+          "text": "What are the dimensions of Tata Nexon?",
+          "acceptedAnswer": [
+            {
+              "@type": "Answer",
+              "dateCreated": "2022-05-24",
+              "author": {
+                "@type": "Person",
+                "name": "Carwale Experts"
+              },
+              "text": "The dimensions of Tata Nexon include its length of 3995 mm, width of 1804 mm and height of 1620 mm. The wheelbase of the Tata Nexon is 2498 mm."
+            }
+          ]
+        },
+        {
+          "@type": "Question",
+          "answerCount": 1,
+          "dateCreated": "2022-05-24",
+          "author": {
+            "@type": "Person",
+            "name": "Carwale Experts"
+          },
+          "name": "Does Tata Nexon get a sunroof?",
+          "text": "Does Tata Nexon get a sunroof?",
+          "acceptedAnswer": [
+            {
+              "@type": "Answer",
+              "dateCreated": "2022-05-24",
+              "author": {
+                "@type": "Person",
+                "name": "Carwale Experts"
+              },
+              "text": "Yes, 43 out of 107 variants of Tata Nexon have Sunroof."
+            }
+          ]
+        },
+        {
+          "@type": "Question",
+          "answerCount": 1,
+          "dateCreated": "2022-05-24",
+          "author": {
+            "@type": "Person",
+            "name": "Carwale Experts"
+          },
+          "name": "Does Tata Nexon have cruise control?",
+          "text": "Does Tata Nexon have cruise control?",
+          "acceptedAnswer": [
+            {
+              "@type": "Answer",
+              "dateCreated": "2022-05-24",
+              "author": {
+                "@type": "Person",
+                "name": "Carwale Experts"
+              },
+              "text": "Yes, 71 out of 107 variants of Tata Nexon have cruise control function. With the Cruise control enabled you can take your foot off the accelerator and move at a fixed speed constantly provided the road system permits this."
+            }
+          ]
+        },
+        {
+          "@type": "Question",
+          "answerCount": 1,
+          "dateCreated": "2022-05-24",
+          "author": {
+            "@type": "Person",
+            "name": "Carwale Experts"
+          },
+          "name": "How many airbags does Tata Nexon get?",
+          "text": "How many airbags does Tata Nexon get?",
+          "acceptedAnswer": [
+            {
+              "@type": "Answer",
+              "dateCreated": "2022-05-24",
+              "author": {
+                "@type": "Person",
+                "name": "Carwale Experts"
+              },
+              "text": "The top Model of Tata Nexon has 6 airbags. The Nexon has driver,  front passenger,  2 curtain,  driver side and  front passenger side airbags."
+            }
+          ]
+        },
+        {
+          "@type": "Question",
+          "answerCount": 1,
+          "dateCreated": "2022-05-24",
+          "author": {
+            "@type": "Person",
+            "name": "Carwale Experts"
+          },
+          "name": "Does Tata Nexon get ABS?",
+          "text": "Does Tata Nexon get ABS?",
+          "acceptedAnswer": [
+            {
+              "@type": "Answer",
+              "dateCreated": "2022-05-24",
+              "author": {
+                "@type": "Person",
+                "name": "Carwale Experts"
+              },
+              "text": "Yes, all variants of Tata Nexon have ABS. ABS is a great accident prevention technology, allowing drivers to steer while braking hard."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
