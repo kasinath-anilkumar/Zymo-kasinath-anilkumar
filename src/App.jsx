@@ -16,6 +16,7 @@ import ExploreNewCars from "./components/ExploreNewCars/ExploreNewCars";
 import Banner1 from "./components/Banner/Banner1"
 
 import Subcribe from "./components/Subscribe/Subscribe";
+import DownloadApp from "./components/DownloadApp/DownloadApp";
 
 
 // Lazy-loaded components
@@ -107,7 +108,7 @@ const App = () => {
             <Route path="/terms-of-service" element={<Terms />} />
             <Route path="/cancellation-policy" element={<CancellationPolicy />} />
             <Route path="/monthly-car-rental/:city" element={<ComingSoon/>} />
-            <Route path="/monthly-car-rental/book/:carName" element={<ComingSoon/>} />
+            <Route path="/monthly-car-rental/book/:carName" element={<DownloadApp/>} />
             <Route path="/buy-car/:car" element={<ComingSoon/>} />
 
             {ZymoAllCityList.concat(ZymoFeaturedCityList).map((city, index) => {
