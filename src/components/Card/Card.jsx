@@ -1,5 +1,6 @@
 import React from "react";
 import SwiftImg from "../../../public/explore-cars/Maruti Swift VXi Opt AMT Blitz Edition.png";
+import { useParams } from 'react-router-dom';
 
 const Card = ({ title, price, image, seater, option }) => {
   return (
@@ -24,9 +25,9 @@ const Card = ({ title, price, image, seater, option }) => {
           </div>
         </div>
         <div className="card-actions justify-center">
-          <button className="btn text-xl text-white hover:opacity-75 hover:-translate-y-3">
+          <a href={`/monthly-car-rental/book/${title}`} className="btn text-xl text-white hover:opacity-75 hover:-translate-y-3">
             Book
-          </button>
+          </a>
         </div>
       </div>
     </div>

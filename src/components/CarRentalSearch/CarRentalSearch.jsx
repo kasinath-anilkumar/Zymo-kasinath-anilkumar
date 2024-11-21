@@ -17,7 +17,7 @@ const CarRentalSearch = () => {
       return alert("Select a location and date to proceed");
     }
     navigate(
-      `/monthly-car-rental?location=${location1.toLowerCase()}&date=${pickupDate}`
+      `/monthly-car-rental/${location1.toLowerCase()}?date=${pickupDate}`
     );
   };
   const handleLocationSelect = (city, type) => {

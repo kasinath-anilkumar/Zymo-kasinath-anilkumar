@@ -96,7 +96,7 @@ const App = () => {
             <Route path="/" element={<Banner />} />
             <Route path="/career" element={<Career />} />
             <Route path="/about" element={<AboutUs />} />
-            <Route path="/monthly-car-rental" element={<Subcribe />} />
+            <Route path="/monthly-car-rental/delhi" element={<Subcribe />} />
             <Route path="/buy-car" element={<ExploreNewCars />} />
             <Route path="/blogs" element={<BlogsMainPage />} />
             <Route path="/blog/:id" element={<BlogDetailPage />} />
@@ -106,7 +106,8 @@ const App = () => {
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/terms-of-service" element={<Terms />} />
             <Route path="/cancellation-policy" element={<CancellationPolicy />} />
-            <Route path="/monthly-car-rental/:city" element={<Subcribe/>} />
+            <Route path="/monthly-car-rental/:city" element={<ComingSoon/>} />
+            <Route path="/monthly-car-rental/book/:carName" element={<ComingSoon/>} />
             <Route path="/buy-car/:car" element={<ComingSoon/>} />
 
             {ZymoAllCityList.concat(ZymoFeaturedCityList).map((city, index) => {
