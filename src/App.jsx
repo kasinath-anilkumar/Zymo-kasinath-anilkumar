@@ -48,6 +48,7 @@ const Mumbai = lazy(() => import("./pages/Mumbai/Mumbai"));
 const Kolkata = lazy(() => import("./pages/Kolkata/Kolkata"));
 const CreateBlogPage = lazy(() => import("./components/blog/CreateBlogPage"));
 const CreateEditBlogPage = lazy(() => import("./components/blog/createEditBlogPage"));
+const ComingSoon = lazy(() => import("./components/ComingSoon/ComingSoon"));
 
 const App = () => {
   const { location, setLocation, locationShow } = useLocationContext();
@@ -106,6 +107,7 @@ const App = () => {
             <Route path="/terms-of-service" element={<Terms />} />
             <Route path="/cancellation-policy" element={<CancellationPolicy />} />
             <Route path="/monthly-car-rental/:city" element={<Subcribe/>} />
+            <Route path="/buy-car/:car" element={<ComingSoon/>} />
 
             {ZymoAllCityList.concat(ZymoFeaturedCityList).map((city, index) => {
               const CityComponent = lazy(() =>

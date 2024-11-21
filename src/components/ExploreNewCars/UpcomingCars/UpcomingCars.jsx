@@ -138,7 +138,7 @@ const UpcomingCars = () => {
                   <FuelTypeIcon fuelType={car.fuelType} />
                   {car.fuelType}
                 </p>
-                <a href="#" className="mt-4 inline-block">
+                <a href={`/buy-car/${car.name}`} className="mt-4 inline-block">
                   <button className="flex items-center bg-gradient-to-r from-indigo-500 to-[#7c2a9d] text-white px-4 py-2 rounded-md">
                     See More <IoIosArrowDropright className="ml-2" />
                   </button>
