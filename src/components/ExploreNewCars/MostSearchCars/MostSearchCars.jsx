@@ -209,7 +209,7 @@ const MostSearchCars = () => {
                 />
                 <h1 className="text-xl font-bold text-gray-800">{car.name}</h1>
                 <p className="text-lg text-gray-500 mt-2">{car.price}</p>
-                <a href="#" className="mt-4 inline-block">
+                <a href={`/buy-car/${car.name}`} className="mt-4 inline-block">
                   <button className="bg-gradient-to-r from-indigo-500 to-[#7c2a9d] text-white px-4 py-2 rounded-md flex items-center">
                     See More <IoIosArrowDropright className="ml-2" />
                   </button>
